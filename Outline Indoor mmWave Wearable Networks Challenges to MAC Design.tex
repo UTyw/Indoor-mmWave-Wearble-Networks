@@ -1,0 +1,96 @@
+\documentclass[10pt, conference, letterpaper]{IEEEtran}
+
+\ifCLASSINFOpdf
+	\usepackage[pdftex]{graphicx}
+\else
+  \usepackage[dvips]{graphicx}
+  \graphicspath{{./figures/}}
+\fi
+	
+\usepackage[cmex10]{amsmath}
+\usepackage[caption = false, font = footnotesize]{subfig}
+\graphicspath{{../infocomfigure/}}
+\usepackage{bbm}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\newtheorem{theorem}{Theorem}
+%\usepackage[normlem]{ulem}
+%\usepackage{algoithm}
+%\usepackage{algpseudocode}
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+
+
+\begin{document}
+\title{Indoor mmWave Wearable Networks: Challenges to MAC Design}
+
+\author{\IEEEauthorblockN{Yicong Wang and Gustavo de Veciana}
+\IEEEauthorblockA{Department of Electrical and Computer Engineering, The University of Texas at Austin\\Email: yicong.wang@utexas.edu, gustavo@ece.utexas.edu }
+}
+
+\maketitle
+
+\begin{abstract}
+Millimeter wave (mmWave) serves as an ideal solution for wearable networks where device density can be high and many applications require Gbps throughput. In a dense scenario such as a crowded train or stadium, users with wearable personal area networks are close to each other and the interference can be strong. Furthermore, wearable devices may have heterogeneous transmission capabilities and different Quality-of-Service (QoS) requirements. The wearable network in dense scenarios differs from other mmWave networks in two ways: (1) human body blockage and body movements make interferers have different interfering channels, i.e., neighbors in close proximity are more likely to have clear interfering channels and their channels are more stable compared to distant users; (2) heterogeneity in device capabilities (e.g. beamforming v.s. omni-directional and different energy constraints) makes it inefficient to schedule all devices in the same way. In this paper, we begin with a first order analysis of the characteristics of interferers in dense wearable networks, i.e., the number and stability of interferers MAC protocol should handle. We further discuss the hierarchical MAC scheduler to manage interference, consisting of clustering of users and scheduling at the user level. We propose clustering principles and provide an analysis of clustering in dense mmWave network. This paper show that in dense mmWave wearable networks, the strong interferers a user see are limited but can be sensitive to users' movement. Clustering users in close proximity can mitigate uncoordinated interference while each can coordinate with cluster peers to improve the spatial reuse.
+
+\end{abstract}
+\IEEEpeerreviewmaketitle
+
+\section{Introduction}\label{section:intro}
+\begin{itemize}
+\item
+MmWave will be used for wearable network. MAC design for dense wearable networks requires understanding of the interference environment and challenges to MAC.
+\item
+Hierarchy of the wearable network: devices on each user forms a BSS. Smart phone works as the Control Point.BSSs can form clusters and coordinate with cluster members
+\item
+Interference in dense wearable networks: high number of interferers and dynamic channels: keeping track of all (potential) interferers is difficult
+\item
+Heterogeneous requirements, transmission capability and volume of different types of traffic affects MAC design
+\end{itemize}
+
+\emph{Contributions} 1) Analysis the characteristics of strong interferers 2) propose hierarchical MAC for dense wearable networks 3) Analysis the trade-off in clustering
+
+\emph{Related Work}
+\begin{itemize}
+\item Channel characteristics of mmWave: pathloss, reflection, human body shadowing
+\item Analysis of mmwave/wearable network: Robert's work on mmWave and wearable network. Angel's work
+\item Existing MAC protocols, including 802.11ad and other MACs aiming at improving spatial reuse
+\end{itemize}
+
+\section{Channel Characteristics in Dense Wearable Network}
+\begin{itemize}
+\item Factors influencing the interference environment: 1) human body shadowing 2) directional transmission 3) direction of traffic: upward downward
+\item Pathloss, shadowing of mmWave as well as reflection
+\item Define strong interferers: those that may kill the transmission and MAC should mitigate interference from strong interferers. Why we care about strong interferers
+\end{itemize}
+\subsection{Number of Strong Interferers}
+\begin{itemize}
+\item Define number of strong interferers $N_{\text{SI}}$
+\item Discuss about the indicator function $f$
+\item Average number of strong interferers. Theorem? 
+\item Result: Average number of strong interferers, compared to simulation
+\item Result: Distribution of strong interferers
+\item Result: * Avg. $N_{\text{SI}}$ for finite region
+\end{itemize}
+\subsection{Sensitivity of Strong Interferers}
+\begin{itemize}
+\item Why we care about sensitivity: overhead and performance
+\item Analytical model, movement model
+\item Sensitivity for user at different distant away/ user density environment
+\item Average Sensitivity
+\end{itemize}
+
+\section{Hierarchical MAC to manage interference}
+\begin{itemize}
+\item Roles of clustering and scheduling at MAC
+\item Discussion about the requirements of clustering and scheduling
+\item Criterion for good clusters
+\item What devices should participate in clustering
+\end{itemize}
+
+\section{Analysis of MAC(Clustering)}
+\subsection{Model for analysis of ``throughput '' of clusters}
+\subsection{Factors affecting the optimal cluster size}
+
+
+\end{document}
