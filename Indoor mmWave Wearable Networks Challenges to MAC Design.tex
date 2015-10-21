@@ -63,41 +63,24 @@ Another important feature of dense wearable network is that channels are more se
 %(More work using Markov model, reference required)
 \cite{blockagein60ghz} use simulations to get the radio propagation in the presence of static and moving obstacles and show that directional LOS wave links experience relatively high outage. These works provide valuable measurements and insights on the influence of moving human blockage, but they do not provide tractable analysis of user movements to quantify the influence of user mobility.
 
-%In wearable network, the TXs and RXs are on the user's body thus the model channels between users are either interfering channels or used for signaling.   while user movements mainly affect the interference to a user instead of signal channel. Furthermore, the high density of users and different mobility patterns in wearable network affect the interference environment.
+% Existing work on MAC
+% 1. Centralized, requires much signaling
+% 2. Dense user and interference not considered
+% 3. multiple BSS not considered
+In dense wearable networks, the MAC protocol need to coordinate a massive number of users and improve the reuse of the resources. Many existing work on MAC design focus on improving resource reuse for centralized network where a single PNC (in 802.15.3c) or AP (in 802.11ad) coordinates the transmissions of different links \cite{virtualtimeslot}\cite{rex}\cite{fdmac}. Only the interference within the BSS is considered while the interference between BSSs are not considered. Furthermore, centralized MAC requires signaling overhead for measurement and control signals. In dense wearable networks, the channel between different users are unreliable and the number of devices/BSSs is large, thus existing work on centralized MAC may fail to schedule the devices. \cite{dtdmac}\cite{mdmac} study distributed MAC protocol for mmWave networks and use memory to improve the resource reuse of the system. However, in highly dense wearable networks, the number of potential interferers can be high and pure distributed MAC may fail to coordinate the large number of users. 
 
-% 3. New challenges to MAC design
-% 1) Large number of users to deal with (signaling) Existing standards, protocols aiming at improving reuse
-% 2) (Combine 2 to 1)Interference is higher, wired model does not hold
-% 3) *Blockage is different
-% 4) Mobility: large scale, small scale
-% 5) Heterogeneity of devices
+802.11ad provides a distributed clustering to coordinate the BSSs. The cluster head synchronize the BSSs and schedule the beacon transmissions while the PCPs/APs schedule the data transmission within each BSS. To avoid interference, a BSS may re-schedule service periods (SPs) and contention-based access periods (CBAPs) in its beacon interval or move the beacon transmission interval in an attempt to mitigate any interference with transmission indicated in the received Extended Schedule element in the beacons of other BSSs. The BSSs work in a TDMA-like method and the resource allocated to each BSS may not be enough. Also in dense wearable networks, the channels are unstable due to human blockage and movements thus the clusters may suffer from frequent changes in cluster topology. How to select the channel and the cluster to join when multiple clusters are available is not specified, thus we propose the principles for clustering and channel selection based on our analysis of channels.
 
-% Contributions: describe our work
+In this paper, we address the MAC design in dense indoor mmWave wearable networks. We consider the case where the user density is high and the devices on a user form a BSS coordinated by the smart phone. Due to the high density of users and unstable channels, the measurements of channel and the exchange of signaling is limited thus the MAC should rely on limited channel measurements and robust changes in network topology and we aim to propose the principles of MAC for such network.
 
+We first provide an analysis of interference environment, specifically, we characterize the set of strong interferers a BSS might see in dense wearable networks. We model the users as a marked point process (m.p.p.) with the locations of the users following a Poisson Point Process (PPP) while the orientations of the users being the marks. We compute the spatial distribution of strong interferers and show that the number of strong interferers is actually limited as user density increases. 
+We then analyze the influence of user movements of different scales, i.e., small local movements and large scale constant velocity movements. For small local movements, we compute the sensitivity of interferers at different distance and show that strong interferers are most sensitive when user density is moderate high, assuming that the range of local movements is limited for high user density. For large scale movements, we assume that users moves at constant velocities and analyze the channel state of a fixed link. We prove that the state of the channel follows a $M/G/\infty$ queue instead of the simple Markove model used in existing works and the distribution of intervals of being blocked has a heavy tailed distribution. We further compute the average length of intervals of being LOS/NLOS using the analytical model.
 
-% What are important in the analysis of interference. Move this to contributions
-From the MAC design perspective, it is important to identify the set of interferers users need to deal with, i.e., the set of strong interferers. We define \emph{strong interferer} of a user as a neighboring user whose device has a strong channel to the user. The channel of a strong interferer can be an LOS channel, or a strong reflected channel. Understanding the set of strong interferers will help us identify the users that MAC need to keep track of and coordinate.
+Based on our analysis of strong interferers, we argue that clustering plus MAC scheduling at BSS is an viable hierarchy for the MAC in dense wearable networks. Clustering and channel selection can be used to mitigate interference while scheduling at each user can be used to schedule wearable devices and improve channel reuse by learning the transmission patterns of other users. We propose a clustering and channel selection algorithm based on Affinity Propagation (AP) and show that the proposed algorithm can improve the stability of channels between cluster members and cluster heads and reduce inter-cluster interference. 
 
-We first provide an analysis of the set of strong interferers. We model the users as a marked point process (m.p.p.) and identify the set of strong interferers of a typical user. We further model the interferers using a homogeneous Poisson Point Process (P.P.P.) and compute the expected number of strong interferers. We show that the number of strong interferers is actually limited as user density increases and a typical user sees most strong interferers at moderate high density. We give the spatial distribution of strong interferers and show that strong interferers will concentrate to the typical user for high user density scenario. We then consider the influence of different scales of user movements, i.e., small local movements and large scale constant velocity movements. For small local movements, we use the sensitivity of strong interferers and show that distant users are more unstable than close interferers. We also show that the set of strong interferers are most sensitive when user density is moderate high, assuming that the range of local movements is limited for high user density. For large scale movements, we model that users moves at constant velocities and study the state transition of a fixed channel. We prove that the state of the channel follows a $M/G/\infty$ queue instead of the simple Markove model with two states and the distribution of intervals of being blocked has a heavy tailed distribution(?). We further compute the average length of intervals of having a strong channel  and the intervals that the channel is blocked.
+Thirdly, we evaluate the performance of clustering and channel selection for dense wearable network with heterogeneous devices, i.e., transmission capabilities and demand of traffic, using analytical model. The members of a cluster are randomly distributed in a circle, whose dimension is decided by the cluster size, and the cluster head is located at the center of the circle. Channel selection generate a circular protection region around the cluster centered at the cluster head. The size of the protection region is decided by cluster size and the number of channels and interferers are randomly located outside of the protection region following a thinned P.P.P.. Users within the same cluster can coordinate with each other and achieve full spatial reuse while the interferers outside the cluster are not synchronized and there is no coordination among clusters. Based on the proposed model, we compute the successful transmission time (STT) for different user densities and user devices. We provide the optimal cluster size maximizing average STT for different scenarios and our results indicate that clustering and reuse provide moderate gain in STT due to reserved beacon overheads but improves the probability of successful transmission. 
 
-
-We then discuss the hierarchical MAC in wearable networks. Clustering and channel selection can be used to mitigate interference while scheduling at each user can be used to schedule wearable devices and improve channel reuse by learning the transmission patterns of other users.
-
-Thirdly, we discuss the principles and design objectives of clustering. To evaluate clustering, we model clustering and FDM scheme and analyze the network capacity based on our analysis of strong interferers. We show how the optimal cluster size and the capacity of the network changes for different scenarios, e.g., user density, transmission capabilities and traffic patterns of users.
-
-
-%Strong interferer is defined as Close neighbors of a user may block the channel between a user and his distant neighbors, decreasing the number of potential interferers. Self-blockage also contributes to reducing interference from neighbors. However, the locations of users are not fixed over time and even small movements like turning the torso or stretching the limb can dramatically change the interference environment a user see.  Generally, the channel between two close neighbors are less likely to be interfered by the local movements of users while a long channel are more sensitive to motion. 
-
-%In this paper, we address the problem of MAC design for dense indoor mmWave wearable networks with heterogeneous devices. The wearable devices on a user's body form a wireless personal area network (WPAN), with a device working as the coordinator of the WPAN and all other devices communicating with the coordinator. A good candidate of coordinator is the smart phone which has access to the Internet and is equipped with smart antennas. In 802.11ad, such directional multi-gigabit (DMG) basic service set is defined as personal basic service set (PBSS) and the coordinator station is called personal basic service set control point (PCP)/access point(AP). We will use the same terminology for wearable network as 802.11ad in our paper. 
-
-%The transmission capabilities and QoS requirements of wearable devices can be heterogeneous in wearable networks. There are high-end devices equipped with smart antennas having high QoS requirements, e.g., smart glasses supporting augmented reality. High-end devices will be interfering with fewer devices since their transmission is directional but may fail to meet the QoS requirements once interfered. On the other hand, there are low-end devices that do not support highly directional beamforming and transmit in quasi-omni directional mode, e.g., smart jewelries and pedometers. Low-end devices transmit at lower rates and have no strict requirements on delay but can not try to transmit all the time due to energy limit. 
-
-
-%The heterogeneous requirements of devices and unique characteristics of highly dense wearable networks inspire us to rethink the MAC design principles. The high density of devices require spatial reuse of resources but the omni-directional transmissions, e.g., beacon transmission and low-end transmissions, and the fast changing interference channels make it hard to achieve spatial reuse with existing techniques like beam alignment. The heterogeneity in wearable devices indicates that different types of transmissions can and perhaps should be treated differently in MAC scheduling. In this paper, we want to design an efficient distributed MAC protocol to meet the requirements of heterogeneous wearable devices in highly dense wearable networks based on mmWave links.
-
-%\emph{Contributions}
-%We present an analysis of the interference environment in highly dense wearable network and devise distributed MAC protocols to coordinate the PBSSs which provide higher resource utilization gain than TDMA and meet the QoS requirements of heterogeneous devices. The key idea of our scheduling method is to reserve resource for the transmission of high-end devices while low-end devices try to learn the channel and reuse the resource. 
-
+The rest of the paper is organized as follows. In the next section, we give the analysis of the strong interferers and how user movements affect the interference environment using stochastic geometry tools. In Section \ref{section:MAC}, we discuss the clustering and channel selection principles and propose AP-based clustering algorithm. In Section \ref{section:clusteranalysis} we analyze the performance of clusters for different scenarios and characterize the optimal cluster size. Section \ref{section:conclusion} concludes our paper. 
 
 \section{Interference in Dense Wearable Network}\label{section:channel}
 In highly dense wearable networks, a user has a large number of neighbors in close proximity, but there are several factors limiting the actual number of interferers a user sees at one time, including the shadowing of human body, directional transmissions and upward-downward directionality of wearable network. The factors Also, directional transmissions will limit the width of beam and a user will be interfering with fewer other users. The upward-downward directionality comes from the general posture of humans and location of common wearable devices. Many devices are located along the torso instead of around the torso thus when directional transmission is used, transmission is in upward or downward direction, reducing the probability of interfering with other users. 
@@ -267,13 +250,13 @@ From queuing theory,
 
 Our analysis show that the state of $OX$ is not a simple Markov process with only two states but a $M/G/\infty$ queue. The distribution of the time that $OX$ is blocked shows heavy tailed distribution, indicating that $\mathrm{E}[T_{\mathrm{NLOS}}]$ can be very long. In some cases, the channel between two links can be blocked for a long time. For general indoor communications, this shows that outage due to blockage of 60 GHz communication can be worse than the result in analytical model. For dense wearable networks, long $T_{\mathrm{NLOS}}$ will result in reorganization of the users, thus the frequency of changing topology can be higher than that in Markov model.
 
-
-
-
+\section{Clustering and Channel Selection in Dense Wearable Networks}\label{section:MAC}
+\section{Analysis of Clustering}\label{section:clusteranalysis}
+\section{Conclusion}\label{section:conclusion}
 
 \newpage
-newpage
-\newpage
+%\newpage
+
 
 \section{Clustering and Channel Selection}
 Clustering improves spatial reuse and reduce interference \cite{80211ad}. Cluster head synchronizes the cluster members and schedules beacon transmissions in the cluster to mitigate intra-cluster interference, while other techniques like channel selection (FDM) and back off \cite{backoff} can be used to reduce inter-cluster interference. The 802.11ad Standard provides both distributed clustering and centralized clustering methods for directional devices working on mmWave. The links between PCPs/APs are unstable in dense wearable networks, thus the distributed clustering method fits better and we will use the distributed clustering algorithm in 802.11ad as the baseline.
@@ -365,7 +348,7 @@ We can see that AP based cluster can effectively cluster the nodes that are clos
 
 Our AP based clustering algorithm requires frames scheduled for channel measurements and message exchange for BSSs working on different channels. This will introduce extra signaling cost thus we are working on devising pure distributed clustering algorithm and channel selection only relying on message exchanging on the same channel.
 
-\section{Hierarchical MAC Scheduling for Heterogeneous Devices}\label{section:MAC}
+\section{Hierarchical MAC Scheduling for Heterogeneous Devices}
 With appropriate clustering and channel selection, we can form clusters that are in close proximity. The above approach does not remove inter-cluster interference completely, but the interferers from outside the cluster are more distant away thus the set of inter-cluster interferers are less stable as shown in Fig. %\ref{fig:parameter}
 The interfering channel to inter-cluster interferers are likely to be blocked, making learning the transmission patterns of BSSs outside the cluster ineffective. A simple way to deal with interference is to treat interference as noise. If inter-cluster interference is strong, the BSS may consider switching to another cluster or work on another channel. 
 
@@ -449,7 +432,22 @@ S. Collonge, G. Zaharia and G.E. Zein, ``Influence of human activity on wide-ban
 S. Singh, F. Ziliotto, U. Madhow, E. M. Belding and M. Rodwell, ``Blockage and Directivity in 60 GHz Wireless Personal Area Networks: From Cross-Layer Model to Multihop MAC Design,'' \emph{IEEE J. Sel. Areas Commun.}, vol. 27, no. 8, Oct. 2009.
 
 \bibitem{timevaryingpathshadowing}
-I. Kashiwagi, T. Taga and T. Imai, ``Time-varying path-shadowing model for indoor populated environments,'' \emph{IEEE Trans. Veh. Technol.}, vol. 59, no. 1, Jan. 2010. 
+I. Kashiwagi, T. Taga and T. Imai, ``Time-varying path-shadowing model for indoor populated environments,'' \emph{IEEE Trans. Veh. Technol.}, vol. 59, no. 1, Jan. 2010.
+
+\bibitem{virtualtimeslot}
+C. Sum, Z. Lan, R. Funada, J. Wang, T. Baykas, M. A. Rahman, and H. Harada, ``Virtual time-slot allocation scheme for throughput enhancement in a millimeter-wave multi-Gbps WPAN system,'' \emph{IEEE J. Sel. Areas Commun.}, vol. 27, no. 8, Oct. 2009.
+
+\bibitem{rex}
+L. X. Cai, L. Cai, X. Shen, and J. Mark, ``REX: a randomized exclusive region based scheduling scheme for mmWave WPANs with directional antenna,'' \emph{IEEE Trans Wireless Commun.}, vol. 9, no. 1, pp. 113-121, Jan. 2010. 
+
+\bibitem{fdmac}
+I. K. Son, S. Mao, M. X. Gong, and Y. Li, ``On frame-based scheduling for directional mmWave WPANs,'' in \emph{Proc. IEEE INFOCOM}, Orlando, FL, 2012, pp. 2149-2157.
+
+\bibitem{dtdmac}
+E. Shihab, L. Cai, and J. Pan, ``A distributed asynchronous directional-to-directional MAC protocol for wireless ad hoc networks,'' \emph{IEEE Tans. Veh. Tech.}, vol. 58, no. 9, pp. 5124-5134, Nov. 2009. 
+
+\bibitem{mdmac}
+S. Singh, R. Mudumbai, and U. Madhow, ``Distributed coordination with deaf neighbors: efficient medium access for 60 GHz mesh networks,'' in \emph{Proc. IEEE INFOCOM}, San Diego, CA, 2010, pp. 1-9.
 
 \bibitem{mmwaveadhoc}
 A. Thornburg, T. Bai and R.W. Heath Jr., ``Interference statistics in a random mmWave ad hoc network,'' in IEEE Int'l Conference on Acoustics, Speech and Signal Processing (ICASSP), Apr. 2015.
