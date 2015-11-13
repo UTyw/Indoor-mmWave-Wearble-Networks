@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.7.10)  11 NOV 2015 17:46
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.7.10)  12 NOV 2015 13:58
 entering extended mode
 **Indoor*mmWave*Wearable*Networks*Challenges*to*MAC*Design.tex
 
@@ -408,29 +408,29 @@ File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 Missing character: There is no d in font msbm10!
 Missing character: There is no d in font msbm10!
 
-Overfull \hbox (14.39565pt too wide) in paragraph at lines 131--131
+Overfull \hbox (14.39565pt too wide) in paragraph at lines 130--130
 [] 
  []
 
-[3] <./figures/Channel_ENB.pdf, id=25, 438.40889pt x 243.77473pt>
+[3] <./figures/Channel_ENB.pdf, id=27, 438.40889pt x 243.77473pt>
 File: ./figures/Channel_ENB.pdf Graphic file (type pdf)
 
 <use ./figures/Channel_ENB.pdf>
-Package pdftex.def Info: ./figures/Channel_ENB.pdf used on input line 143.
+Package pdftex.def Info: ./figures/Channel_ENB.pdf used on input line 144.
 (pdftex.def)             Requested size: 206.39685pt x 114.76384pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 155--157
+Underfull \hbox (badness 10000) in paragraph at lines 158--160
 $[]\OMS/cmsy/m/n/10 n\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x; \OT1/cmr/m/n/10 )$ \
 OT1/ptm/m/n/10 is an in-de-pen-dently marked PPP and
  []
 
 
-Overfull \hbox (6.97636pt too wide) in paragraph at lines 164--164
+Overfull \hbox (6.97636pt too wide) in paragraph at lines 167--167
 [] 
  []
 
 
-Overfull \hbox (16.2065pt too wide) detected at line 184
+Overfull \hbox (16.2065pt too wide) detected at line 189
 [] []
  []
 
@@ -439,29 +439,29 @@ ENB.pdf>] <./figures/Channel_NLOS.pdf, id=42, 386.37749pt x 191.26155pt>
 File: ./figures/Channel_NLOS.pdf Graphic file (type pdf)
 
 <use ./figures/Channel_NLOS.pdf>
-Package pdftex.def Info: ./figures/Channel_NLOS.pdf used on input line 196.
+Package pdftex.def Info: ./figures/Channel_NLOS.pdf used on input line 201.
 (pdftex.def)             Requested size: 206.39685pt x 102.16777pt.
- [5 <F:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures/Channel
-_NLOS.pdf>]
-Underfull \hbox (badness 1448) in paragraph at lines 276--277
+
+Underfull \hbox (badness 1448) in paragraph at lines 280--281
 []\OT1/ptm/m/n/10 Denote $\OML/cmm/m/it/10 f[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10
  x[]; m[]; []\OMS/cmsy/m/n/10 n\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]; m[]\OT1/c
 mr/m/n/10 )\OML/cmm/m/it/10 ; m[]\OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 be the in-d
 i-ca-tor
  []
 
-<./figures/Channel_trace.pdf, id=55, 444.66125pt x 184.69pt>
+[5 <F:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures/Channel_
+NLOS.pdf>] <./figures/Channel_trace.pdf, id=55, 444.66125pt x 184.69pt>
 File: ./figures/Channel_trace.pdf Graphic file (type pdf)
 
 <use ./figures/Channel_trace.pdf>
-Package pdftex.def Info: ./figures/Channel_trace.pdf used on input line 315.
+Package pdftex.def Info: ./figures/Channel_trace.pdf used on input line 319.
 (pdftex.def)             Requested size: 154.80157pt x 64.29582pt.
 
 <./figures/Channel_boolean.pdf, id=56, 289.54272pt x 137.30397pt>
 File: ./figures/Channel_boolean.pdf Graphic file (type pdf)
 
 <use ./figures/Channel_boolean.pdf>
-Package pdftex.def Info: ./figures/Channel_boolean.pdf used on input line 316.
+Package pdftex.def Info: ./figures/Channel_boolean.pdf used on input line 320.
 (pdftex.def)             Requested size: 154.80157pt x 73.40974pt.
  [6 <F:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures/Channel
 _trace.pdf> <F:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures
@@ -470,14 +470,14 @@ _trace.pdf> <F:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures
 File: ./figures/Channel_en_si.pdf Graphic file (type pdf)
 
 <use ./figures/Channel_en_si.pdf>
-Package pdftex.def Info: ./figures/Channel_en_si.pdf used on input line 454.
+Package pdftex.def Info: ./figures/Channel_en_si.pdf used on input line 457.
 (pdftex.def)             Requested size: 206.39685pt x 154.80127pt.
 
 <./figures/Channel_si_pdf.pdf, id=74, 341.275pt x 255.95625pt>
 File: ./figures/Channel_si_pdf.pdf Graphic file (type pdf)
 
 <use ./figures/Channel_si_pdf.pdf>
-Package pdftex.def Info: ./figures/Channel_si_pdf.pdf used on input line 462.
+Package pdftex.def Info: ./figures/Channel_si_pdf.pdf used on input line 465.
 (pdftex.def)             Requested size: 206.39685pt x 154.80127pt.
 
 <./figures/Channel_translation_range.pdf, id=75, 227.85126pt x 170.6375pt>
@@ -485,33 +485,33 @@ File: ./figures/Channel_translation_range.pdf Graphic file (type pdf)
 
 <use ./figures/Channel_translation_range.pdf>
 Package pdftex.def Info: ./figures/Channel_translation_range.pdf used on input 
-line 475.
+line 478.
 (pdftex.def)             Requested size: 154.80157pt x 115.93301pt.
- [8 <F:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures/Channel
-_en_si.pdf> <F:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures
-/Channel_si_pdf.pdf> <F:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Network
-s/figures/Channel_translation_range.pdf>] <./figures/Channel_sensitivity.pdf, i
-d=96, 341.275pt x 255.95625pt>
+
+<./figures/Channel_sensitivity.pdf, id=76, 341.275pt x 255.95625pt>
 File: ./figures/Channel_sensitivity.pdf Graphic file (type pdf)
 
 <use ./figures/Channel_sensitivity.pdf>
 Package pdftex.def Info: ./figures/Channel_sensitivity.pdf used on input line 4
-84.
+87.
 (pdftex.def)             Requested size: 206.39685pt x 154.80127pt.
 
-<./figures/Channel_sensitivity_average.pdf, id=97, 284.06125pt x 204.765pt>
+<./figures/Channel_sensitivity_average.pdf, id=77, 284.06125pt x 204.765pt>
 File: ./figures/Channel_sensitivity_average.pdf Graphic file (type pdf)
 
 <use ./figures/Channel_sensitivity_average.pdf>
 Package pdftex.def Info: ./figures/Channel_sensitivity_average.pdf used on inpu
-t line 493.
+t line 496.
 (pdftex.def)             Requested size: 154.80157pt x 111.59314pt.
-
+ [8 <F:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures/Channel
+_en_si.pdf> <F:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures
+/Channel_si_pdf.pdf> <F:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Network
+s/figures/Channel_translation_range.pdf>]
 <./figures/Channel_constant_velocity_model.pdf, id=98, 341.275pt x 255.95625pt>
 File: ./figures/Channel_constant_velocity_model.pdf Graphic file (type pdf)
 <use ./figures/Channel_constant_velocity_model.pdf>
 Package pdftex.def Info: ./figures/Channel_constant_velocity_model.pdf used on 
-input line 502.
+input line 505.
 (pdftex.def)             Requested size: 206.39685pt x 154.80127pt.
 
 <./figures/Channel_constant_velocity_model_frequency.pdf, id=99, 341.275pt x 25
@@ -520,7 +520,7 @@ File: ./figures/Channel_constant_velocity_model_frequency.pdf Graphic file (typ
 e pdf)
  <use ./figures/Channel_constant_velocity_model_frequency.pdf>
 Package pdftex.def Info: ./figures/Channel_constant_velocity_model_frequency.pd
-f used on input line 504.
+f used on input line 507.
 (pdftex.def)             Requested size: 206.39685pt x 154.80127pt.
 
 [9 <F:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures/Channel_
@@ -530,7 +530,7 @@ ve Wearble Networks/figures/Channel_constant_velocity_model.pdf> <F:/Dropbox/Re
 search/15 Fall/Indoor mmWave Wearble Networks/figures/Channel_constant_velocity
 _model_frequency.pdf>] [10] [11]
 
-LaTeX Warning: Reference `section:intro' on page 12 undefined on input line 616
+LaTeX Warning: Reference `section:intro' on page 12 undefined on input line 621
 .
 
 [12]
@@ -575,13 +575,13 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 4111 strings out of 493706
- 65307 string characters out of 3144580
- 131142 words of memory out of 3000000
- 7379 multiletter control sequences out of 15000+200000
+ 4110 strings out of 493706
+ 65287 string characters out of 3144580
+ 129131 words of memory out of 3000000
+ 7378 multiletter control sequences out of 15000+200000
  47182 words of font info for 103 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 36i,19n,48p,1945b,351s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,19n,48p,2095b,351s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program File
 s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Program Files/MiKTeX 
 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/font
@@ -607,7 +607,7 @@ urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a
 .pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program 
 Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
 Output written on "Indoor mmWave Wearable Networks Challenges to MAC Design.pdf
-" (14 pages, 459376 bytes).
+" (14 pages, 459314 bytes).
 PDF statistics:
  220 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

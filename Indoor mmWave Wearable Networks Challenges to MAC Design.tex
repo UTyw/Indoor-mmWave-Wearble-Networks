@@ -38,7 +38,7 @@
 \maketitle
 
 \begin{abstract}
-Millimeter wave (mmWave) serves as an ideal solution for short range high bandwidth applications in wearable networks. In a dense scenario such as a crowded train or stadium, users are close to each other and the interference can be strong. Furthermore, wearable devices may have heterogeneous transmission capabilities and different Quality-of-Service (QoS) requirements. The wearable network in dense scenarios differs from other mmWave networks in two ways: (1) human body blockage and body movements make interferers have different interfering channels; (2) heterogeneity in device capabilities (e.g. beamforming v.s. omni-directional and different energy constraints) makes it inefficient to schedule all devices in the same way. Different scenarios poses challenges to the design of medium access control (MAC) protocols. In this paper, we begin with an analysis of the characteristics of interferers in dense wearable networks. We compute the number of strong interferers of a typical user and study the stability of strong interferers when users moves locally. We further show that when users make large scale movements, the channel state between two fixed points should be modeled as an $M/G/\infty$ queue instead of two-state Markov model. Based on our analysis of interferers, we discuss the hierarchical MAC to manage interference, including the clustering of users and scheduling at the user level. We propose clustering principles for wearables and analyze the performance of clustering and try to characterize the optimal cluster size of clusters for different scenmarios and device capabilities. We show that coexistence of heterogeneous devices present challenges and clustering and reuse can provide moderate gain in resource reuse but improves the probability of successful transmissions. 
+Millimeter wave (mmWave) serves as an ideal solution for short range high bandwidth applications in wearable networks. In a dense scenario such as a crowded train or stadium, users are close to each other and the interference can be strong. Furthermore, wearable devices may have heterogeneous transmission capabilities and different Quality-of-Service (QoS) requirements. The wearable network in dense scenarios differs from other mmWave networks in two ways: (1) human body blockage and body movements make channels between users different; (2) heterogeneity in device capabilities (e.g. beamforming v.s. omni-directional and different energy constraints) makes it inefficient to schedule all devices in the same way. The different channel characteristics and transmission capabilities pose challenges to the design of medium access control (MAC) protocols. In this paper, we begin with an analysis of the characteristics of interferers in dense wearable networks. We compute the number of strong interferers of a typical user and study the stability of strong interferers when users moves locally. We further study how mobile blockages affect fixed channels when users make constant velocity movements by modeling the channel as an $M/G/\infty$ queue and study the distribution of the length of clear and blocked periods of the channel. Based on our analysis of interferers, we discuss the hierarchical MAC to manage interference, including the clustering of users and scheduling at the user level and propose the clustering principles for wearables. We further analyze the performance of clustering using the derived channel model with local perturbation and characterize the optimal cluster size of clusters for different scenarios and device capabilities. We show that coexistence of heterogeneous devices present challenges and clustering and reuse can provide moderate gain in resource reuse but improves the probability of successful transmissions. 
 
 
 \end{abstract}
@@ -58,36 +58,38 @@ Millimeter wave (mmWave) serves as an ideal solution for short range high bandwi
 % 1. Brief introduction
 The market for wearable devices is growing fast in recent years \cite{wearable} and research on wearable networks is now being actively pursued. In the future, users may be equipped with multiple interconnected devices on the body, some of which may require high bandwidths, e.g., augmented reality devices (other examples required). To support the high data rates and high user densities, millimeter wave communication has been proposed as a possible solution and standards have been developed for short-range wireless personal area network (WPAN) in the mmWave band, e.g., 802.11ad \cite{80211ad}, 802.15.3c \cite{802153c} and ECMA387 \cite{ECMA387}. 
 
-Clearly to be viable, such networks will need to be able to operate in a range of user densities from sparse to very dense ones such as a train cart or a crowded stadium, where the number of interferers is high and existing protocols may fail to coordinate amongst the large number of WPANs so as to meet the QoS requirements of various devices. The design of medium access control (MAC) protocols for dense and heterogeneous wearable networks requires understanding the characteristics of the interference environment and the requirements of different devices.
+Clearly to be viable, such networks will need to be able to operate in a range of user densities from sparse to very dense ones such as a crowded train cart or stadium, where the number of interferers can be high and existing protocols may fail to coordinate amongst the large number of WPANs so as to meet the QoS requirements of various devices. The design of medium access control (MAC) protocols for dense and heterogeneous wearable networks requires understanding the characteristics of the interference environment and the requirements of different devices.
 
 % 2. Modeling and analysis of interference
 \emph{Related Work}
-Two major factors influencing the interference environment in dense wearable networks are human blockage and user movements. The human body introduces a path loss of over 20dB \cite{humanshadowing} thus variations in channel gain can be large. The authors in \cite{urbanblockage} analyze blockage effects in urban areas and model penetration loss of the paths using stochastic geometry. The work in \cite{interferencefinitesized} studies human shadowing effects in finite-sized areas when users' locations are fixed. The authors use different path loss exponents and fading models to model the line-of-sight (LOS) and non-line-of-sight (NLOS) channels and approximately compute the signal-to-interference-ratio (SINR) distribution. Subsequently the authors in \cite{enclosedmmwave} model the SINR in random networks in an enclosed environment and incorporate the first order reflections off the walls, the ceiling and the floor. The analysis of the interference in the mmWave band has mainly focused on the distribution of SINR where users are assumed to be uncoordinated, i.e., either all users transmit or use simple MAC protocols like Aloha, where they transmit with a given probability. 
+Two major factors influencing the interference environment in dense wearable networks are human blockage and user movements. The human body introduces a path loss of over 20dB \cite{humanshadowing} thus variations in channel gain can be large. The authors in \cite{urbanblockage} analyze blockage effects in urban areas and model penetration loss of the paths using stochastic geometry. The work in \cite{interferencefinitesized} studies human shadowing effects in finite-sized areas when users' locations are fixed. The authors use different path loss exponents and fading models to model the line-of-sight (LOS) and non-line-of-sight (NLOS) channels and approximately compute the signal-to-interference-ratio (SINR) distribution. Subsequently the authors in \cite{enclosedmmwave} model the SINR in random networks in an enclosed environment and incorporate the first order reflections off the walls, the ceiling and the floor. The analysis of the interference in the mmWave band has mainly focused on the distribution of SINR where users are assumed to be uncoordinated, i.e.,users  either all transmit or use simple MAC protocols like Aloha, where they transmit with a given probability. 
 
-Another important feature of dense wearable networks is that channels are more sensitive to user movements, including small local movements like turning torso or swinging and large scale movements, e.g., people walking around. Existing work on the user mobility includes \cite{humanactivity}\cite{blockagein60ghz}\cite{timevaryingpathshadowing}, which study the influence of human mobility on the radio channel between fixed transmitter and receiver. The authors of \cite{humanactivity}\cite{timevaryingpathshadowing} present measurements of the impact of human mobility on channel variations. The work in \cite{timevaryingpathshadowing} further computes the probability that a channel is blocked by users and model the state of channel using a two-state Markov model. 
+Another important feature of dense wearable networks is that channels are sensitive to user movements, including small local movements like turning torso or swinging and large scale movements, e.g., people walking around. Existing work on the user mobility includes \cite{humanactivity}\cite{blockagein60ghz}\cite{timevaryingpathshadowing}, which study the influence of human mobility on the radio channel between fixed transmitter and receiver. The authors of \cite{humanactivity}\cite{timevaryingpathshadowing} present measurements of the impact of human mobility on channel variations. The work in \cite{timevaryingpathshadowing} further computes the probability that a channel is blocked by users and model the state of channel using a two-state Markov model. 
 Authors of \cite{blockagein60ghz} use simulations to get the radio propagation characteristics in the presence of static and moving obstacles and show that directional LOS wave links experience relatively high outage. These works provide valuable measurements and insights on the influence of moving human blockage, but they do not provide tractable analysis of user movements to quantify the influence of user mobility.
 
 % Existing work on MAC
 % 1. Centralized, requires much signaling
 % 2. Dense user and interference not considered
 % 3. multiple BSS not considered
-In dense wearable networks, the MAC protocol needs to coordinate users' transmissions to improve the reuse of the resources and ensure \underline{application} QoS. Many existing works on MAC design focus on improving resource reuse for centralized networks where a single Piconet Coordinator (PNC) (in 802.15.3c) or Access Point (AP) (in 802.11ad) coordinates the transmissions of different links \cite{virtualtimeslot}\cite{rex}\cite{fdmac}. Only the interference within the Piconet / Basic Service Set (BSS) is considered while the interference among different networks is neglected. Centralized MACs require signaling overheads for measurement and control signals. In dense wearable networks, the channel between different users are unreliable and the number of devices/BSSs may be large, thus existing works on centralized MAC may fail to schedule the devices. The authors of \cite{dtdmac}\cite{mdmac} study distributed MAC protocols for mmWave networks and use memory to improve the resource reuse of the system. However, in highly dense wearable networks, the number of potential interferers can be high and pure distributed MAC may fail to efficiently coordinate amongst the large numbers of users. 
+In dense wearable networks, the MAC protocol needs to coordinate users' transmissions to improve the reuse of the resources and ensure \underline{application} QoS. Many existing works on MAC design focus on improving resource reuse for centralized networks where a single Piconet Coordinator (PNC) (in 802.15.3c) or Access Point (AP) (in 802.11ad) coordinates the transmissions of different links \cite{virtualtimeslot}\cite{rex}\cite{fdmac}. Only the interference within the Piconet / Basic Service Set (BSS) is considered while the interference among different networks is neglected. Centralized MAC protocols require signaling overheads for measurement and control signals. In dense wearable networks, the channel between different users can be unreliable and the number of devices/BSSs may be large, thus existing works on centralized MAC may fail to schedule the devices. The authors of \cite{dtdmac}\cite{mdmac} study distributed MAC protocols for mmWave networks and use memory to improve the resource reuse of the system. However, in highly dense wearable networks, the number of potential interferers can be high and pure distributed MAC may fail to efficiently coordinate amongst the large numbers of users. 
 
-The 802.11ad standard provides a hierarchical MAC geared at coordinating the personal basic service sets (PBSSs). The devices of a user forms a PBSS with a device working as the PBSS coordinate point (PCP). PCPs may use the PCP clustering mechanism to improve the spatial sharing and interference mitigation with other co-channel directional multi-gigabit (DMG) BSSs. Multiple PBSSs form a cluster, with one PCP/AP selected as the synchronization PCP (S-PCP), which can be viewed as the cluster head.
-There are two types of clustering, decentralized PCP/AP clustering and centralized PCP/AP clustering. Centralized clustering requires synchronization and coordination of multiple S-APs, which might be hard to achieve in wearable networks where users might moves and the channel between distant PCPs can be unstable. In this paper, we focus on the decentralized clustering. In decentralized clustering, the 
-S-PCP synchronizes the PCPs in the cluster and schedules beacon transmissions of each PCP while the PCPs schedule the data transmission for each BSS. To avoid interference, a PCP may re-schedule service periods (SPs) and contention-based access periods (CBAPs) in its beacon interval or move the beacon transmission interval in an attempt to mitigate any interference with transmission indicated in the received Extended Schedule element in the beacons of other BSSs. The BSSs work in a TDMA-like scheme but the resources allocated to each BSS may not be enough. In dense wearable networks, the channels are unstable due to human blockage and movements, and so clusters may suffer from frequent changes in topology. The problem of selecting the channel and the cluster to join when multiple clusters are available is not specified. In this paper, we propose principles for clustering and channel selection based on our analysis of mmWave environment.
+The 802.11ad standard provides a hierarchical MAC geared at coordinating the personal basic service sets (PBSSs). The devices of a user forms a PBSS with a device working as the PBSS coordinate point (PCP). PCPs may use the PCP clustering mechanism to improve the spatial sharing and interference mitigation with other co-channel directional multi-gigabit (DMG) BSSs. Multiple PBSSs form a cluster, with one PCP selected as the synchronization PCP (S-PCP), which can be viewed as the cluster head.
+There are two types of clustering, decentralized PCP/AP clustering and centralized PCP/AP clustering. Centralized clustering requires synchronization and coordination of multiple S-APs, which might be hard to achieve in wearable networks with unstable channels thus we focus on the decentralized clustering. 
+
+In decentralized clustering, the 
+S-PCP synchronizes the PCPs in the cluster and schedules beacon transmissions of each PCP while the PCPs schedule the data transmission for each PBSS. To avoid interference, a PCP may re-schedule service periods (SPs) and contention-based access periods (CBAPs) in its beacon interval or move the beacon transmission interval in an attempt to mitigate any interference with transmission indicated in the received Extended Schedule element in the beacons of other PBSSs. The PBSSs work in a TDMA-like scheme but the resources allocated to each PBSS may not be enough. Furthermore, clusters may suffer from frequent changes in topology and the problem of selecting the channel and the cluster to join when multiple clusters are available is not specified in the standard. To improve users' Quality-of-Service (QoS), we propose principles for clustering and channel selection based on our analysis of mmWave environment.
 
 \emph{Paper Contributions}
-In this paper, we address the MAC design in dense indoor mmWave wearable networks. We consider the case where the user density is high and the devices on a user form a BSS coordinated by the smart phone. Due to the high density of users and unstable channels, the measurements of channel and the exchange of signaling is limited thus the MAC should rely on limited channel measurements and be robust to changes in network topology and we aim to propose the principles of MAC for such network.
+In this paper, we address the MAC design in dense indoor mmWave wearable networks. We consider the case where the user density is high and the devices on a user form a BSS coordinated by the smart phone. %Due to the high density of users and unstable channels, the measurements of channel and the exchange of signaling is limited thus the MAC should rely on limited channel measurements and be robust to changes in network topology and we aim to propose the principles of MAC for such network.
 
-We first provide an analysis of the mmWave interference environment, specifically, we characterize the set of strong interferers (SIs) a BSS might see in a dense wearable network. We define strong interferers of a user as other users whose PCPs have a strong channel to the PCP of the target user. We model the users as a marked point process (m.p.p.) with the locations of the users following a Poisson Point Process (PPP) and the orientations of the users captured by marks. We compute the spatial distribution of strong interferers and show that the number of strong interferers is limited as user density increases. 
-We then analyze the influence of user movements of different scales, i.e., small local movements and large scale constant velocity movements. For small local movements, we compute the sensitivity of strong interferers at different distances and show that strong interferers are most sensitive when user density is moderately high, assuming that the range of local movements is limited for high user density. For large scale movements, we assume that users move at constant velocities and analyze the channel state of a fixed link. We prove that the blockage state of the channel follows an alternating renewal precess which is not quite the simple Markov model used in existing works and the distribution of length of the blocked period is different from exponential distribution. We further compute the average length of intervals of channel being clear or blocked using the analytical model.
+We first provide an analysis of the mmWave interference environment, specifically, we characterize the set of strong interferers (SIs) a PBSS might see in a dense wearable network. We define strong interferers of a user as other users whose PCPs have a strong channel to the PCP of the target user. We model the users as a marked point process (m.p.p.) with the locations of the users following a Poisson Point Process (PPP) and the orientations of the users captured by marks. We compute the spatial distribution of strong interferers and show that the expected number of strong interferers is limited as user density increases. 
+We then analyze the influence of user movements of different scales, i.e., small local movements and constant velocity movements. For small local movements, we compute the sensitivity of strong interferers at different distances and show that strong interferers are most sensitive when user density is moderately high, assuming that the range of local movements is limited for high user density. For large scale movements, we assume that users move at constant velocities and analyze the channel state of a fixed link. We show that the blockage state of the channel can be modeled by an $M/GI/\infty$ queue We derive the average length of intervals when the fixed channel is clear or blocked, and further show that the distribution of the length of the intervals follows exponential distribution if the channel is long, user density is high and users' velocity is large.
 
-Based on our analysis of strong interferers, we argue that clustering plus MAC scheduling at BSS is a viable hierarchy for dense wearable networks. Clustering and channel selection can be used to mitigate interference while scheduling at each user can be used to schedule wearable devices and improve channel reuse by learning the transmission patterns of other users. We propose a clustering and channel selection algorithm based on Affinity Propagation (AP) and show that the proposed algorithm can improve the stability of channels between cluster members and cluster heads and reduce inter-cluster interference. 
+Based on our analysis of strong interferers, we argue that clustering plus MAC scheduling at PBSS is a viable hierarchy for dense wearable networks. Clustering and channel selection can be used to mitigate interference while scheduling at each user can be used to schedule wearable devices and improve channel reuse by learning the transmission patterns of other users. We propose a clustering and channel selection algorithm based on Affinity Propagation (AP) and show that the proposed algorithm can improve the stability of channels between cluster members and cluster heads and reduce inter-cluster interference. 
 
-Thirdly, we propose a simple model to analytically evaluate the performance of clustering and channel selection for dense wearable networks with heterogeneous devices, i.e., transmission capabilities and traffic demands. The members of a cluster are randomly distributed in a disc, whose size depends on the cluster size, and its cluster head is located at the center of the circle. The benefir of frequency division across clusters is modeled as a ring protection region around the cluster. The size of the protection region depends on the cluster size and the number of channels. Interferers are randomly located outside of the protection region following a thinned P.P.P.. Users within the same cluster can coordinate with each other and achieve full spatial reuse while the interferers outside the cluster are not synchronized and there is no coordination among clusters. Using our proposed model, we are able to compute the successful transmission time (STT) for different user densities and user devices. We can also study the optimal cluster size maximizing average STT for different scenarios. Our results indicate that clustering and reuse provide moderate gains in STT due to beacon overheads but improve the probability of successful transmission. 
+Thirdly, we propose a simple model to analytically evaluate the performance of clustering and channel selection for dense wearable networks with heterogeneous devices, i.e., transmission capabilities and traffic demands. The members of a cluster are randomly distributed in a disc, whose size depends on the cluster size, and the cluster head is located at the center of the circle. The benefit of frequency division across clusters is modeled as a ring protection region centered at the cluster head, whose size depends on the cluster size and the number of channels. Interferers are randomly located outside of the protection region following a thinned PPP. Users within the same cluster can coordinate with each other and achieve full spatial reuse while the interferers outside the cluster are not synchronized and there is no coordination among clusters. Using our proposed model, we are able to compute the successful transmission time (STT) for different user densities and user devices. We can also study the optimal cluster size maximizing average STT for different scenarios. Our results indicate that clustering and reuse provide moderate gains in STT due to beacon overheads but improve the probability of successful transmission. 
 
-The rest of the paper is organized as follows. In the next section, we give the analysis of the strong interferers and how user movements affect the interference environment using stochastic geometry tools. We present the numerical results of the analysis and discuss their implications on MAC design in Section \ref{section:channel_numerical}. In Section \ref{section:MAC}, we discuss the clustering and channel selection principles and propose AP-based clustering algorithm. In Section \ref{section:clusteranalysis} we analyze the performance of clusters for different scenarios and characterize the optimal cluster size. Section \ref{section:conclusion} concludes our paper. 
+The rest of the paper is organized as follows. In the next section, we give the analysis of the strong interferers and how user movements affect the interference environment using stochastic geometry. We present the numerical results of the analysis and discuss their implications on MAC design in Section \ref{section:channel_numerical}. In Section \ref{section:MAC}, we discuss the clustering and channel selection principles and propose AP-based clustering algorithm. In Section \ref{section:clusteranalysis} we analyze the performance of clusters and characterize the optimal cluster size for different scenarios. Section \ref{section:conclusion} concludes our paper. 
 
 \section{Interference in Dense Wearable Network}\label{section:channel}
 In a highly dense wearable network, a user may have a large number of neighbors in close proximity, but there are several factors limiting the actual number of interferers a user sees, including the shadowing by the human body, environmental obstructions and the directionality of transmissions, which might further be enhanced by the upward-downward directionality of wearable applications. Also, directional transmissions limit the width of transmission beams thus a user will be interfering with fewer other users. The upward-downward directionality results from the typical posture of humans and locations of common wearable devices. Many devices are located along the torso instead of around the torso thus when directional transmissions are used, transmission is in upward or downward direction, reducing the likelihood of interfering with other users. 
@@ -95,34 +97,31 @@ In a highly dense wearable network, a user may have a large number of neighbors 
 The precise modeling of mmWave channels, especially the NLOS channels is still an open question and there has been much effort towards developing channel models based on measurements. In our analysis, we shall focus on two salient characteristics, human body blockage of interference and one time reflection on the ceiling. We ignore reflections or scattering from human bodies or other objects.
 
 \subsection{System Model for Wearable Network}
-We consider a wearable network of PBSSs, each consists of the wearable devices on a user and study the interference environment seen by a typical user. Suppose users are standing on a 2-D plane. There is no walls or obstructions other than human bodies, and there is a ceiling at a height of $h_{\mathrm{ceiling}}$ meters. 
+We consider a wearable network of PBSSs, each consisting of the wearable devices on a user and study the interference environment seen by a typical user. Suppose users are standing on a 2-D plane. There is no walls or obstructions other than human bodies, and there is a ceiling at a height of $h_{\mathrm{ceiling}}$ meters. 
 
-For simplicity, we assume the locations of PCPs on the human body are the same and the users' bodies are of the same dimensions. Users are of the same height, $h_{\mathrm{body}}$ and the cross section of human body at $h_{\mathrm{device}}$ is a convex shape $A$. The PCPs are located in front of user bodies at a height of $h_{\mathrm{device}}$. In this way, user $i$, $u_i$, can be decided by his location $x_i$ and orientation $\theta_i$. We assume $x_i$'s follow a point process $\Phi=\{x_i\}_i$ and the orientation of user $i$ is $\theta_i$. The network can be modeled as a marked point process (m.p.p.) $\tilde{\Phi}=\{(x_i, \theta_i)\}_i$. The typical user $u_0$ is located at the origin, $x_0=0$, and the orientation is $\theta_0$.
+For simplicity, we assume the locations of PCPs on the human body are the same and the users' bodies are of the same dimensions and the network can be modeled as a marked point process (m.p.p.) $\tilde{\Phi}=\{(x_i, \theta_i)\}_i$, where the location of the users form a point process $\Phi=\{x_i\}_i$ and the orientation of user $i$, $\theta_i$, is the mark of the user. The height of users is $h_{\mathrm{body}}$ and the PCPs are located in front of user bodies at a height of $h_{\mathrm{device}}$. The cross section of a user centered at $x$ with an orientation of $\theta$ at the height $h_{\mathrm{device}}$ is a convex shape $A_x^{\theta}$, which is obtained by translating and rotating the general cross section $A$. The typical user $u_0$ is located at the origin, $x_0=0$, and the orientation is $\theta_0$.
 
-We use the link between the centers of two users to approximate the actual channel between the PCPs. Denote the line-of-sight (LOS) channel between $u_0$ and user located at $x$ as $l_{0,x}^{\mathrm{LOS}}$ and the non-line-of-sight (NLOS) reflected channel over the ceiling as $l_{0,x}^{\mathrm{NLOS}}$. The path loss of $l_{0,x}^{\mathrm{LOS}}$ follows the free space propagation, $L = 20\log_{10}\big(\frac{4\pi l}{\lambda}\big)$. For $l_{0,x}^{\mathrm{NLOS}}$, the path loss is decided by the length of the pass and the reflection coefficient, which is decided by the material and incident angle. User centered at $x$ is a strong interferer if either LOS or NLOS channel is not blocked and has a low path loss. The path loss is below the threshold if  
+We use the link between the centers of two users to approximate the actual channel between the PCPs. Denote the line-of-sight (LOS) channel between $u_0$ and user located at $x$ as $l_{0,x}^{\mathrm{LOS}}$ and the non-line-of-sight (NLOS) reflected channel over the ceiling as $l_{0,x}^{\mathrm{NLOS}}$. The path loss of $l_{0,x}^{\mathrm{LOS}}$ follows the free space propagation, $L = 20\log_{10}\big(\frac{4\pi l}{\lambda}\big)$. For $l_{0,x}^{\mathrm{NLOS}}$, the path loss is decided by the free-space path loss along the path and the reflection coefficient, $\Gamma(x)$,which is decided by the material and incident angle. User centered at $x$ is a strong interferer if either LOS or NLOS channel is not blocked and has a low path loss. The path loss is below the threshold if  
 \begin{equation}\label{eq:PL_LOS}
-r_{0,x} < r_{\max}
+|x| < r_{\max}
 \end{equation}
 for LOS channel, and 
 \begin{equation}\label{eq:PL_NLOS}
-r_{0,x} < r_{\max}^{\mathrm{reflection}}
+|x| < r_{\max}^{\mathrm{reflection}}
 \end{equation}
-for reflected channel, where $r_{0,x}$ is the distance between the centers of the users. $r_{\max}$ is the max distance of a LOS strong interferer and $r_{\max}^{\mathrm{reflection}}$ is the maximum distance of a reflected strong interferer, which is related to $h_{\mathrm{ceiling}}$, $h_{\mathrm{device}}$ and material of the ceiling. Notice that the reflection coefficient may not be a monotonic function of incident angle \cite{reflection}. It is possible that a distant user might have a stronger reflection channel than a close user, thus $\{r_{0,x}<r_{\max}^{\mathrm{interference}}\}$ may not be the sufficient condition to decide whether the path loss is below the threshold. In this paper, we stick to the simple condition in (\ref{eq:PL_LOS}) and (\ref{eq:PL_NLOS}), but our results can be easily extended to incorporate different reflection models.
-
-
-
+for reflected channel, where $|x|$ is the distance between the centers of the users, $r_{\max}$ is the max distance of a LOS strong interferer and $r_{\max}^{\mathrm{reflection}}$ is the maximum distance of a reflected strong interferer, which is related to $h_{\mathrm{ceiling}}$, $h_{\mathrm{device}}$ and the material of the ceiling. Notice that $|\Gamma(x)|$ may not be a monotonic function of $|x|$ \cite{reflection}. It is possible that a distant user might have a stronger reflection channel than a close user, thus $\{r_{0,x}<r_{\max}^{\mathrm{interference}}\}$ may not be the sufficient condition to decide whether the path loss is below the threshold. In this paper, we stick to the simple condition in (\ref{eq:PL_LOS}) and (\ref{eq:PL_NLOS}), but our results can be easily extended to incorporate different reflection models.
 
 
 \subsection{Number of Strong Interferers}
-We first analyze the set of strong interferers seen by a typical user. Using our system model, the number of strong interferers seen by the typical user, $N_{\mathrm{SI}}$ is given by, 
+In this section we analyze the set of strong interferers seen by a typical user. The number of strong interferers seen by the typical user, $N_{\mathrm{SI}}$, is as follows, 
 \begin{equation}
 N_{\mathrm{SI}}(\tilde{\Phi}, \theta_0) = \sum_{(x_i, \theta_i)\in \tilde{\Phi}}f_0(x_i, \theta_i, \tilde{\Phi}\backslash\{(x_i,\theta_i)\}, \theta_0)
 \end{equation}
-where $f_0(x_i, \theta_i, \tilde{\Phi}\backslash\{(x_i,\theta_i)\}, \theta_0)$ is the indicator function that $u_i$ located at $x_i$ and with orientation $\theta_i$ is a strong interferer of the typical user located at the origin. Note this depends on blockages from other users, i.e., $\tilde{\Phi}\backslash\{(x_i,\theta_i)\}$. $f_0$ is $1$ if there is a strong LOS channel between devices or a strong unblocked reflected channel over the ceiling.
+where $f_0(x_i, \theta_i, \tilde{\Phi}\backslash\{(x_i,\theta_i)\}, \theta_0)$ is the indicator function that $(x_i, \theta_i)$ is a strong interferer of the typical user $(0,\theta_0)$. Note $f$ depends on blockages from other users, i.e., $\tilde{\Phi}\backslash\{(x_i,\theta_i)\}$. $f$ is $1$ if there is a strong LOS channel between devices or a strong unblocked reflected channel over the ceiling.
 
-$N_{\mathrm{SI}}$ depends on realization of $\tilde{\Phi}$, making the distribution of $N_{\mathrm{SI}}$ hard to compute. Still the average number of strong interferers is a good metric to understand the coordination requirements of MAC. Assuming that $\{\theta_i\}$ are mutually independent and the distribution of $\theta_i$ depends only on the location of the user, $x_i$, then $\tilde{\Phi}$ is independently marked point process (i.m.p.p.) \cite{stochasticgeometry}. Given these assumptions, we can compute the expected number of strong interferers in the following theorem.
+$N_{\mathrm{SI}}$ depends on the realization of $\tilde{\Phi}$, making the distribution of $N_{\mathrm{SI}}$ hard to compute. Still the average number of strong interferers is a good metric to understand the coordination requirements of MAC. Assuming that $\{\theta_i\}$ are mutually independent and the distribution of $\theta_i$ depends only on the location of the user, $x_i$, then $\tilde{\Phi}$ is independently marked point process (i.m.p.p.) \cite{stochasticgeometry}. Given these assumptions, we can compute the expected number of strong interferers in the following theorem.
 \begin{theorem}\label{theorem:E_N_SI}
-	$\tilde{\Phi}$ is an i.m.p.p., then $\mathrm{E}[N_{\mathrm{SI}}]$ is given y,
+	$\tilde{\Phi}$ is an i.m.p.p., then $\mathrm{E}[N_{\mathrm{SI}}]$ is given by,
 	\begin{equation} \label{eq:N_SI}
 	\begin{split}
 	\mathrm{E}[N_{SI}] &= \mathrm{E}^0\bigg[\int\limits_{\mathbb{R}^2\times[0,2\pi)}f_0(x_i, \theta_i, \tilde{\Phi}\backslash\{(x_i,\theta_i)\}, \theta_0)\tilde{\Phi}(\mathrm{d}(x,\theta)) \bigg]\\
@@ -131,19 +130,23 @@ $N_{\mathrm{SI}}$ depends on realization of $\tilde{\Phi}$, making the distribut
 	\end{equation}	
 \end{theorem}
 \begin{proof}
-	Theorem \ref{theorem:E_N_SI} follows the Reduced Campbell's formula for i.m.p.p. of Corollary 2.2 in \cite{stochasticgeometry}, by taking expectation over $\theta_0$ and use $\mathrm{E}_{\theta_0}[f_0(x,\theta,\tilde{\phi}, \theta_0)]$ as the non-negative function defined on $\mathbb{R}^2\times \mathbb{R}\times \mathbb{\tilde{M}}$.
+	Theorem \ref{theorem:E_N_SI} follows the Reduced Campbell's formula for i.m.p.p. of Corollary 2.2 in \cite{stochasticgeometry}. By taking expectation over $\theta_0$ and use $\mathrm{E}_{\theta_0}[f_0(x,\theta,\tilde{\phi}, \theta_0)]$ as the non-negative function defined on $\mathbb{R}^2\times \mathbb{R}\times \mathbb{\tilde{M}}$, (\ref{eq:N_SI}) is the direct application of the Reduced Campbell's formula.
 \end{proof}
 
 In Theorem \ref{theorem:E_N_SI}, $\mathrm{E}^0$ is the expectation given that there is a user at the origin, $\mathrm{E}_{\theta_0}$ is the expectation over $\theta_0$, $\mathbb{\tilde{M}}$ is the set of all possible realizations of $\tilde{\Phi}$, $P_{(x,\theta)}^!$ is the Palm distribution of marked point process given that there is a point $(x, \theta)$ and a point at the origin. $F_x(\mathrm{d}\theta)$ is the probability measure of the orientation of the user located at $x$ and $M(S)=\mathrm{E}[\Phi(S)]$ is the mean measure of the points $\Phi$.
 
-For tractability, we use homogeneous Poisson Point Process (HPPP) to model the locations of users, and the density of the HPPP is $\lambda$. For the channel between the typical user and a user located at $x$, other users are uniformly distributed over $\mathbb{R}^2\backslash \{0,x\}$. We also assume that the facing directions of users are independent of user locations and uniformly distributed in $[0, 2\pi)$. A user $(x', \theta')$ blocks  if the projection of $x'$ on $l_{0,x}^{\mathrm{LOS}}\big)$ lies on the segment between $0$ and $x$, $s_x(x')\in [0,|x|]$, and the cross section of user body projection on $n_x$ does not cross the origin $0$, see Fig. \ref{fig:Channel_enb}. $s_x(x')$ is the projection of $x'$ on $x$, $n_x$ is the unit vector perpendicular to $x$ and $D_x(x, \theta')$ is the projection of user's cross-section on $n_x$. Based on the geometric analysis, we can compute the probability that a user located at $x$ is a strong interferer of the typical user. 
+For tractability, we assume users other than the typical user are distributed over $\mathbb{R}^2$ following a homogeneous Poisson Point Process (HPPP) with density $\lambda$.$\theta_i$ is independent of $x_i$ and other users, and uniformly distributed in $[0, 2\pi)$. 
 
+A user $(x', \theta')$ blocks channel $x$ if the following he meets the following two conditions as shown in Fig. \ref{fig:Channel_enb}: 1) the projection of $x'$ on $l_{0,x}^{\mathrm{LOS}}\big)$ lies on the segment between $0$ and $x$, $s_x(x')\in [0,|x|]$; 2) the cross section of user body projection on $n_x$ does not cross the origin $0$. Here $s_x(x')$ is the projection of $x'$ on $x$, $n_x$ is the unit vector perpendicular to $x$ and $D_x(x, \theta')$ is the projection of user's cross-section on $n_x$.
+ 
 \begin{figure}
 	\centering
 	\includegraphics[width = 0.4\textwidth]{Channel_ENB.pdf}
 	\caption{User $(x', \theta')$ will block the LOS channel between $0$ and $x$ if the projection of $x'$ lies on $x$ and the projection of his cross-segment covers $0$. }
 	\label{fig:Channel_enb}
 \end{figure}
+
+Based on the geometric analysis, we can compute the probability that a user located at $x$ is a strong interferer of the typical user in the following theorem.  
 
 \begin{theorem}\label{theorem:E_N_B_LOS}
 	The number of users blocking $l_{0,x}^{\mathrm{LOS}}$, $N_\mathrm{B}^\mathrm{LOS}(x)$, follows Poisson distribution and the average number of blockage $\mathrm{E}[N_{\mathrm{B}}^\mathrm{LOS}(x)] \approx \lambda |x| \mathrm{E}[D]$. $\mathrm{E}[D]$ is the expected width of cross section of user.  
@@ -170,10 +173,12 @@ By Theorem \ref{theorem:E_N_B_LOS}, the probability that $l_{0,x}^{\mathrm{LOS}}
 	f_0(x,\theta, \tilde{\phi},\theta_0)=\text{1}((x,\theta)\mathrm{~faces~}(0,\theta_0))\cdot\mathrm{1}(N_\mathrm{B}^\mathrm{LOS}(x)=0) \\
 	\cdot\text{1}(|x|\leq r_{\max}). 
 \end{multline}
-Based on our assumption on user locations and orientations, we can compute $\mathrm{E}[N_{\mathrm{SI}}^{\text{LOS}}]$ as follows, 
+
+Considering the fact that users can not overlap with the typical user, the users that are too close to the typical should not be included in $N_{\mathrm{SI}}$, thus we integrate over $\mathbb{R}\backslash{\mathcal{B}(0, r_{\min})}$ where $\mathcal{B}(0, r_{\min})$ is a circle centered at $0$ with a radius $r_{\min}$ and $r_{\min}$ is the minimum distance between users. 
+$\mathrm{E}[N_{\mathrm{SI}}^{\text{LOS}}]$ is as follows, 
 \begin{equation}
 \begin{aligned}
-\mathrm{E}[N_{\mathrm{SI}}^{\text{LOS}}] &= \int\limits_{\mathbb{R}^2\backslash\mathrm{B}(0,r_{\text{min}})} \int\limits_{[0,2\pi)}\mathrm{E}_{\theta_0}[\text{1}((x,\theta)\mathrm{~faces~}(0,\theta_0))]\\
+\mathrm{E}[N_{\mathrm{SI}}^{\text{LOS}}] &= \int\limits_{\mathbb{R}^2\backslash\mathcal{B}(0,r_{\text{min}})} \int\limits_{[0,2\pi)}\mathrm{E}_{\theta_0}[\text{1}((x,\theta)\mathrm{~faces~}(0,\theta_0))]\\
 & \phantom{{}=1} \cdot\text{1}(|x|\leq r_{\max})\cdot e^{-\mathrm{E}[N_{\mathrm{B}}^\mathrm{LOS}(x)]}F_{\theta}(\mathrm{d}\theta)\lambda(\mathrm{d}x)\\
 & \stackrel{(a)} = \int\limits_{\mathbb{R}^2\backslash\mathrm{B}(0,r_{\text{min}})}
 \mathrm{P}_{\text{facing}}(x)\text{1}(|x|<r_{\text{max}})e^{-\mathrm{E}[N_{\mathrm{B}}^\mathrm{LOS}(x)]}\lambda(\mathrm{d}x)\\
@@ -186,7 +191,7 @@ In (a), $\mathrm{P}_{\text{facing}}$ is the probability that the link is not blo
 \begin{equation*}
 \mathrm{P}_{\text{facing}}(x) = \int\limits_{[0,2\pi)}\mathrm{E}_{\theta_0}[\text{1}((x,\theta)\mathrm{~faces~}(0,\theta_0))]F_{\theta}(\mathrm{d}\theta)
 \end{equation*}
-We assume that user orientations are uniform over $[0, 2\pi)$, thus $\mathrm{P}_{\text{facing}}(x)$ is same for all $x$ and we use $\mathrm{P}_{\text{facing}}$ as the probability of the two users are not blocked by the bodies of the typical user and the potential interferer. $r_{\mathrm{min}}$ is the minimum distance between the centers of the users.
+$\theta_0$ and $\theta$ are uniform over $[0, 2\pi)$, thus $\mathrm{P}_{\text{facing}}(x)$ is same for all $x$.
 
 For NLOS channel, the number of blockages also follows Poisson distribution. We can compute $\mathrm{E}[N_{\mathrm{B}}^{\mathrm{NLOS}}]$ in a similar way as above for  $\mathrm{E}[N_{\mathrm{B}}^\mathrm{LOS}(x)]$ by substituting the first indicator function in (\ref{eq:2dblocking}), $\mathrm{1}\big(0\notin B_x(x',\theta')\big)$, with 
 $$\mathrm{1}\big(h_{x}(x',\theta_{x'}) > h_{\mathrm{NLOS}}(x, s_x(x'))  \big),$$
@@ -203,7 +208,7 @@ We make further assumptions about users that user bodies are cylinders, or more 
 \sigma(h_1)\subseteq \sigma(h_2), \forall h_1\geq h_2\geq h_{\mathrm{device}}.
 \end{equation}
 
-If the users satisfies the condition in (\ref{condition1}), a user that does not block $l_{0,x}^{\mathrm{LOS}}$, i.e., $x\cap \sigma(h_{\mathrm{device}}) = \emptyset$, then $x\cap \sigma(h') = \emptyset$ for $h'>h_{\mathrm{device}}$, indicating that the user will not block the reflected channel $l_{0,x}^{\mathrm{NLOS}}$. 
+If the users satisfies the condition in (\ref{condition1}), then a user that does not block $l_{0,x}^{\mathrm{LOS}}$ does not block $l_{0,x}^{\mathrm{NLOS}}$, i.e., $x\cap \sigma(h_{\mathrm{device}}) = \emptyset$, then $x\cap \sigma(h') = \emptyset$ for $h'>h_{\mathrm{device}}$.
 
 Combining the above results, the expected number of strong interferers is given by 
 \begin{multline}\label{eq:E_N_SI}
@@ -217,8 +222,8 @@ Combining the above results, the expected number of strong interferers is given 
 
 
 \subsection{Sensitivity of Strong Interferers}
-In this section we introduce local movements model and study the sensitivity of strong interferers to user's small local movements.
-Interference channels are sensitive to user movements, especially for dense wearable networks. The sensitivity of strong interferers defines the cost and benefit of keep tracking of and coordinating the strong interferers and how robust the strong interferers are to perturbations in the network. Suppose in a time interval $[t, t+ \Delta t]$, users make translations as well as rotations, resulting in changes for the typical user and potential interferers summarized as follows:
+In this section we introduce local movements model and study the sensitivity of strong interferers to users' small local movements.
+The sensitivity of strong interferers, i.e., how strong interferers changes when users move, defines the cost and benefit of keep tracking of and coordinating the strong interferers and how robust the strong interferers are to perturbations in the network. Suppose in a time interval $[t, t+ \Delta t]$, users make translations as well as rotations, resulting in changes for the typical user and potential interferers summarized as follows:
 \begin{equation*}
 \begin{split}
 (0,\theta_0)&\rightarrow(\Delta x_0, \theta_0 + \Delta\theta_0) \\
@@ -231,18 +236,19 @@ Let $Y_x^t=f_0(x, \theta, \tilde{\Phi}^t\backslash (x, \theta), \theta_0)$ be th
 Y_{x}^{t+\Delta t} = f_{\Delta x_0}(x+\Delta x, \theta + \Delta\theta, \tilde{\Phi}^{t+\Delta t}\backslash (x+\Delta x, \theta + \Delta\theta), \\
 \theta_0 + \Delta\theta_0),
 \end{multline*}
-$Y_x^t \mathrm{~and~} Y_{x}^{t+\Delta t} \in \{0,1\}$. $Y = 1$ if the user is a strong interferer of the typical user and $Y = 0$ otherwise. We define the sensitivity of an interferer originally located at $x$, $S(x)$, via the autocorrelation of the state of the interferer at $t$ and $t+\Delta t$. We define $S(x, \Delta t)$ as follows, 
+$Y_x^t \mathrm{~and~} Y_{x}^{t+\Delta t} \in \{0,1\}$. $Y = 1$ if the user is a strong interferer of the typical user and $Y = 0$ otherwise. We define the sensitivity of an interferer originally located at $x$ for an interval of length $\Delta t$, $S(x, \Delta t)$, via the autocorrelation of the state of the interferer at $t$ and $t+\Delta t$, 
 \begin{equation}
 S(x, \Delta t)
 =\mathrm{Corr}(Y_x^t, Y_x^{t+\Delta t})
-=\frac{\mathrm{E}[Y_x^t\cdot Y_x^{t + \Delta t}]}{\sigma_{Y_x^t}\cdot \sigma_{Y_x^{t+\Delta t}}}.
+=\frac{\mathrm{E}[Y_x^t\cdot Y_x^{t + \Delta t}]}{\sigma_{Y_x^t}\cdot \sigma_{Y_x^{t+\Delta t}}},
 \end{equation}
+$S(x, \Delta t)\in [0,1]$. If $S(x, \Delta t)$ is small, the autocorrelation between the state of the channel is small and sensitive to movements; if $S(x, \Delta t)$ approximates $1$, the autocorrelation is high and the strong interferer is stable.
 
-By definition of $S(x, \Delta t)$ and the range of $Y_x$, we have $S(x, \Delta t)\in [0,1]$. If $S(x, \Delta t)$ is small, the autocorrelation between the state of the channel is small and sensitive to movements; if $S(x, \Delta t)$ approximates $1$, the autocorrelation is high and the strong interferer is stable.
+%We assume the locations of users follow HPPP of density $\lambda$ and the users make movements independent of their locations. For the orientations of users, we assume $\tilde{\Phi}$ is i.m.p.p. and $\theta \sim \unif(0,2\pi)$, also the rotation of users is independent of users' orientations. 
 
-We assume the locations of users follow HPPP of density $\lambda$ and the users make movements independent of their locations. For the orientations of users, we assume $\tilde{\Phi}$ is i.m.p.p. and $\theta \sim \unif(0,2\pi)$, also the rotation of users is independent of users' orientations. 
+%To compute $S(x, \Delta t)$, we need to know the distribution of users in presence of movements. We assume users are uniformly distributed on the plane and users make independent movements, then we have the following theorem on the $\Phi$.
 
-To compute $S(x, \Delta t)$, we need to know the distribution of users in presence of movements. We assume users are uniformly distributed on the plane and users make independent movements, then we have the following theorem on the $\Phi$.
+Based on our assumptions on $\tilde{\Phi}$ and independent movements, we have the following theorems on the state of the network after user moves.
 
 \begin{theorem}\label{theorem:hppp}
 If $\Phi^t$ is HPPP with density $\lambda$ and users make independent movements and the movements is indepedent of users' location, then $\Phi^{t+\Delta t}$ is still HPPP with density $\lambda$. 
@@ -252,8 +258,6 @@ Let $p_{t, t+\Delta t}(x, x+\Delta x)$ be the probability that the user located 
 According to the displacement theorem in \cite{poisson}, $\Phi^{t+\Delta t}$ is a HPPP with density $\lambda$.
 \end{proof}
 
-Based on our assumptions on user movements and orientation, we have the following theorem for $\tilde{\Phi}$. 
-
 \begin{theorem}\label{theorem:hppp_orientation}
 $\tilde{\Phi}^{t+\Delta t}$ is an i.m.p.p. and $\theta$ is uniform in $[0, 2\pi)$ at $t+ \Delta t$. 
 \end{theorem}
@@ -261,7 +265,7 @@ $\tilde{\Phi}^{t+\Delta t}$ is an i.m.p.p. and $\theta$ is uniform in $[0, 2\pi)
 	$\theta$ and $\Delta \theta$ are independent from other users and the locations and translations of users, $x$ and $\Delta x$, thus $\tilde{\Phi}^{t+\Delta t}$ is i.m.p.p.. If $\theta^t\sim \unif(0, 2\pi)$ and $\Delta \theta$ is independent from $\theta^t$, then follow the similar proof used in displacement theorem, $\theta^{t + \Delta t}\sim \unif(0, 2\pi)$. 
 \end{proof}
 
-By Theorem \ref{theorem:hppp} and \ref{theorem:hppp_orientation}, $\tilde{\Phi}$ is stationary thus the variance of $Y_x^t$ and $Y_x^{t+\Delta t}$ are the same and independent of $t$ or $\Delta t$, 
+By Theorem \ref{theorem:hppp} and \ref{theorem:hppp_orientation}, $\tilde{\Phi}$ is stationary and the variance of $Y_x^t$ and $Y_x^{t+\Delta t}$ are the same and independent of $t$ or $\Delta t$ if we ignore the change in $|x|$,  
 \begin{equation*}
 \mathrm{Var}(Y_x)=p_{\mathrm{SI}}(x)\cdot (1-p_{\mathrm{SI}}(x)),
 \end{equation*}
@@ -285,28 +289,28 @@ Given the model of movements, i.e., $F_{(\Delta x, \Delta \theta)}$, we can comp
 
 
 \subsection{Influence of Mobile Blockers on Static Wearable Networks}\label{subsection:largemobility}
-Another scenario we are interested in is dense user environment where some users move and the other users stay fixed, e.g., in a train cart, some users are sitting in their seats while other users are leaving the train through the passage. 
-In this section we study the influence of mobile blockers on static channels. We assume the blockers make constant velocity movements towards their orientation and we refer to the model as Constant Velocity Model(CVM).
+Another scenario we are interested in is the dense user environment where some users move and the other users stay fixed, e.g., in a train cart, some users are sitting in their seats while other users are leaving the train through the passage. 
+In this section we study the influence of mobile blockers on static channels. We assume the blockages make constant velocity movements towards their orientation and we refer to the model as Constant Velocity Model(CVM).
 
-We first introduce the following operations on subsets in $A, B\in \mathbb{R}^d$, 
+For CVM, we focus on whether the channel is LOS channel, thus we place the users on the 2-D plane. 
+We first introduce the following operations on subsets $A, B\in \mathbb{R}^2$ in \cite{stochasticgeometry}, 
 \begin{equation*}
 \begin{split}
 A \oplus B & = \{x+y:x\in A, y\in B\},\\
-x + B & = \{x+y:y\in B\}, \mathrm{~for~} x\in \mathbb{R}^d, \\
+x + B & = \{x+y:y\in B\}, \mathrm{~for~} x\in \mathbb{R}^2, \\
 \check{B} & = \{x: -x \in B\}.
 \end{split}
 \end{equation*}
 
-Now we describe the assumptions about CVM in detail. At time $0$, the locations of users, $\Phi^0 = \{x_i^0\}_i$, follows HPPP with density $\lambda$, and the orientations of users is independently and uniformly distributed in $[0, 2\pi]$, $\theta_i \sim \unif(0, 2\pi)$. Users moves towards their orientation at constant speeds $\{s_i\}_i$ and $s_i$'s are independently and identically distributed (i.i.d.).
+Now we describe the assumptions about CVM in detail. At time $0$, the locations of users, $\Phi^0 = \{x_i^0\}_i$, follows HPPP with density $\lambda$, and the orientations of users is independently and uniformly distributed in $[0, 2\pi]$, $\theta_i \sim \unif(0, 2\pi)$. Users moves towards their orientation at constant velocities $\{s_i\}_i$ and $s_i$'s are independently and identically distributed (i.i.d.).
 
-Let $A_0^{\theta_i}$ be the cross-section of user centered at $0$ facing $\theta_i$. $A_0^{\theta_i}$ is convex and bilateral symmetrical \underline{along} $\theta_i$.
-$x_i^t$ is the location of the center of $u_i$ at time $t$, then the area $u_i$ blocks at time $t$, $A_{x_i}^t$, is given by 
+Assume $A_0^{\theta_i}$ is convex and bilateral symmetrical \underline{along} $\theta_i$ and the width of $A_0$ is $D_0$. $x_i^t$ is the location of the center of $u_i$ at time $t$, then the area $u_i$ blocks at time $t$, $\Xi_{i}^t$, is given by 
 \begin{equation*}
-A_{x_i}^t = x_i^t + A_0^{\theta_i}.
+\Xi_{i}^t = x_i^t + A_0^{\theta_i}.
 \end{equation*}
 From $t$ to $t+\Delta t$, $u_i$ moves from $x_i^t$ to $x_i^{t+\Delta t} = x_i^t + \vec{s}_i\cdot \Delta t$ and we denote the $l_{x_i^t, x_i ^{t+\Delta t}}$ as the trace of the center of $u_i$. The area that $u_i$ covers during $[t, t+\Delta t]$, $\Xi_i^{[t, t+\Delta t]}$, is as follows, 
 \begin{equation*} %\label{eq:cover_area}
-\Xi_i^{[t, t+\Delta t]}=A_0^{\theta_i} \oplus l_{x_i^t, x_i ^{t+\Delta t} }.
+\Xi_i^{[t, t+\Delta t]} = A_0^{\theta_i} \oplus l_{x_i^t, x_i ^{t+\Delta t} }.
 \end{equation*}
 Fig. \ref{fig:boolean} illustrates the boolean model of mobile blockages.
 
@@ -320,7 +324,7 @@ Fig. \ref{fig:boolean} illustrates the boolean model of mobile blockages.
 
 The distribution of user locations and velocities is given in the following theorem.
 \begin{theorem}\label{theorem:boolean_stationary}
-Suppose users make i.i.d. constant speed movements and the locations of users follows HPPP at time $0$, then $\tilde{\Phi}_c^t = \{(x_i^t, (\theta_i, s_i))\}_i$ is stationary.
+Suppose users make i.i.d. constant velocity movements and the locations of users follows HPPP at time $0$, then $\tilde{\Phi}_c^t = \{(x_i^t, (\theta_i, s_i))\}_i$ is stationary.
 \end{theorem}
 The proof uses displacement theory and is similar to the proof of Theorem \ref{theorem:hppp} and \ref{theorem:hppp_orientation}.
 By Theorem \ref{theorem:boolean_stationary}, 
@@ -329,16 +333,16 @@ $\Xi_i^{[t, t+\Delta t]}$ is i.i.d. distributed and independent of $x_i^t$ thus 
 \begin{equation*}
 \tilde{\Phi}_{\Xi}^{[t, t+\Delta t]} = \{(x_i^t, \Xi_i^{[t, t+\Delta t]})\}_i.
 \end{equation*}
-The set of users that has crossed channel $x$ during $[t, t+\Delta t]$ is given by
+The set of users that has blocked channel $x$ during $[t, t+\Delta t]$ is given by
 \begin{equation*}
-N_{\mathrm{B}}^{[t, t + \Delta t]} = \{x_i:x_i \in \Phi, x_i^t+\Xi_i^{[t, t+\Delta t]}\cap x \neq \emptyset \}.
+N_{\mathrm{B}}^{[t, t + \Delta t]} = \{x_i:x_i \in \Phi, \Xi_i^{[t, t+\Delta t]}\cap x \neq \emptyset \}.
 \end{equation*}
-$|N_{\mathrm{B}}^{[t, t + \Delta t]}|$ is a Poisson random variable with parameter $\lambda\mathrm{E}[\nu_2(\check{x}\oplus \Xi_i^{[t, t+\Delta t]})]$, where $\nu_2$ is the area of the set \cite{stochasticgeometry}.
+For the boolean model, $|N_{\mathrm{B}}^{[t, t + \Delta t]}|$ is a Poisson random variable with parameter $\lambda\mathrm{E}[\nu_2(\check{x}\oplus \Xi_i^{[t, t+\Delta t]})]$, where $\nu_2$ is the area of the set \cite{stochasticgeometry}.
 
-$A_0$ is bilateral symmetric, $\theta_i\sim\unif(0, 2\pi)$ and $s_i$ is independent from $\theta_i$, thus $\tilde{\Phi}_{\Xi}^{[t, t+\Delta t]}$ is isotropic. For isotropic $\Xi_i^{[t, t+\Delta t]}$ and $\Phi^t$ following HPPP with density $\lambda$, we have the following theorem for $\mathrm{E}[\nu_2(\check{x}\oplus\Xi_i^{[t, t+\Delta t]})]$.
+$A_0^{\theta_i}$ is bilateral symmetric, $\theta_i\sim\unif(0, 2\pi)$ and $s_i$ is independent from $\theta_i$, thus $\tilde{\Phi}_{\Xi}^{[t, t+\Delta t]}$ is isotropic. For isotropic $\Xi_i^{[t, t+\Delta t]}$ and $\Phi^t$ following HPPP with density $\lambda$, we have the following theorem for $\mathrm{E}[\nu_2(\check{x}\oplus\Xi_i^{[t, t+\Delta t]})]$.
 
 \begin{theorem}\label{theorem:boolean_mean}
-$K$ is a closed convex set and the typical grain $\Xi_0$ is convex and isotropic. In two dimensional case, $\mathrm{E}[\nu_2(\check{K}\oplus \Xi_0)]$ is given as follows,
+$K$ is a closed convex set and $\Xi_0$ is convex and isotropic. In two dimensional case, $\mathrm{E}[\nu_2(\check{K}\oplus \Xi_0)]$ is given as follows,
 \begin{equation}
 \mathrm{E}[\nu_2(\check{K}\oplus \Xi_0)] = \nu_2(K) + \mathrm{E}[\nu_2(\Xi_0)] + \frac{1}{2\pi}\nu_1(K)\mathrm{E}[\nu_1(\partial \Xi_0)],
 \end{equation}
@@ -346,18 +350,17 @@ where $\nu_1$ is the one-dimensional measure and $\partial \Xi_0$ is the boundar
 \end{theorem}
 Theorem \ref{theorem:boolean_mean} is the 2-D case of the general result on the average number of grains hitting a convex set \cite{}. The proof involves integral geometry and generalized Steiner formula.
 
-By Theorem \ref{theorem:boolean_mean} and make $K = x$, then we have
-\begin{equation*}\label{eq:boolean_mean}
-\E[\nu_2(\check{x}\oplus\Xi_0^{[t, t+\Delta t]})] = \E[\nu_2(\Xi_0^{[t, t+\Delta t]})] + \frac{|x|}{\pi}\E[\nu_1(\partial \Xi_0^{[t + \Delta t}])].
-\end{equation*}
-By geometry ananlysis, we have
+By Theorem \ref{theorem:boolean_mean} and making $K = x$, we can compute $\E[\nu_2(\check{x}\oplus\Xi_0^{[t, t+\Delta t]})]$ as follows,
+\begin{equation}\label{eq:boolean_mean}
+\E[\nu_2(\check{x}\oplus\Xi_0^{[t, t+\Delta t]})] = \E[\nu_2(\Xi_0^{[t, t+\Delta t]})] + \frac{|x|}{\pi}\E[\nu_1(\partial \Xi_0^{[t + \Delta t}])],
+\end{equation}
+where
 \begin{equation*}
 \begin{split}
 \E[\nu_2(\Xi_0^{[t, t+\Delta t]})] & = \nu_2(A_0) + D_0\E[s]\Delta t,\\
-\E[\nu_1(\Xi_0^{[t, t+\Delta t]})] & = \nu_1(A_0) + 2\E[s]\Delta t,
+\E[\nu_1(\Xi_0^{[t, t+\Delta t]})] & = \nu_1(A_0) + 2\E[s]\Delta t.
 \end{split}
 \end{equation*}
-where $D_0$ is the width of user's cross section along user's orientation.
 
 Now we can compute the probability that channel $x$ is not blocked as follows, 
 \begin{equation}\label{eq:P_LOS}
@@ -369,13 +372,13 @@ Now we can compute the probability that channel $x$ is not blocked as follows,
 \end{equation}
 
 Armed with the analysis for the number of users that have blocked channel during any time interval, we now analyze the dynamics of the state of channel. We model channel $x$ as a queue, $Q$, while the blockages are modeled as the jobs coming to the queue. 
-The service time $S$ is the time that a blockage blocks the channel. Since we assume that the movements of users are independent from each other, the time that each blockage blocks the channel (stays in the queue) is independent from others thus $Q$ has infinite servers. For the number of new blockages (NB) that begin to block channel $x$ during $[t, t+\Delta t]$, $N_{\mathrm{NB}}^{[t, t+\Delta t]}$, we have the following theorem.
+The service time $S$ is the time that a blockage blocks the channel. $S$ is related to $x_i$, $\theta_i$ and $s_i$ thus the service time can be viewed as following a general distribution. Since we assume that the movements of users are independent from each other, the time that each blockage blocks the channel (stays in the queue) is independent from others thus $Q$ has infinite servers. For the number of new blockages (NB) that begin to block channel $x$ during $[t, t+\Delta t]$, $N_{\mathrm{NB}}^{[t, t+\Delta t]}$, we have the following theorem.
 
 \begin{theorem}\label{theorem:poisson_arrival}
-For CVM, $N_{\mathrm{NB}^{[t, t+\Delta t]}}$ follows a Poisson distribution with density $\lambda\E[s](D_0 + 2|x|/\pi).$
+For CVM, $N_{\mathrm{NB}}^{[t, t+\Delta t]}$ follows a Poisson distribution with density $\lambda\E[s](D_0 + 2|x|/\pi)\Delta t.$
 \end{theorem}
 \begin{proof}
-The users that begins to block channel $x$ during $[t, t+\Delta t]$ is an independent thinning of a PPP, thus $N_{\mathrm{NB}^{[t, t+\Delta t]}}$ follows Poisson distribution. 
+The users that begins to block channel $x$ during $[t, t+\Delta t]$ is an independent thinning of a PPP, thus $N_{\mathrm{NB}}^{[t, t+\Delta t]}$ follows a Poisson distribution. 
 
 The number of users that begins to block the channel is the number of users that has blocked channel $x$ during $[t, t+\Delta t]$ minus the number of blockages at $t$,  
 \begin{equation*}
@@ -387,7 +390,7 @@ N_{\mathrm{NB}}^{[t, t+\Delta t]} & = N_\mathrm{B}^{[t, t+\Delta t]} - N_\mathrm
 \end{equation*}
 \end{proof}
 
-By Theorem \ref{theorem:poisson_arrival}, the arrival of blockages is memoryless. The time that $u_i$ blocks the channel is related to $x_i$, $\theta_i$ and $s_i$. Given the above analysis, $Q$ is a $M/GI/\infty$ queue,  and the arrival rate of blockages, $\lambda^Q$ is as follows,
+By Theorem \ref{theorem:poisson_arrival}, the arrival of blockages is memoryless.  Given the above analysis, $Q$ is a $M/GI/\infty$ queue,  and the arrival rate of blockages, $\lambda^Q$ is as follows,
 \begin{equation}\label{eq:lambda_queue}
 \lambda^Q = \lambda\E[s](D_0 + 2|x|/\pi).
 \end{equation} 
@@ -419,11 +422,11 @@ as $z\rightarrow \infty$.
 For our constant velocity model, we derive a sufficient condition for busy period to approximate exponential distribution in the following theorem.
 
 \begin{theorem}\label{theorem:T_NLOS_exp}
-For CVM, the distribution of $T_{\NLOS}$ approximates exponential distribution with mean $\E[T_{\NLOS}]$ if the velocity of blockages meets following condition,
+For CVM, the distribution of $T_{\NLOS}$ approximates exponential distribution with mean $\E[T_{\NLOS}]$ as $\lambda^Q\rightarrow \infty$ if the velocity of blockages meets following condition,
 \begin{equation}\label{condition:T_NLOS_exp}
 s_i\geq s_{\min}, s_{\min}>0,
 \end{equation} 
-for all blockages $i$.
+for all blockage $i$.
 \end{theorem}
 
 \begin{proof}
@@ -509,7 +512,9 @@ The above results show that interferers are more sensitive to perturbation, and 
 In Fig. \ref{fig:Channel_constant_velocity_model} we present how $\E[T_{\LOS}]$, $\E[T_{\NLOS}]$ and $f_{\mathrm{change}}$ changes for different blockage density $\lambda$ and channel lengths $|x|$. From (\ref{eq:T_LOS}) we know that $\E[T_{\LOS}]$ is inversely proportional to $\lambda\E[s]|x|$ if we ignore $D_0$. Results in Fig. \ref{fig:Channel_constant_velocity_model}\subref{subfig:et} indicate that if the blockage density is higher, the blockages move faster and the link is longer, then the time of having LOS channel decreases while the time of having NLOS channel increases. Results in Fig. \ref{fig:Channel_constant_velocity_model}\subref{subfig:freq} indicate that the state of channel changes most frequently at moderately high user densities. In dense wearable networks, distant users are likely to be blocked and state of their channel is relatively stable thus we may ignore theses users in MAC protocol.
 
 \section{Clustering and Channel Selection in Dense Wearable Networks}\label{section:MAC}
-In this section 
+In this section we discuss the roles of clustering and clustering hierarchy for wearable networks. We discuss th requirements on clustering and scheduling algorithm and propose the criterion on clustering. 
+
+
 \section{Analysis of Clustering}\label{section:clusteranalysis}
 \section{Conclusion}\label{section:conclusion}
 
@@ -669,8 +674,8 @@ In each slot, a BSS has the channel measurements from the previous frame. There 
 \bibitem{ECMA387}
 \emph{``High Rate 60 GHz PHY, MAC and PALs,''} ECMA Standard 387, 2010.
 
-\bibitem{mmwave_propagation}
-S. Y. Geng, J. Kivinen, X. W. Zhao, and P. Vainikainen, ``Millimeter-wave propagation channel characterization for short-range wireless communications,'' \emph{IEEE Trans. Veh. Tachnol.}, vol. 58, no. 1, pp. 3-13, Jan. 2009.
+%\bibitem{mmwave_propagation}
+%S. Y. Geng, J. Kivinen, X. W. Zhao, and P. Vainikainen, ``Millimeter-wave propagation channel characterization for short-range wireless communications,'' \emph{IEEE Trans. Veh. Tachnol.}, vol. 58, no. 1, pp. 3-13, Jan. 2009.
 
 \bibitem{humanshadowing}
 C. Gustafson and F. Tufvesson, \emph{``Characterization of 60 GHz Shadowing by Human Bodies and Simple Phantoms, ''} Antennas and Propagation (EUCAP), 6th European Conference on, 2012.
@@ -687,11 +692,12 @@ G. George and A. Lozano, ``Performance of enclosed mmWave wearable networks,'' i
 \bibitem{humanactivity}
 S. Collonge, G. Zaharia and G.E. Zein, ``Influence of human activity on wide-band characteristics of the 60 GHz indoor radio channel,'' \emph{IEEE Trans. Wirel. Commun.}, vol. 3,  no. 6, pp. 2369-2406, 2004.
 
+\bibitem{timevaryingpathshadowing}
+I. Kashiwagi, T. Taga and T. Imai, ``Time-varying path-shadowing model for indoor populated environments,'' \emph{IEEE Trans. Veh. Technol.}, vol. 59, no. 1, Jan. 2010.
+
 \bibitem{blockagein60ghz}
 S. Singh, F. Ziliotto, U. Madhow, E. M. Belding and M. Rodwell, ``Blockage and Directivity in 60 GHz Wireless Personal Area Networks: From Cross-Layer Model to Multihop MAC Design,'' \emph{IEEE J. Sel. Areas Commun.}, vol. 27, no. 8, Oct. 2009.
 
-\bibitem{timevaryingpathshadowing}
-I. Kashiwagi, T. Taga and T. Imai, ``Time-varying path-shadowing model for indoor populated environments,'' \emph{IEEE Trans. Veh. Technol.}, vol. 59, no. 1, Jan. 2010.
 
 \bibitem{virtualtimeslot}
 C. Sum, Z. Lan, R. Funada, J. Wang, T. Baykas, M. A. Rahman, and H. Harada, ``Virtual time-slot allocation scheme for throughput enhancement in a millimeter-wave multi-Gbps WPAN system,'' \emph{IEEE J. Sel. Areas Commun.}, vol. 27, no. 8, Oct. 2009.

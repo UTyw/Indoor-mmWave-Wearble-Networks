@@ -23,6 +23,7 @@
 \newlabel{section:introduction}{{I}{1}}
 \citation{reflection}
 \citation{stochasticgeometry}
+\citation{stochasticgeometry}
 \@writefile{toc}{\contentsline {section}{\numberline {II}Interference in Dense Wearable Network}{3}}
 \newlabel{section:channel}{{II}{3}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-A}}System Model for Wearable Network}{3}}
@@ -30,11 +31,10 @@
 \newlabel{eq:PL_NLOS}{{2}{3}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-B}}Number of Strong Interferers}{3}}
 \newlabel{theorem:E_N_SI}{{1}{3}}
-\citation{stochasticgeometry}
+\newlabel{eq:N_SI}{{4}{3}}
 \citation{stochasticgeometry}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces User $(x', \theta ')$ will block the LOS channel between $0$ and $x$ if the projection of $x'$ lies on $x$ and the projection of his cross-segment covers $0$. }}{4}}
 \newlabel{fig:Channel_enb}{{1}{4}}
-\newlabel{eq:N_SI}{{4}{4}}
 \newlabel{theorem:E_N_B_LOS}{{2}{4}}
 \newlabel{eq:2dblocking}{{5}{4}}
 \newlabel{eq:N_blockage_original}{{6}{4}}
@@ -49,8 +49,10 @@
 \newlabel{theorem:hppp_orientation}{{4}{5}}
 \citation{stochasticgeometry}
 \citation{stochasticgeometry}
+\citation{stochasticgeometry}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-D}}Influence of Mobile Blockers on Static Wearable Networks}{6}}
 \newlabel{subsection:largemobility}{{\unhbox \voidb@x \hbox {II-D}}{6}}
+\newlabel{theorem:boolean_stationary}{{5}{6}}
 \newlabel{subfig:trace}{{3a}{6}}
 \newlabel{sub@subfig:trace}{{(a)}{a}}
 \newlabel{subfig:boolean}{{3b}{6}}
@@ -59,28 +61,27 @@
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{6}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{6}}
 \newlabel{fig:boolean}{{3}{6}}
-\newlabel{theorem:boolean_stationary}{{5}{6}}
 \newlabel{theorem:boolean_mean}{{6}{6}}
+\newlabel{eq:boolean_mean}{{13}{6}}
 \citation{busyperiod_heavytraffic}
 \citation{busyperiod_heavytraffic}
 \citation{busyperiod_heavytraffic}
 \citation{busyperiod_exponential}
-\newlabel{eq:boolean_mean}{{\unhbox \voidb@x \hbox {II-D}}{7}}
-\newlabel{eq:P_LOS}{{13}{7}}
+\citation{matern}
+\newlabel{eq:P_LOS}{{14}{7}}
 \newlabel{theorem:poisson_arrival}{{7}{7}}
-\newlabel{eq:lambda_queue}{{14}{7}}
-\newlabel{eq:T_LOS}{{15}{7}}
-\newlabel{eq:t_relation}{{16}{7}}
+\newlabel{eq:lambda_queue}{{15}{7}}
+\newlabel{eq:T_LOS}{{16}{7}}
+\newlabel{eq:t_relation}{{17}{7}}
 \newlabel{eq:T_NLOS}{{\unhbox \voidb@x \hbox {II-D}}{7}}
 \newlabel{eq:frequency}{{\unhbox \voidb@x \hbox {II-D}}{7}}
-\newlabel{eq:busyperiod_condition}{{17}{7}}
+\newlabel{eq:busyperiod_condition}{{18}{7}}
 \newlabel{theorem:T_NLOS_exp}{{8}{7}}
-\newlabel{condition:T_NLOS_exp}{{18}{7}}
-\citation{matern}
-\@writefile{toc}{\contentsline {section}{\numberline {III}Numberical Results for Interference Environment and Implications on MAC design}{8}}
-\newlabel{section:channel_numerical}{{III}{8}}
+\newlabel{condition:T_NLOS_exp}{{19}{7}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces $\mathrm  {E}[N_{\mathrm  {SI}}]$ for different user densities. Whether user at $x'$ blocks the channel is decided by $h_x(x',\theta ')$ and $h_{\mathrm  {NLOS}}$.}}{8}}
 \newlabel{fig:Channel_en_si}{{4}{8}}
+\@writefile{toc}{\contentsline {section}{\numberline {III}Numberical Results for Interference Environment and Implications on MAC design}{8}}
+\newlabel{section:channel_numerical}{{III}{8}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Probability density function of LOS strong interferers as a function of the distance to the typical user at $\bf  {0}$.}}{8}}
 \newlabel{fig:Channel_si_pdf}{{5}{8}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Range of translation $r$ for different user densities $\lambda $. For low user density, $\lambda <0.72$, $r$ is fixed. For large $\lambda $, $r = 0.6 \sqrt  {1/\lambda \pi }$ for $\lambda >0.72$.}}{8}}
@@ -89,6 +90,8 @@
 \newlabel{fig:Channel_sensitivity}{{7}{9}}
 \@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces $\mathrm  {E}[S(x)|f_0(x_i, \theta _i, \mathaccentV {tilde}07E{\Phi }\delimiter "026E30F \{(x_i,\theta _i)\}, \theta _0)=1]$ average sensitivity of strong interferers.}}{9}}
 \newlabel{fig:Channel_sensitivity_average}{{8}{9}}
+\@writefile{toc}{\contentsline {section}{\numberline {IV}Clustering and Channel Selection in Dense Wearable Networks}{9}}
+\newlabel{section:MAC}{{IV}{9}}
 \newlabel{subfig:et}{{9a}{9}}
 \newlabel{sub@subfig:et}{{(a)}{a}}
 \newlabel{subfig:freq}{{9b}{9}}
@@ -97,8 +100,6 @@
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {$\E [T_{\LOS }]$ and $\E [T_{\NLOS }]$}}}{9}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {State change frequency $f_{\mathrm {change}}$}}}{9}}
 \newlabel{fig:Channel_constant_velocity_model}{{9}{9}}
-\@writefile{toc}{\contentsline {section}{\numberline {IV}Clustering and Channel Selection in Dense Wearable Networks}{9}}
-\newlabel{section:MAC}{{IV}{9}}
 \@writefile{toc}{\contentsline {section}{\numberline {V}Analysis of Clustering}{9}}
 \newlabel{section:clusteranalysis}{{V}{9}}
 \@writefile{toc}{\contentsline {section}{\numberline {VI}Conclusion}{9}}
@@ -108,12 +109,12 @@
 \citation{apcluster}
 \@writefile{toc}{\contentsline {section}{\numberline {VII}Clustering and Channel Selection}{10}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {VII-A}}Clustering based on Affinity Propagation}{10}}
-\newlabel{eq:r_update}{{19}{10}}
+\newlabel{eq:r_update}{{20}{10}}
 \citation{apvanet}
 \citation{apd2d}
-\newlabel{eq:a_update1}{{20}{11}}
-\newlabel{eq:a_update2}{{21}{11}}
-\newlabel{eq:CNS}{{22}{11}}
+\newlabel{eq:a_update1}{{21}{11}}
+\newlabel{eq:a_update2}{{22}{11}}
+\newlabel{eq:CNS}{{23}{11}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {VII-B}}Analysis of Clustering Performance}{11}}
 \newlabel{subsection:cluster_analysis}{{\unhbox \voidb@x \hbox {VII-B}}{11}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {VII-C}}Clustering Results}{12}}
@@ -123,29 +124,28 @@
 \bibcite{80211ad}{2}
 \bibcite{802153c}{3}
 \bibcite{ECMA387}{4}
-\bibcite{mmwave_propagation}{5}
-\bibcite{humanshadowing}{6}
-\bibcite{urbanblockage}{7}
-\bibcite{interferencefinitesized}{8}
-\bibcite{enclosedmmwave}{9}
-\bibcite{humanactivity}{10}
+\bibcite{humanshadowing}{5}
+\bibcite{urbanblockage}{6}
+\bibcite{interferencefinitesized}{7}
+\bibcite{enclosedmmwave}{8}
+\bibcite{humanactivity}{9}
+\bibcite{timevaryingpathshadowing}{10}
 \bibcite{blockagein60ghz}{11}
-\bibcite{timevaryingpathshadowing}{12}
-\bibcite{virtualtimeslot}{13}
-\bibcite{rex}{14}
-\bibcite{fdmac}{15}
-\bibcite{dtdmac}{16}
-\bibcite{mdmac}{17}
-\bibcite{reflection}{18}
-\bibcite{stochasticgeometry}{19}
-\bibcite{busyperiod_heavytraffic}{20}
-\bibcite{busyperiod_exponential}{21}
-\bibcite{matern}{22}
-\bibcite{poisson}{23}
-\bibcite{backoff}{24}
-\bibcite{apcluster}{25}
-\bibcite{apvanet}{26}
-\bibcite{apd2d}{27}
+\bibcite{virtualtimeslot}{12}
+\bibcite{rex}{13}
+\bibcite{fdmac}{14}
+\bibcite{dtdmac}{15}
+\bibcite{mdmac}{16}
+\bibcite{reflection}{17}
+\bibcite{stochasticgeometry}{18}
+\bibcite{busyperiod_heavytraffic}{19}
+\bibcite{busyperiod_exponential}{20}
+\bibcite{matern}{21}
+\bibcite{poisson}{22}
+\bibcite{backoff}{23}
+\bibcite{apcluster}{24}
+\bibcite{apvanet}{25}
+\bibcite{apd2d}{26}
 \@writefile{toc}{\contentsline {section}{\numberline {IX}Simulation Evaluation}{14}}
 \@writefile{toc}{\contentsline {section}{\numberline {X}Conclusion}{14}}
 \@writefile{toc}{\contentsline {section}{References}{14}}
