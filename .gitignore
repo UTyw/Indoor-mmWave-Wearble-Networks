@@ -1,3 +1,8 @@
+# unnecessary files
+*.aux
+*.pdf
+*.gz
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
