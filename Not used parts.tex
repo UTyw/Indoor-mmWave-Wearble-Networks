@@ -1,0 +1,227 @@
+\documentclass[10pt, conference, letterpaper]{IEEEtran}
+
+\ifCLASSINFOpdf
+	\usepackage[pdftex]{graphicx}
+\else
+  \usepackage[dvips]{graphicx}
+  \graphicspath{{./figures/}}
+\fi
+	
+\usepackage[cmex10]{amsmath}
+\usepackage[caption = false, font = footnotesize]{subfig}
+\graphicspath{{../infocomfigure/}}
+\usepackage{bbm}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\newtheorem{theorem}{Theorem}
+%\usepackage[normlem]{ulem}
+%\usepackage{algoithm}
+%\usepackage{algpseudocode}
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+
+
+\begin{document}
+\title{Indoor mmWave Wearable Networks: Challenges to MAC Design}
+
+\author{\IEEEauthorblockN{Yicong Wang and Gustavo de Veciana}
+\IEEEauthorblockA{Department of Electrical and Computer Engineering, The University of Texas at Austin\\Email: yicong.wang@utexas.edu, gustavo@ece.utexas.edu }
+}
+
+\maketitle
+
+\begin{abstract}
+Millimeter wave (mmWave) serves as an ideal solution for wearable networks where device density can be high and many applications require Gbps throughput. In a dense scenario such as a crowded train or stadium, users with wearable personal area networks are close to each other and the interference can be strong. Furthermore, wearable devices may have heterogeneous transmission capabilities and different Quality-of-Service (QoS) requirements. The wearable network in dense scenarios differs from other mmWave networks in two ways: (1) human body blockage and body movements make interferers have different interfering channels, i.e., neighbors in close proximity are more likely to have clear interfering channels and their channels are more stable compared to distant users; (2) heterogeneity in device capabilities (e.g. beamforming v.s. omni-directional and different energy constraints) makes it inefficient to schedule all devices in the same way. In this paper, we begin with a first order analysis of the characteristics of interferers in dense wearable networks, i.e., the number and stability of interferers MAC protocol should handle. We further discuss the hierarchical MAC scheduler to manage interference, consisting of clustering of users and scheduling at the user level. We propose clustering principles and provide an analysis of clustering in dense mmWave network. This paper show that in dense mmWave wearable networks, the strong interferers a user see are limited but can be sensitive to users' movement. Clustering users in close proximity can mitigate uncoordinated interference while each can coordinate with cluster peers to improve the spatial reuse.
+
+\end{abstract}
+\IEEEpeerreviewmaketitle
+
+\section{Introduction}\label{section:intro}
+\begin{itemize}
+\item
+MmWave will be used for wearable network. MAC design for dense wearable networks requires understanding of the interference environment and challenges to MAC.
+\item
+Hierarchy of the wearable network: devices on each user forms a BSS. Smart phone works as the Control Point.BSSs can form clusters and coordinate with cluster members
+\item
+Interference in dense wearable networks: high number of interferers and dynamic channels: keeping track of all (potential) interferers is difficult
+\item
+Heterogeneous requirements, transmission capability and volume of different types of traffic affects MAC design
+\end{itemize}
+
+\emph{Contributions} 1) Analysis the characteristics of strong interferers 2) propose hierarchical MAC for dense wearable networks 3) Analysis the trade-off in clustering
+
+\emph{Related Work}
+\begin{itemize}
+\item Channel characteristics of mmWave: pathloss, reflection, human body shadowing
+\item Analysis of mmwave/wearable network: Robert's work on mmWave and wearable network. Angel's work
+\item Existing MAC protocols, including 802.11ad and other MACs aiming at improving spatial reuse
+\end{itemize}
+
+\section{Channel Characteristics in Dense Wearable Network}
+\begin{itemize}
+\item Factors influencing the interference environment: 1) human body shadowing 2) directional transmission 3) direction of traffic: upward downward
+\item Pathloss, shadowing of mmWave as well as reflection
+\item Define strong interferers: those that may kill the transmission and MAC should mitigate interference from strong interferers. Why we care about strong interferers
+\end{itemize}
+\subsection{Number of Strong Interferers}
+\begin{itemize}
+\item Define number of strong interferers $N_{\text{SI}}$
+\item Discuss about the indicator function $f$
+\item Average number of strong interferers. Theorem? 
+\item Result: Average number of strong interferers, compared to simulation
+\item Result: Distribution of strong interferers
+\item Result: * Avg. $N_{\text{SI}}$ for finite region
+\end{itemize}
+\subsection{Sensitivity of Strong Interferers}
+\begin{itemize}
+\item Why we care about sensitivity: overhead and performance
+\item Analytical model, movement model
+\item Sensitivity for user at different distant away/ user density environment
+\item Average Sensitivity
+\end{itemize}
+
+\section{Hierarchical MAC to manage interference}
+\begin{itemize}
+\item Roles of clustering and scheduling at MAC
+\item Discussion about the requirements of clustering and scheduling
+\item Criterion for good clusters
+\item What devices should participate in clustering
+\end{itemize}
+
+\section{Analysis of MAC(Clustering)}
+\subsection{Model for analysis of ``throughput '' of clusters}
+\subsection{Factors affecting the optimal cluster size}
+
+\newpage
+
+\section{Clustering and Channel Selection}
+Clustering improves spatial reuse and reduce interference \cite{80211ad}. Cluster head synchronizes the cluster members and schedules beacon transmissions in the cluster to mitigate intra-cluster interference, while other techniques like channel selection (FDM) and back off \cite{backoff} can be used to reduce inter-cluster interference. The 802.11ad Standard provides both distributed clustering and centralized clustering methods for directional devices working on mmWave. The links between PCPs/APs are unstable in dense wearable networks, thus the distributed clustering method fits better and we will use the distributed clustering algorithm in 802.11ad as the baseline.
+
+In the distributed clustering algorithm, the formation of cluster follows a first come first serve rule: a BSS tries to join a existing cluster when it enters a network and starts a new cluster if no existing cluster is available. The maintenance of clusters is similar to lowest ID clustering. If the original cluster head is lost or two clusters meet each other, the remaining BSS or the original cluster head with the lowest/lower ID will be selected as the new cluster head. The Beacon SPs of cluster members are non-overlapping in time and a BSS need to reserve the slots if the PCP/AP or other devices receive beacons or Extended Schedule element from other BSSs. Distributed clustering help schedule beacon transmissions and the BSSs share the channel in a pure TDMA way. 
+
+In dense wearable networks, the TDMA like scheduling method based on omni-directional beacons will not allocate enough resource for BSSs and channel reuse is necessary. Furthermore, the channels between devices, especially the channels between PCPs/APs of cluster members and PCPs/APs of cluster heads, are unstable, leading to frequent lost of cluster heads and reforming of clusters. A good clustering should cluster BSSs that have stable connections to cluster heads and facilitate resource reuse at BSS level.
+%A good clustering should cluster BSSs so that cluster members have stable connection to their cluster heads and facilitate the resource scheduling at BSS level. 
+
+The requirements of clustering are affected by the network scenario. If users move a lot, e.g., users getting off a subway train car or moving along the aisle, the channels changes fast and the basic requirements of clustering algorithm is to be fast in formation and maintenance. If users moves locally and are relatively stable, clusters can be optimized to form more stable clusters so that BSSs can better schedule their transmissions by learning their interference environment. 
+
+Choosing the proper size of clusters is important for dense wearable networks. Big clusters can reduce inter-cluster interference but a cluster would reserve more slots for beacon transmission and the slots for each BSS's primary high-end transmission is limited. Furthermore, the connections between cluster members and cluster heads can be unstable. 
+Small clusters provide enough resource for each cluster member and are easy to maintain but suffer from more inter-cluster interference.
+
+Another question with wearable network clustering is what devices should participate in clustering. Devices of the same BSS are controlled by PCP/AP and communicate with each other thus BSS is the basic unit in clustering. However, the interference environments of different devices can be completely different due to the short wave length and human body shadowing. Choosing the devices to participate in clustering requires the trade-off between the accuracy of channel estimation and the cost for measurement and signaling. 
+The PCPs/APs send beacons in every slot and PCPs/APs within the same cluster are required to listen to the beacons thus the channel between PCPs/APs are measured in every frame. The non-PCP/non-AP devices can measure the channel from PCPs/APs by listening to the beacons, but the measurements cost energy and the measurements need to be sent to PCP/AP. The measurement of channels from non-PCPs/non-APs will require additional pilots. In our case, the connectivity between cluster members and cluster heads require measurements and message exchange between PCPs/APs thus PCPs/APs are necessary in clustering. The high-end non-PCP/non-AP devices can measure the interfering channel from other PCPs/APs and send the results to PCP/AP to improve clustering. Low-end devices have limited energy thus they are not required to measure interference. %Measurements on other channels
+Optimization of clusters also requires the measurements and exchange of control messages between BSSs working on different channels thus BSSs need to measure other channels and exchange messages periodically. 
+
+Our purpose here is to devise a clustering algorithm to provide stable clusters where the connections between cluster heads and cluster members are more stable and use a channel selection algorithm to further reduce inter-cluster interference.
+
+\subsection{Clustering based on Affinity Propagation}
+Affinity Propagation (AP) \cite{apcluster} is a distributed clustering algorithm which elects a set of exemplars and assign nodes to exemplars based on message exchange between nodes . AP clustering maximizes the sum of pairwise similarities between nodes and their exemplars, where similarity $s(i,k)$ indicates how well node $k$ serves as the exemplar of node $i$. The clustering result does not depend on the initialization of cluster heads and only requires exchange of real value messages between data nodes and AP clustering can produce good clustering result at low computational and signaling cost compared to other clustering techniques such as $k$-centers clustering.
+
+In AP clustering, nodes exchange two types of messages and the messages are combined to decide cluster heads and association. Each node $i$ sends `responsibility' $r(i,k)$ to candidate cluster head $k$, indicating how suitable node $k$ works as node $i$'s cluster head compared to other candidate cluster heads. The candidate cluster head $k$ sends `availability' $a(i,k)$ to node $i$ to show the accumulative support for being a cluster head that node $k$ receives from nodes other than $i$. The messages are initialized to be 0 and messages of the same type are updated at the same time. 
+
+The responsibilities are computed as the similarity minus the maximum of the sum of availability and similarity of other competing cluster heads,
+\begin{equation}\label{eq:r_update}
+r(i,k) = s(i,k) - \max_{k'\text{s.t.}k'\neq k}\{a(i,k') + s(i,k')\}.
+\end{equation}
+The candidate cluster heads compete for the ownership of node $i$ and the candidate cluster head with larger similarity value compared to other potential cluster heads is more likely to own node $i$. For $i = k$, 
+$$r(i,i) = s(i,i) - \max_{k\text{s.t.}k\neq i}\{a(i,k) + s(i,k)\}$$ is the self-responsibility for becoming a cluster head and $s(i,i)$ is the prior preference for being a cluster head. A negative self-responsibility means the node is better working as a cluster member instead of a cluster head. If $s(i,i)$ is large, BSS $i$ will tend to start its own cluster and the density of cluster heads will increase; otherwise, the clustering algorithm will produce fewer cluster heads and larger clusters.
+
+The availabilities are computed at the candidate cluster heads by adding self-responsibility and the positive responsibilities they receive from other nodes: 
+\begin{equation}\label{eq:a_update1}
+a(i,k) = \min \Big\{0, r(k,k) + \sum_{i'\text{s.t.}i'\neq i,k}\max \{0, r(i',k) \}\Big\}
+\end{equation}
+\begin{equation}\label{eq:a_update2}
+a(k,k) =\sum_{i'\text{s.t.}i'\neq k}\max \{0, r(i',k) \}
+\end{equation}
+A candidate cluster head with stronger support from other nodes and high self-responsibility is more likely to become a cluster head and the availability is high. 
+
+At any stage, the messages can be combined to decide the cluster heads. The nodes which have positive sum of self-availability and self-responsibility will be elected as cluster heads, i.e., 
+$CH = \{k|a(k,k) + r(k,k)>0\}$. Other nodes select the cluster head which maximize the sum of availability and responsibility:
+$$ch(i) = \argmax_{k\in CH}\{a(i,k)+r(i,k)\}, \forall i\notin CH.$$
+However, there is no guarantee of convergence for AP clustering. To avoid numerical oscillations and reach convergence, the messages need to be damped when updated, e.g., $m(t+1) = (1-\lambda)m(t) + \lambda m$. 
+
+AP-based clustering algorithms have been proposed to produce stable clusters \cite{apvanet} or reduce signaling overhead\cite{apd2d}. In our case, we want cluster members to have stable connections to cluster heads and reduce inter-cluster interference. The stability of channels is inferred by tracking the channel quality over time. To get stable channels between users, a good `similarity' metric would be the `stability' of channel and we use the average channel strength to measure stability,
+$$Stability(i,j)=Pr(|H_{i,j}|^2>\gamma),$$ 
+where $H_{i,j}$ is the record of estimations of channel gain from PCP $j$ to PCP $i$ in previous frames. To mitigate inter-cluster interference and facilitate the exchange of messages within cluster, cluster members should share similar strong interferers with the cluster head so that inter-cluster interference can be effectively reduced by making neighbor clusters work on different channels. We devise a metric to measure the similarity in strong interfering neighbors, \emph{Common Neighbor Stability} (CNS). CNS between two BSSs is defined as the sum of minimum of the two BSSs' stability to their common interfering neighbors, i.e.,
+\begin{equation}\label{eq:CNS}
+CNS(i,j) = \sum_{k\in N_i}{\min(Stability(i,k), Stability(j,k))}.
+\end{equation}
+$N_i$ is the set of most stable strong interferers of BSS $i$, $|N_i| = M$. BSS $i$ broadcasts $N_i$ and corresponding $Stability(i,:)$ in its beacons or clustering messages periodically and BSSs hearing the beacons update their CNS to BSS $i$. CNS is computed locally at each BSS and the set $N$ varies for different BSSs thus CNS can be asymmetric, i.e., $CNS(i,j)\neq CNS(j,i)$.
+$Stability(i,i) = 1$ by default. We use CNS as the similarity metric for AP clustering to elect the exemplars and when a BSS decides to join a cluster, it selects the cluster head which has best stability and CNS, i.e.,
+$$CH(i) = \argmax_k \{Stability(i,k)\cdot CNS(i,k)\}.$$
+
+%AP clustering requires the similarity between nodes. For wearable network, we select a metrics for similarity between nodes, \emph{Common Neighbor Probability} (CNP). CNP is defined based on the \emph{probability of having LOS channel}, $P_{LOS}$, which we define as the proportion of fames that the PCPs/APs between two BSSs receive the beacon sent by each other. Let $P_{LOS}(i,j)$ be the probability of having LOS channel between BSS $i$ and $j$, and let $N_i$ be the set of close neighbors around BSS $i$. $N_i$ contains the $M$ neighbor BSSs which have larger $P_{LOS}$ than any other BSSs. $P_{LOS}(i,j) = 0$ if $j \notin N(i)$ and $i \neq j$ and $P_{LOS}(i, i) = 1, \forall i$. With these settings, common neighbor probability is defined as follows,
+%\begin{equation}\label{eq:CNP}
+%CNP(i,j) = \sum_{k\in N_i}{min(P_{LOS}(i,k), P_{LOS}(j,k))}
+%\end{equation}
+%Each BSS can broadcast its neighbor set and corresponding CNP in its Beacon periodically and BSSs update their similarities to other BSSs.
+
+
+%In AP, each node has two values, `responsibility' $r(i,j)$ and `availability' $a(i,j)$. $r(i,j)$ indicates how much does node $j$ should work as the exemplar, cluster head in our case, of node $i$ while $a(i,j)$ measures the degree that nodes other than $i$ have selected $j$ as their cluster head. Potential cluster members sends `responsibility' value to their potential cluster heads, while the potential cluster heads broadcasts their sum availability to cluster members. The update rule of clustering messages is as follows:
+
+
+Running AP clustering for a network consisting of $N$ BSSs has a signaling complexity of $O(N^2)$. However, the actual signaling cost can be reduced to $O(N)$. Only positive responsibilities are needed thus a node only need to broadcast positive responsibilities in its beacons. For availabilities, node $k$ just need to broadcast $a(:,k) = r(k,k)+\sum_{i'\text{s.t.}i'\neq k}\max \{0, r(i',k) \}$ to other nodes, and node $i$ can update $a(i,k)$ as $a(i, k) = \min(0,a(:,k) - \max(0, r(i,j)))$. Furthermore, we do not need to assign non-overlapping slots for signaling: if two BSSs can hear each other, they will reserve slots for the beacon transmission of each other; if two BSSs do not have a good connection, then they are not likely to become the cluster head of the other BSS and the message exchange is not necessary. Applying AP clustering only requires each BSS to broadcast limited messages in their beacons thus the signaling over head is limited. 
+
+%Each node can estimate and update its similarity vector locally and the update of similarity is not involved in the clustering procedure. In \ref{eq:r_update}, the update of $r$ requires the availability of $a$. Each node only need to broad cast $a(i,:) = $ and nodes hearing $a(i,:)$ can compute $a(i,j)$ in the following way,
+%\begin{equation}\label{eq:compute_a}
+%a(i, j) = a(j,:) - max(0, r(i,j))
+%\end{equation}
+%For the update of $r$, nodes only need to send/broadcast non-negative $r$ values in their beacon. According to the clustering in 802.11ad, the BSSs working on the same channel reserve the slots for other BSSs' Beacon SPs thus BSSs would listen to other BSSs beacons. It only takes a few more bits to broadcast $a(i,:)$ and non-negative $r$, thus the signaling overhead of exchanging AP clustering message is not large.
+%The update of messages only require local computation and exchange of messages between close neighbors. If two BSSs cannot hear each other, then it is likely that they do not belong to the same cluster and they do not need to exchange messages between them. The cost of messaging and computation will not blow up as user density increases.  
+
+We use channel selection to reduce inter-cluster interference. Channel selection is performed by the cluster head to avoid using the same channel as its stable strong interferers. The PCP/AP of cluster head estimates the channels to nodes outside the cluster periodically. If the inter-cluster interference is high, the cluster head may switch to another channel with certain probability. The cluster head then estimates the interference environment on the new channel for some slots and decide to stay on the new channel or switch back to the original one based on measurements. If the network is stable, such channel selection method can assign neighboring clusters to different channels and reduce inter-cluster interference.
+
+%If in every several frames, we schedule a frame for BSSs working on different channels to send pilots and estimate channels, the BSSs can estimate the potential interference it will receive on each channel and switch to the channel with different nodes. If such channel estimation period is not available, each cluster may switch to other channels with some probability and switch back based on channel estimation results on different channels. Either way, if the users are relatively stable, the channel selection can reach a point that the intra-cluster interference reduced.
+
+\subsection{Analysis of Clustering Performance}\label{subsection:cluster_analysis}
+The major variant in our clustering algorithm is cluster size. In dense wearable networks, small clusters provides more parallelism across clusters but users experience more inter-cluster interference; large clusters reduce inter-cluster interference but the resource reserved for each user is limited and the it is more difficult to maintain connections between cluster heads and cluster members. In this part we analyze the throughput of users for different network scenarios and assumptions about users and try to identify the optimal cluster size.
+
+To model the clusters, we assume the cluster members 
+
+\subsection{Clustering Results}\label{subsection:cluster_result}
+We apply AP based clustering algorithm and channel selection in dense scenario. We use Markov Contention Matrix to model the channel between different users in Section \ref{section:channel}. For comparison, we also simulate lowest ID clustering, which is a simplified version of the distributed clustering algorithm used in 802.11ad. We evaluate the performance of the clustering algorithms using two metrics, the average probability of having LOS channel with cluster heads and the average number of LOS interferers working on the same channel within the cluster and outside the cluster. The clustering results are shown in Fig. %\ref{fig:cluster_result}
+and Table %\ref{tab:cluster_result}.
+We can see that AP based cluster can effectively cluster the nodes that are close in proximity (well-connected) and channel selection effectively reduce the number of LOS interferers. In fact, lowest ID clustering provides fewer strong interferers, but the cluster heads and the cluster members are not well connected thus the signaling within the cluster is hard to perform. Furthermore, the number of uncoordinated LOS interferers is not reduced (if not increased). If we only perform channel selection without clustering, the average number of total LOS interferers is also smaller, but the interference is uncoordinated and more unpredictable.
+
+Our AP based clustering algorithm requires frames scheduled for channel measurements and message exchange for BSSs working on different channels. This will introduce extra signaling cost thus we are working on devising pure distributed clustering algorithm and channel selection only relying on message exchanging on the same channel.
+
+\section{Hierarchical MAC Scheduling for Heterogeneous Devices}
+With appropriate clustering and channel selection, we can form clusters that are in close proximity. The above approach does not remove inter-cluster interference completely, but the interferers from outside the cluster are more distant away thus the set of inter-cluster interferers are less stable as shown in Fig. %\ref{fig:parameter}
+The interfering channel to inter-cluster interferers are likely to be blocked, making learning the transmission patterns of BSSs outside the cluster ineffective. A simple way to deal with interference is to treat interference as noise. If inter-cluster interference is strong, the BSS may consider switching to another cluster or work on another channel. 
+
+After performing channel selection, the average number of strong interferers working on the same channel would be approximately $1/M$ of the average number of total strong interferers, $M$ being the total number of channels. Such number is relative small, however, simple TDM scheduling used in 802.11ad is not enough. In 802.11ad, a PCP/AP would reserve the slots for other BSSs if the PCP/AP or the non-PCP/non-AP devices receives the extended schedule element of other BSSs. The set of strong interferers may change fast over time, thus the number of Extended Schedule Element a BSS receive. As a result of it, there can be much more BSSs working in the same contention group. If instead, all BSSs do not reserve resource for neighbor BSSs, interference will be unpredictable, making it hard to guarantee the QoS of transmission. 
+
+As discussed in Section \ref{section:intro}, high-end and low-end devices have different QoS requirements and transmission capabilities. A basic principle with the MAC design is that high-end devices should work on reserved slots. BSSs would reserve the slots for the high-end transmissions to avoid degrading the QoS. For low-end devices, or not important high-end transmissions, BSS try to reuse the slots of other BSSs' high-end transmission by first sensing the channel. Due to the energy limit of low-end devices, channel sensing may not be performed in all slots. To effectively sensing and reusing the channel, low-end devices can stay idle for some time if there is interference on the channel it try to reuse or select the slot that are more likely to be idle to work on. 
+
+To apply the MAC principle, we first model the contention relationship in dense wearable network using Markov model. The channel between two BSSs, $i$ and $j$, is modeled as a discrete Markov process with two states. If there is a LOS channel, or strong reflection channel between $i$ and $j$, the state of channel is $0$; the state is $1$ otherwise. The channel state transits in each frame and the state transition diagram is shown in Fig. %\ref{fig:state_transition}
+The state transition rate is determined by the users density, the movement pattern of users and the length of the channel. 
+
+We begin with a toy example, optimizing the reward from scheduling secondary transmission. For a slot in which a BSS works as a secondary user, the BSS can take three actions, Transmit, Sense and Idle. The reward of a successful transmission is $R_{\text{Transmit}}$, and the energy cost using different states is $E_{\text{Transmit}}$, $E_{\text{Sense}}$ and $E_{\text{Idle}}$. The corresponding state transition matrix is shown in Fig. %\ref{fig:MDP}.
+The optimization problem can be solved as a Markov Decision Process, which optimize the discounted sum of potential gain over time. 
+Another objective is to optimize the average reward over frames. As shown in Fig. %\ref{fig:MDP} 
+the optimization problem involves two decisions, the number of slots to wait if the channel is sensed to be interfered and the action to take after waiting. For different decisions, the stationary distribution of states and corresponding reward over time. Let $k$ be the number of slots that a BSS stays idle after the channel is interfered by the primary user, $k = \{0,1,\ldots, \}$. There are three states, \emph{Transmit}, \emph{Idle} and \emph{Action}. \emph{Action} is the state that a BSS either transmit or sense the channel after staying idle.
+The stationary distribution of the state is as follows,
+\begin{equation}%\label{eq:dist}
+\begin{split}
+\pi_{Transmit} = \frac{P(0|<k+1>)}{P(0|<k+1>) + 2\cdot p_{block}} \\
+\pi_{Idle} = \frac{p_{block}}{P(0|<k+1>) + 2\cdot p_{block}} \\
+\pi_{Action} = \frac{p_{block}}{P(0|<k+1>) + 2\cdot p_{block}} 
+\end{split}
+\end{equation}
+
+State \emph{Idle} takes $k$ frames while the other two states take one frame.  Given the stationary distribution of states, we can compute the average gain over time for different combination of $k$ and action taken after waiting. A BSS can treat each slot independently and optimize the reward from each slot. However, there is limitation with the above approach. The first problem is that the secondary users might interfere with each other thus the reward from utilizing a slot is not constant. If the BSSs try to reuse the slots aggressively, there will be more interference among the secondary users thus reducing the gain of reuse. 
+The second limitation with the naive approach is that the QoS requirements are not fully considered. The rewards of different slots in a frame are correlated. A BSS will not always have data to transmit but may have different requirements on delay. If a BSS reuse multiple slots of a frame successfully and does not have more data to transmit, the reward from reusing a new slot will be trivial, even negative. On the other hand, if the BSS does not have enough slots, a BSS should probe/transmit more aggressively to meet the QoS requirements.  
+The third limitation is the exact optimization requires the exact channel between primary and secondary BSSs. To deal with this problem, a BSS can adjust its decision making procedure according to the results from the channel. If a slot is constantly busy, BSS can increase the time of staying Idle; otherwise, the time of waiting can be shortened. In fact, the analytical results in Fig. %\ref{fig:para}
+supports the philosophy of adaptation: the long channels are more likely to be blocked by obstructions and interference from far away neighbors are more likely to be blocked due to the movements of users, thus the channels that are often blocked are more likely to become blocked after certain frames. 
+
+Considering the above discussed limitations, we extend the hierarchical scheduling to optimize the resource a BSS can get from reusing slots in one whole frame. Each frame consists of $N$ slots, and there are $N$ BSSs working in one cluster. At the beginning of each frame, the PCP/AP node broadcast Beacons to the non-PCP/non-AP nodes and the schedule for the frame is contained in the Beacon, thus a BSS need to make the scheduling decisions at the beginning of each slot based on the measurements in the previous frame and can not schedule new transmissions during the frame. For a typical BSS, the state of a frame is as follows, 
+$$FrameState = \{SlotState_1, SlotState_2, \ldots, SlotState_N\}.$$
+$SlotState_i$ is the same as the slot state used for toy example. In our design, Slot 1 is the slot reserved for primary transmission. Ignoring inter-cluster interference, the BSS does not need to consider $SlotState_1$ in scheduling. We assume the channels between the BSS and other BSSs are independent from each other, thus the state transition diagram of each slot is the same as shown in Fig. %\ref{fig:state_transition}.
+The difference is that the reward on a slot is also influenced by the interference from other BSSs in the same cluster and the QoS requirements of the BSS. Assuming the BSSs are independent from each other and all the channels between any pair of BSSs are independent from each other and the transition for each link are identical, then intra-cluster interference is a function of the probability that a slot schedules transmission. For the QoS requirements of BSSs, the marginal gain from reusing the slot decreases with the slots available to the BSS. Considering intra-cluster interference explicitly makes the reward influenced by the decision that the BSS makes for different states, thus the standard MDP procedure no longer works. To solve such problem, one method is update the values and decisions of different states iteratively while updating the reward of state transition over iteration. The second method is to solve the problem by brute force search over the whole state space.The problem with such approach is that the size of the state space is very large. Even we limit the number of frames that a BSS would stay idle to be a limited number, e.g., $M$, the size of state space is $(M+2)^{N}$.
+
+The computational complexity with MDP approach is not affordable thus we need to find heuristic scheduling methods for reusing the MAC, which strike a balance between simple naive scheduling over each slot and the optimization over all the potential state space. Two major objectives of heuristic scheduling includes 1) reuse slots based on measurements of channel in previous frames without knowing the exact parameter of the channel and 2) making each BSS to have some slots to work on to meet minimum QoS requirements and achieve fairness among secondary BSSs. To serve the above two objectives, the key idea of our scheduling methods is that each BSS schedule transmissions on slots where there is no interference from primary users while keeping track of an additional slot with no interference. If the channel to the primary BSS does not change, the BSS will keep using the slot; otherwise the BSS try to reuse the alternative slot instead. The detailed scheduling algorithm is as follows. 
+
+
+In each slot, a BSS has the channel measurements from the previous frame. There will be some slots in which a BSS does not see interference from primary users. The BSS selects $K$ available slots to schedule its secondary transmission and keeps track of an alternative slot in case one of the reused slots is no longer available. The BSS will always have the measurements of the slots that they schedule secondary transmission. To keep track of the alternative slot, the BSS schedule $Sense$ on one of the rest of the slots. If the slot is sensed as available, it is an alternative slot and the BSS may either keep sensing that channel or sensed that channel again after some time, based on the variability of the channel. If the BSS sees interference from the primary user, it reschedule its secondary transmission on the alternative slot and scheduling sensing on the slot which has the highest probability of having no interference from primary users among the rest of the slots. If more than one slot reused become unavailable, the BSS reschedule transmissions on the slots with highest probabilities of not having interference from primary BSSs. At the same time, the BSS schedule sensing on the other slots.  
+
+
+\end{document}
