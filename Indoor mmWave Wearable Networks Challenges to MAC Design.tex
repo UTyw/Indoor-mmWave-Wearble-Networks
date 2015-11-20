@@ -76,8 +76,7 @@ In dense wearable networks, the MAC protocol needs to coordinate users' transmis
 The 802.11ad standard provides a hierarchical MAC geared at coordinating the personal basic service sets (PBSSs). The devices of a user forms a PBSS with a device working as the PBSS coordinate point (PCP). PCPs may use the PCP clustering mechanism to improve the spatial sharing and interference mitigation with other co-channel directional multi-gigabit (DMG) BSSs. Multiple PBSSs form a cluster, with one PCP selected as the synchronization PCP (S-PCP), which can be viewed as the cluster head.
 There are two types of clustering, decentralized PCP/AP clustering and centralized PCP/AP clustering. Centralized clustering requires synchronization and coordination of multiple S-APs, which might be hard to achieve in wearable networks with unstable channels thus we focus on the decentralized clustering. 
 
-In decentralized clustering, the 
-S-PCP synchronizes the PCPs in the cluster and schedules beacon transmissions of each PCP while the PCPs schedule the data transmission for each PBSS. To avoid interference, a PCP may re-schedule service periods (SPs) and contention-based access periods (CBAPs) in its beacon interval or move the beacon transmission interval in an attempt to mitigate any interference with transmission indicated in the received Extended Schedule element in the beacons of other PBSSs. The PBSSs work in a time division multiple access (TDMA) like scheme but the resources allocated to each PBSS may not be enough. Furthermore, clusters may suffer from frequent changes in topology and the problem of selecting the channel and the cluster to join when multiple clusters are available is not specified in the standard. To improve users' Quality-of-Service (QoS), we propose principles for clustering and channel selection based on our analysis of mmWave environment.
+In decentralized clustering, the S-PCP synchronizes the PCPs in the cluster and schedules beacon transmissions of each PCP while the PCPs schedule the data transmission for each PBSS. To avoid interference, a PCP may re-schedule service periods (SPs) and contention-based access periods (CBAPs) in its beacon interval or move the beacon transmission interval in an attempt to mitigate any interference with transmission indicated in the received Extended Schedule element in the beacons of other PBSSs. The PBSSs work in a time division multiple access (TDMA) like scheme but the resources allocated to each PBSS may not be enough. Furthermore, clusters may suffer from frequent changes in topology and the problem of selecting the channel and the cluster to join when multiple clusters are available is not specified in the standard. To improve users' Quality-of-Service (QoS), we propose principles for clustering and channel selection based on our analysis of mmWave environment.
 
 \emph{Paper Contributions}
 In this paper, we address the MAC design in dense indoor mmWave wearable networks. We consider the case where the user density is high and the devices on a user form a BSS coordinated by the smart phone. %Due to the high density of users and unstable channels, the measurements of channel and the exchange of signaling is limited thus the MAC should rely on limited channel measurements and be robust to changes in network topology and we aim to propose the principles of MAC for such network.
@@ -221,7 +220,7 @@ Combining the above results, the expected number of strong interferers is given 
 \end{multline}
 
 
-\subsection{Sensitivity of Strong Interferers}
+\subsection{Sensitivity of Strong Interferers}\label{section:channel:sensitivity}
 In this section we introduce local movements model and study the sensitivity of strong interferers to users' small local movements.
 The sensitivity of strong interferers, i.e., how strong interferers changes when users move, defines the cost and benefit of keep tracking of and coordinating the strong interferers and how robust the strong interferers are to perturbations in the network. Suppose in a time interval $[t, t+ \Delta t]$, users make translations as well as rotations, resulting in changes for the typical user and potential interferers summarized as follows:
 \begin{equation*}
@@ -543,72 +542,150 @@ To guarantee basic channel access and QoS of high-end transmissions, each BSS is
 In our settings, the transmissions are within the BSSs and scheduled by the PCPs, thus there is no deafness problem. Also note that the transmissions of each BSS is scheduled and broadcast in the beacon sent in the BSS's Beacon SP, thus the BSSs know the transmissions scheduled in each slot and can use directional antenna to listen to the directional RTS/CTS. 
 
 \subsection{Clustering for Wearable Network}\label{section:MAC:clustering}
-In this section, we discuss the issues related to clustering in dense wearable networks.
+In this section, we discuss the principles of clustering and the factors influencing clustering in dense wearable networks.
 
 The first general principle of clustering is that the channel between S-PCP and member PCPs should be good and stable. S-PCP synchronizes the member PCPs and help coordinating the transmissions thus the member PCPs should receive the beacons from S-PCP periodically. Our analysis on channel stability indicate that the channels between the close neighbors is good and robust to user movements, thus the cluster should cluster users in close proximity in general. 
 
-The second principle is that BSSs in the cluster should share similar set of interferers. The PCPs in different clusters are not synchronized thus it is difficult to avoid inter-cluster interference through coordination on a PCP level. A simple and effective way to reduce inter-cluster interference is channel selection of cluster. Our analysis show that most strong interferers are related to 
+The second principle is that BSSs in the cluster should share similar set of interferers. The PCPs in different clusters are not synchronized thus it can difficult to avoid inter-cluster interference through MAC scheduling on a PCP level. One simple and effective way to mitigate inter-cluster interference is channel selection on cluster level, i.e., the clusters select channel to avoid interference from neighboring clusters. Our analysis show that in dense scenarios, most strong interferers are in close proximity thus mitigating interference from neighboring clusters can effectively reduce inter-cluster interference. 
 
+Despite the basic principles of clustering, there are other factors influencing the criterion for good clustering.
 
+The requirements of clustering are affected by the network scenario. If users move a lot, e.g., users getting off a subway train car or moving along the aisle, the channels changes fast and the basic requirements of clustering algorithm is to be fast in formation and maintenance. If users moves locally and are relatively stable, clusters can be optimized to form more stable clusters so that BSSs can better schedule their transmissions by learning their interference environment. The density of users may also influence the performance of clustering.
 
-Choosing the proper size of clusters is important for dense wearable networks. Big clusters can reduce inter-cluster interference but a cluster would reserve more slots for beacon transmissions and the slots reserved for each BSS is limited. Furthermore, the connections between cluster members and cluster heads can be unstable as the distance to cluster heads becomes large.
+Choosing the proper size of clusters is important in the design of clustering algorithm. Big clusters can reduce inter-cluster interference but a cluster would reserve more slots for beacon transmissions and the slots reserved for each BSS is limited. Furthermore, the connections between cluster members and cluster heads can be unstable in large clusters.
 Small clusters provide enough resource for each cluster member and are easy to maintain but suffer from more inter-cluster interference.
 
-The requirements of clustering are affected by the network scenario. If users move a lot, e.g., users getting off a subway train car or moving along the aisle, the channels changes fast and the basic requirements of clustering algorithm is to be fast in formation and maintenance. If users moves locally and are relatively stable, clusters can be optimized to form more stable clusters so that BSSs can better schedule their transmissions by learning their interference environment. 
+The heterogeneity of transmission capabilities and traffic patterns also affects clustering. How the directionality of antennas, the amount of traffic for high-end and low-end transmissions affects the clustering performance is not clear. 
 
-Another question with wearable network clustering is what devices should participate in clustering. Devices of the same BSS are controlled by PCP and communicate with each other thus BSS is the basic unit in clustering. However, the interference environments of different devices can be completely different due to the short wave length and human body shadowing. Choosing the devices to participate in clustering requires the trade-off between the accuracy of channel estimation and the cost for measurement and signaling. 
+Other factors related to clustering includes the overhead of clustering algorithms, how to deal with user dynamics and the energy constraint of devices, etc.
 
-two general clustering principles for dense wearable networks include, 1) the PCPs of the cluster members should have good and stable channels to the S-PCP; 2) the cluster members share similar set of strong interferers. 
+%Another question with wearable network clustering is what devices should participate in clustering. Devices of the same BSS are controlled by PCP and communicate with each other thus BSS is the basic unit in clustering. However, the interference environments of different devices can be completely different due to the short wave length and human body shadowing. Choosing the devices to participate in clustering requires the trade-off between the accuracy of channel estimation and the cost for measurement and signaling. 
 
 
-\subsection{Clustering Algorithm based on Affinity Propagation}\label{section:MAC:ap}
-In this section, we present the clustering algorithm based on Affinity Propagation and channel selection algorithm to meet the clustering principles we propose. 
 
-Affinity Propagation (AP) \cite{apcluster} is a distributed clustering algorithm which elects a set of exemplars and assign nodes to exemplars based on message exchange between nodes. AP clustering maximizes the sum of pairwise similarities between nodes and their exemplars, where similarity $s(i,k)$ indicates how well node $k$ serves as the exemplar of node $i$. The clustering result does not depend on the initialization of cluster heads and only requires exchange of real value messages between data nodes and AP clustering can produce good clustering result at low computational and signaling cost compared to other clustering techniques such as $k$-centers clustering.
+Fig. \ref{fig:clustering:ap} illustrates the simulation result of AP-based clustering and channel selection. The locations of users follows a HPPP and we assume the users make local movements. The channels between users are modeled with the two-state Markov channel model \cite{timevaryingpathshadowing} with parameters derived from our analysis on the sensitivity of channels in Section \ref{section:channel:sensitivity}, see Fig. \ref{fig:clustering:markov}. The state of the channel between each pair of links is independent from other channels. At time $t = 0$, the channel between two users with a length of $d$ m, $d<r_{\max}$, the channel is LOS with probability 
+\begin{equation*}
+\mathrm{P}_{\mathrm{LOS}}(d) = e^{-\lambda d \E[D]}\cdot \mathrm{P}_{\mathrm{facing}}.
+\end{equation*}
+Then after every $\Delta t$, the state of the channel changes independently according to the state transition probability shown in Fig. \ref{fig:clustering:markov}, where
+\begin{equation*}
+\begin{aligned}
+\mathrm{P}_{\mathrm{block}}(d) & = \mathrm{P}\big(\{Y^{t+\Delta t} = 0\}|\{Y^{t} = 1\}\big) \\
+				   & = 1 - \frac{\mathrm{P}\big(\{Y^{t+\Delta t} = 1\}\cap\{Y^{t} = 1\}\big)}{\mathrm{P}_{\LOS}(d)}.
+\end{aligned}
+\end{equation*}
+For two-state Markov model, 
+\begin{equation*}
+\mathrm{P}_{\LOS}(d)\cdot \mathrm{P}_{\mathrm{block}}(d) = (1 - \mathrm{P}_{\LOS}(d)) \cdot \mathrm{P_{clear}}(d),
+\end{equation*}
+thus $\mathrm{P_{clear}}(d)$ is as follows,
+\begin{equation*}
+\mathrm{P_{clear}}(d) = \frac{\mathrm{P_{LOS}}(d)}{1 - \mathrm{P_{LOS}}(d)}\cdot\mathrm{P_{block}}(d).
+\end{equation*}
 
-In AP clustering, nodes exchange two types of messages and the messages are combined to decide cluster heads and association. Each node $i$ sends `responsibility' $r(i,k)$ to candidate cluster head $k$, indicating how suitable node $k$ works as node $i$'s cluster head compared to other candidate cluster heads. The candidate cluster head $k$ sends `availability' $a(i,k)$ to node $i$ to show the accumulative support for being a cluster head that node $k$ receives from nodes other than $i$. The messages are initialized to be 0 and messages of the same type are updated at the same time. 
-
-The responsibilities are computed as the similarity minus the maximum of the sum of availability and similarity of other competing cluster heads,
-\begin{equation}\label{eq:r_update}
-r(i,k) = s(i,k) - \max_{k'\text{s.t.}k'\neq k}\{a(i,k') + s(i,k')\}.
-\end{equation}
-The candidate cluster heads compete for the ownership of node $i$ and the candidate cluster head with larger similarity value compared to other potential cluster heads is more likely to own node $i$. For $i = k$, 
-$$r(i,i) = s(i,i) - \max_{k\text{s.t.}k\neq i}\{a(i,k) + s(i,k)\}$$ is the self-responsibility for becoming a cluster head and $s(i,i)$ is the prior preference for being a cluster head. A negative self-responsibility means the node is better working as a cluster member instead of a cluster head. If $s(i,i)$ is large, BSS $i$ will tend to start its own cluster and the density of cluster heads will increase; otherwise, the clustering algorithm will produce fewer cluster heads and larger clusters.
-
-The availabilities are computed at the candidate cluster heads by adding self-responsibility and the positive responsibilities they receive from other nodes: 
-\begin{equation}\label{eq:a_update1}
-a(i,k) = \min \Big\{0, r(k,k) + \sum_{i'\text{s.t.}i'\neq i,k}\max \{0, r(i',k) \}\Big\}
-\end{equation}
-\begin{equation}\label{eq:a_update2}
-a(k,k) =\sum_{i'\text{s.t.}i'\neq k}\max \{0, r(i',k) \}
-\end{equation}
-A candidate cluster head with stronger support from other nodes and high self-responsibility is more likely to become a cluster head and the availability is high. 
-
-At any stage, the messages can be combined to decide the cluster heads. The nodes which have positive sum of self-availability and self-responsibility will be elected as cluster heads, i.e., 
-$CH = \{k|a(k,k) + r(k,k)>0\}$. Other nodes select the cluster head which maximize the sum of availability and responsibility:
-$$ch(i) = \argmax_{k\in CH}\{a(i,k)+r(i,k)\}, \forall i\notin CH.$$
-However, there is no guarantee of convergence for AP clustering. To avoid numerical oscillations and reach convergence, the messages need to be damped when updated, e.g., $m(t+1) = (1-\lambda)m(t) + \lambda m$. 
-
-AP-based clustering algorithms have been proposed to produce stable clusters \cite{apvanet} or reduce signaling overhead\cite{apd2d}. In our case, we want cluster members to have stable connections to cluster heads and reduce inter-cluster interference. The stability of channels is inferred by tracking the channel quality over time. To get stable channels between users, a good `similarity' metric would be the `stability' of channel and we use the average channel strength to measure stability,
-$$Stability(i,j)=Pr(|H_{i,j}|^2>\gamma),$$ 
-where $H_{i,j}$ is the record of estimations of channel gain from PCP $j$ to PCP $i$ in previous frames. To mitigate inter-cluster interference and facilitate the exchange of messages within cluster, cluster members should share similar strong interferers with the cluster head so that inter-cluster interference can be effectively reduced by making neighbor clusters work on different channels. We devise a metric to measure the similarity in strong interfering neighbors, \emph{Common Neighbor Stability} (CNS). CNS between two BSSs is defined as the sum of minimum of the two BSSs' stability to their common interfering neighbors, i.e.,
-\begin{equation}\label{eq:CNS}
-CNS(i,j) = \sum_{k\in N_i}{\min(Stability(i,k), Stability(j,k))}.
-\end{equation}
-$N_i$ is the set of most stable strong interferers of BSS $i$, $|N_i| = M$. BSS $i$ broadcasts $N_i$ and corresponding $Stability(i,:)$ in its beacons or clustering messages periodically and BSSs hearing the beacons update their CNS to BSS $i$. CNS is computed locally at each BSS and the set $N$ varies for different BSSs thus CNS can be asymmetric, i.e., $CNS(i,j)\neq CNS(j,i)$.
-$Stability(i,i) = 1$ by default. We use CNS as the similarity metric for AP clustering to elect the exemplars and when a BSS decides to join a cluster, it selects the cluster head which has best stability and CNS, i.e.,
-$$CH(i) = \argmax_k \{Stability(i,k)\cdot CNS(i,k)\}.$$
-
-Running AP clustering for a network consisting of $N$ BSSs has a signaling complexity of $O(N^2)$. However, the actual signaling cost can be reduced to $O(N)$. Only positive responsibilities are needed thus a node only need to broadcast positive responsibilities in its beacons. For availabilities, node $k$ just need to broadcast $a(:,k) = r(k,k)+\sum_{i'\text{s.t.}i'\neq k}\max \{0, r(i',k) \}$ to other nodes, and node $i$ can update $a(i,k)$ as $a(i, k) = \min(0,a(:,k) - \max(0, r(i,j)))$. Furthermore, we do not need to assign non-overlapping slots for signaling: if two BSSs can hear each other, they will reserve slots for the beacon transmission of each other; if two BSSs do not have a good connection, then they are not likely to become the cluster head of the other BSS and the message exchange is not necessary. Applying AP clustering only requires each BSS to broadcast limited messages in their beacons thus the signaling over head is limited. 
-
-After clustering the BSSs, the S-PCPs can perform the following channel selection algorithm to reduce inter-cluster interference. The S-PCP estimates the channels to PCPs outside the cluster periodically. If the inter-cluster interference is high, the S-PCP may switch to another channel with certain probability. The S-PCP then estimates the interference environment on the new channel for some slots and decide to stay on the new channel or switch back to the original channel based on measurements. If the network is stable, such channel selection method can assign neighboring clusters to different channels and reduce inter-cluster interference.
-
-In Fig. \ref{fig:clustering:ap}, we show the 
-
+The simulation results show that if the network is stable and makes local movements and we cluster the users according to the cluster principles we propose, the clusters will consist of BSSs in close proximity with the cluster head located at the center of the cluster. Channel selection would form protection region around the cluster with neighboring clusters mostly working on different channels.
 
 \section{Analysis of Clustering}\label{section:clusteranalysis}
+In this section, we use propose a simple analytical model to evaluate the performance of clustering and channel selection for different scenarios.
 
+\subsection{Model of Clustering and Channel Selection}
+We consider the performance of BSSs in a typical cluster. Users are located on a 2-D plane following a HPPP with density $\lambda$. The cluster size is $K$ and there are $M$ channels. The cluster head of the typical cluster is located at the origin, with $K-1$ cluster members randomly distributed in the disc centered at the origin. The radius of the disc, $R_{\mathrm{cluster}}$, satisfies that 
+\begin{align*}
+\lambda\pi (R_{\mathrm{cluster}}^2 - r_{\min}^2) = K - 1,\\
+R_{\mathrm{cluster}} = \sqrt{\frac{K - 1}{\lambda\pi}+r_{\min}^2}.
+\end{align*}
+Channel selection makes neighboring clusters work on different channels and forms an inter-cluster interference protection region around the cluster with radius, 
+\begin{equation*}
+R_{\mathrm{protect}} = \sqrt{\frac{M\cdot K - 1}{\lambda \pi} + r_{\min}^2}.
+\end{equation*}
+All other users working on the same channel, i.e., the inter-cluster interferers, are distributed outside of the protection region following a HPPP with density $\frac{\lambda}{M}$.
 
+We only consider the LOS channel between PCPs in our analysis. The channel between any pair of PCPs are independent and the state of the channel is determined by the length of the channel, i.e. at any time $t$, a channel of length $d<r_{\max}$ is LOS channel with probability $\mathrm{P_{LOS}}(d)$. 
+
+In each BSS, there are three types of transmissions with different directionality and transmit power as follows,
+\begin{itemize}
+	\item Beacon: omni-directional, high power
+	\item Primary: directional, high power
+	\item Secondary: omni-directional, Low power
+\end{itemize}
+For each type of traffic, the directions of transmissions, i.e., from PCP to other devices or from other devices to PCP, affects the performance of the system.
+
+The antenna gain of directional antennas is modeled using a sector antenna model, see Fig. \ref{fig:clusteringanalysis:antenna}. The width of the main lobe is $\theta_t$ and $\theta_r$, for transmit antenna and receive antenna respectively. The antenna gain in the main lobe is $M_t$ and $M_r$ and the gain out side the main lobe is $m_t$ and $m_r$.
+
+The transceiver of one link point their beams to each other while other transmitters points their beams to a random direction uniformly distributed in $[0, 2\pi]$. The power receiver $i$ receives from transmitter $j$ is given as follows, 
+\begin{equation*}
+P_r(j,i) = P_t(j)\cdot G_t(j,i) \cdot G_r(i,j) \cdot PL(i,j).
+\end{equation*} 
+where $P_t$ is the transmit power of $j$, 
+\begin{equation*}
+G_t(j,i) = 
+\begin{cases}
+M_t(j), & w.p. ~ \theta_t(j)/2\pi \\
+m_t(j), & w.p. ~ 1-\theta_t(j)/2\pi
+\end{cases},
+\end{equation*}
+\begin{equation*}
+G_r(i,j) = 
+\begin{cases}
+M_r(i), & w.p. ~ \theta_r(i)/2\pi \\
+m_r(i), & w.p. ~ 1-\theta_r(i)/2\pi
+\end{cases},
+\end{equation*}
+\begin{equation*}
+PL(i,j) = 
+\begin{cases}
+\big(\frac{4\pi d(i,j) freq}{c}\big)^2, & w.p. ~ \mathrm{P_{LOS}}(d(i,j))\\
+0, & w.p. ~ 1-\mathrm{P_{LOS}}(d(i,j))
+\end{cases}.
+\end{equation*}
+The transmission is successful if there is no other transmitters such that the power received at the receiver exceeds some threshold, i.e., $P_r(i,j)< P_{\mathrm{threshold}}, ~ \forall j$. $P_{\mathrm{threshold}}$ depends on the type of traffic. 
+
+Notice that the transmit power, beam width and beam gain are related to the transmission type of $j$, which is influenced by the scheduling, clustering, as well as the traffic patterns of users.
+
+After describing the channel model, we now introduce the model for MAC. Denote $T_{\mathrm{frame}}$ as the length of frame and $T_{\mathrm{beacon}}$ as the length of one Beacon SP. The cluster head reserves exact $K$ Beacon SPs thus $K\cdot T_{\mathrm{beacon}}$ is reserved for beacon transmission in each frame and $T_{\mathrm{data}} = T_{\mathrm{frame}} - K\cdot T_{\mathrm{beacon}}$ is used for data transmission. The proportion of data reserved for data transmission is given by
+\begin{equation*}
+p_{\mathrm{data}} = \frac{T_{\mathrm{data}}}{T_{\mathrm{frame}}}.
+\end{equation*}
+In each Beacon SP, the PCP of exactly one BSS of the cluster will transmit its beacon and the other devices will receive the beacon using omni-directional mode. 
+
+We consider two types of scheduling method within the cluster, TDMA and ideal resource reuse (IRR). In TDMA scheduling, the fraction of that a BSS can access the channel in a frame is given by, 
+\begin{equation*}
+p_{\mathrm{access}}^{\mathrm{TDMA}} = p_{\mathrm{data}}/K.
+\end{equation*}
+In IRR, we assume there is ideal resources sharing mechanism among the BSSs in the cluster, i.e., independent set scheduling [ref required]. Let $N_{\mathrm{intra-cluster}}$ be the number of other BSSs in the same cluster that interferes with the data transmission of BSS, then the probability that the BSS can access the channel can be approximated by, 
+\begin{equation*}
+p_{\mathrm{access}}^{\mathrm{IRR}} = p_{\mathrm{data}}/\E[N_{\mathrm{intra-cluster}}].
+\end{equation*} 
+\% proportion of different types of traffic \\
+\% $E[N_{intra-cluster}]$
+
+A BSS's transmission is successful if there is no strong interference from inter-cluster interference. Denote $N_{\mathrm{inter-cluster}}$ as the number of BSSs outside the the cluster. The probability of successful transmission is approximated as follows, 
+\begin{equation*}
+p_{\mathrm{success}} = e^{-\E[N_{\mathrm{inter-cluster}}]}.
+\end{equation*} 
+
+Based on the above analysis, we can evaluate the throughput of a BSS using the average successful transmission time (STT) of the user,
+\begin{equation*}
+STT = p_{\mathrm{data}}\times p_{\mathrm{access}} \times p_{\mathrm{success}}.
+\end{equation*}
+
+\subsection{Numerical Results and Discussion}
+In this section, we compute $STT$ for different scenarios and characterize the optimal cluster size. 
+Some common parameters are listed in Table \ref{tab:clusteranalysis:parameter}.
+
+\begin{table}
+	\centering
+	\caption{The parameters used for numerical analysis}
+	\begin{tabular}{cc}
+		\hline
+		Parameter & Value \\
+		\hline
+		M & 4 \\
+		$\lambda$ & 1 $\mathrm{user/m^2}$ \\	
+		\hline
+	\end{tabular}
+	\label{tab:clusteranalysis:parameter}	
+\end{table}
 
 \section{Conclusion}\label{section:conclusion}
 
