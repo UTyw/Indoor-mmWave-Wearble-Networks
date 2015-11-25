@@ -51,6 +51,8 @@
 \citation{stochasticgeometry}
 \citation{stochasticgeometry}
 \citation{stochasticgeometry}
+\citation{stochasticapp}
+\citation{stochasticapp}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-D}}Influence of Mobile Blockers on Static Wearable Networks}{6}}
 \newlabel{subsection:largemobility}{{\unhbox \voidb@x \hbox {II-D}}{6}}
 \newlabel{theorem:boolean_stationary}{{5}{6}}
@@ -63,12 +65,12 @@
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{6}}
 \newlabel{fig:boolean}{{3}{6}}
 \newlabel{theorem:boolean_mean}{{6}{6}}
-\newlabel{eq:boolean_mean}{{13}{6}}
+\newlabel{eq:interference:boolean_mean}{{12}{6}}
 \citation{busyperiod_heavytraffic}
 \citation{busyperiod_heavytraffic}
 \citation{busyperiod_heavytraffic}
 \citation{busyperiod_exponential}
-\citation{matern}
+\newlabel{eq:boolean_mean}{{13}{7}}
 \newlabel{eq:P_LOS}{{14}{7}}
 \newlabel{theorem:poisson_arrival}{{7}{7}}
 \newlabel{eq:lambda_queue}{{15}{7}}
@@ -79,6 +81,7 @@
 \newlabel{eq:busyperiod_condition}{{18}{7}}
 \newlabel{theorem:T_NLOS_exp}{{8}{7}}
 \newlabel{condition:T_NLOS_exp}{{19}{7}}
+\citation{matern}
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces $\mathrm  {E}[N_{\mathrm  {SI}}]$ for different user densities. Whether user at $x'$ blocks the channel is decided by $h_x(x',\theta ')$ and $h_{\mathrm  {NLOS}}$.}}{8}}
 \newlabel{fig:Channel_en_si}{{4}{8}}
 \@writefile{toc}{\contentsline {section}{\numberline {III}Numberical Results for Interference Environment and Implications on MAC design}{8}}
@@ -112,7 +115,26 @@
 \citation{timevaryingpathshadowing}
 \@writefile{toc}{\contentsline {section}{\numberline {V}Analysis of Clustering}{11}}
 \newlabel{section:clusteranalysis}{{V}{11}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {V-A}}Model of Clustering and Channel Selection}{11}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {V-A}}System Model for cluster analysis}{11}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Model of a typical cluster using clustering and channel selection. Red circles represent users working on the same channel.}}{12}}
+\newlabel{fig:clusteranalysis:model}{{12}{12}}
+\@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces The parameters used for numerical analysis}}{12}}
+\newlabel{tab:clusteranalysis:parameter}{{I}{12}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {V-B}}Numerical Results and Discussion}{12}}
+\newlabel{subfig:basic_stt}{{13a}{13}}
+\newlabel{sub@subfig:basic_stt}{{(a)}{a}}
+\newlabel{subfig:basic_psuccess}{{13b}{13}}
+\newlabel{sub@subfig:basic_psuccess}{{(b)}{b}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces }}{13}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Successful transmission time (STT)}}}{13}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Probability of successful transmission}}}{13}}
+\newlabel{fig:clusteranalysis:basic}{{13}{13}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces STT for antennas with different directionality.}}{13}}
+\newlabel{fig:clusteranalysis:directionality}{{14}{13}}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces STT for different tranffic patterns $\rho _{\mathrm  {primary}}$.}}{13}}
+\newlabel{fig:clusteranalysis:primary_ratio}{{15}{13}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Cluster size that maximizes STT for different user densities.}}{13}}
+\newlabel{fig:clustereanalysis:optimal_cluster_size}{{16}{13}}
 \bibcite{wearable}{1}
 \bibcite{80211ad}{2}
 \bibcite{802153c}{3}
@@ -131,17 +153,17 @@
 \bibcite{mdmac}{16}
 \bibcite{reflection}{17}
 \bibcite{stochasticgeometry}{18}
-\bibcite{busyperiod_heavytraffic}{19}
-\bibcite{busyperiod_exponential}{20}
-\bibcite{matern}{21}
-\bibcite{poisson}{22}
-\bibcite{backoff}{23}
-\bibcite{apcluster}{24}
-\@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces The parameters used for numerical analysis}}{12}}
-\newlabel{tab:clusteranalysis:parameter}{{I}{12}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {V-B}}Numerical Results and Discussion}{12}}
-\@writefile{toc}{\contentsline {section}{\numberline {VI}Conclusion}{12}}
-\newlabel{section:conclusion}{{VI}{12}}
-\@writefile{toc}{\contentsline {section}{References}{12}}
-\bibcite{apvanet}{25}
-\bibcite{apd2d}{26}
+\bibcite{stochasticapp}{19}
+\bibcite{busyperiod_heavytraffic}{20}
+\bibcite{busyperiod_exponential}{21}
+\bibcite{matern}{22}
+\bibcite{poisson}{23}
+\bibcite{backoff}{24}
+\bibcite{apcluster}{25}
+\bibcite{apvanet}{26}
+\bibcite{apd2d}{27}
+\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces Sum STT in different user densities for different MAC protocols, optimal Aloha, Cluster + TDMA and Cluster + IRR.}}{14}}
+\newlabel{fig:clusteranalysis:compare_mac}{{17}{14}}
+\@writefile{toc}{\contentsline {section}{\numberline {VI}Conclusion}{14}}
+\newlabel{section:conclusion}{{VI}{14}}
+\@writefile{toc}{\contentsline {section}{References}{14}}

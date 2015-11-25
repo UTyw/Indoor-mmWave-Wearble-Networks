@@ -1,4 +1,4 @@
- \documentclass[10pt, conference, letterpaper]{IEEEtran}
+\documentclass[10pt, conference, letterpaper]{IEEEtran}
 
 \ifCLASSINFOpdf
 	\usepackage[pdftex]{graphicx}
@@ -27,6 +27,10 @@
 \DeclareMathOperator*{\E}{\mathrm{E}}
 \DeclareMathOperator*{\LOS}{\mathrm{LOS}}
 \DeclareMathOperator*{\NLOS}{\mathrm{NLOS}}
+%\newcommand*\conj[1]{\bar{#1}}
+%\newcommand*\mean[1]{\bar{#1}}
+\newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
+
 
 \begin{document}
 \title{Indoor mmWave Wearable Networks: Analysis of Interference and Clustering Principles}
@@ -62,7 +66,7 @@ Clearly to be viable, such networks will need to be able to operate in a range o
 
 % 2. Modeling and analysis of interference
 \emph{Related Work}
-Two major factors influencing the interference environment in dense wearable networks are human blockage and user movements. The human body introduces a path loss of over 20dB \cite{humanshadowing} thus variations in channel gain can be large. The authors in \cite{urbanblockage} analyze blockage effects in urban areas and model penetration loss of the paths using stochastic geometry. The work in \cite{interferencefinitesized} studies human shadowing effects in finite-sized areas when users' locations are fixed. The authors use different path loss exponents and fading models to model the line-of-sight (LOS) and non-line-of-sight (NLOS) channels and approximately compute the signal-to-interference-ratio (SINR) distribution. Subsequently the authors in \cite{enclosedmmwave} model the SINR in random networks in an enclosed environment and incorporate the first order reflections off the walls, the ceiling and the floor. The analysis of the interference in the mmWave band has mainly focused on the distribution of SINR where users are assumed to be uncoordinated, i.e.,users  either all transmit or use simple MAC protocols like Aloha, where they transmit with a given probability. 
+Two major factors influencing the interference environment in dense wearable networks are human blockage and user movements. The human body introduces a path loss (PL) of over 20dB \cite{humanshadowing} thus variations in channel gain can be large. The authors in \cite{urbanblockage} analyze blockage effects in urban areas and model penetration loss of the paths using stochastic geometry. The work in \cite{interferencefinitesized} studies human shadowing effects in finite-sized areas when users' locations are fixed. The authors use different path loss exponents and fading models to model the line-of-sight (LOS) and non-line-of-sight (NLOS) channels and approximately compute the signal-to-interference-ratio (SINR) distribution. Subsequently the authors in \cite{enclosedmmwave} model the SINR in random networks in an enclosed environment and incorporate the first order reflections off the walls, the ceiling and the floor. The analysis of the interference in the mmWave band has mainly focused on the distribution of SINR where users are assumed to be uncoordinated, i.e.,users  either all transmit or use simple MAC protocols like Aloha, where they transmit with a given probability. 
 
 Another important feature of dense wearable networks is that channels are sensitive to user movements, including small local movements like turning torso or swinging and large scale movements, e.g., people walking around. Existing work on the user mobility includes \cite{humanactivity}\cite{blockagein60ghz}\cite{timevaryingpathshadowing}, which study the influence of human mobility on the radio channel between fixed transmitter and receiver. The authors of \cite{humanactivity}\cite{timevaryingpathshadowing} present measurements of the impact of human mobility on channel variations. The work in \cite{timevaryingpathshadowing} further computes the probability that a channel is blocked by users and model the state of channel using a two-state Markov model. 
 Authors of \cite{blockagein60ghz} use simulations to get the radio propagation characteristics in the presence of static and moving obstacles and show that directional LOS wave links experience relatively high outage. These works provide valuable measurements and insights on the influence of moving human blockage, but they do not provide tractable analysis of user movements to quantify the influence of user mobility.
@@ -341,13 +345,18 @@ For the boolean model, $|N_{\mathrm{B}}^{[t, t + \Delta t]}|$ is a Poisson rando
 $A_0^{\theta_i}$ is bilateral symmetric, $\theta_i\sim\unif(0, 2\pi)$ and $s_i$ is independent from $\theta_i$, thus $\tilde{\Phi}_{\Xi}^{[t, t+\Delta t]}$ is isotropic. For isotropic $\Xi_i^{[t, t+\Delta t]}$ and $\Phi^t$ following HPPP with density $\lambda$, we have the following theorem for $\mathrm{E}[\nu_2(\check{x}\oplus\Xi_i^{[t, t+\Delta t]})]$.
 
 \begin{theorem}\label{theorem:boolean_mean}
-$K$ is a closed convex set and $\Xi_0$ is convex and isotropic. In two dimensional case, $\mathrm{E}[\nu_2(\check{K}\oplus \Xi_0)]$ is given as follows,
-\begin{equation}
+$K$ is a closed convex set and $\Xi_0$ is convex and isotropic. In two dimensional case, the average number of germs intersects  with $K$ is $\lambda\mathrm{E}[\nu_2(\check{K}\oplus \Xi_0)]$, where 
+\begin{equation}\label{eq:interference:boolean_mean}
 \mathrm{E}[\nu_2(\check{K}\oplus \Xi_0)] = \nu_2(K) + \mathrm{E}[\nu_2(\Xi_0)] + \frac{1}{2\pi}\nu_1(K)\mathrm{E}[\nu_1(\partial \Xi_0)],
 \end{equation}
-where $\nu_1$ is the one-dimensional measure and $\partial \Xi_0$ is the boundary of $\Xi_0$.
+$\nu_1$ is the one-dimensional measure and $\partial \Xi_0$ is the boundary of $\Xi_0$.
 \end{theorem}
-Theorem \ref{theorem:boolean_mean} is the 2-D case of the general result on the average number of grains hitting a convex set \cite{}. The proof involves integral geometry and generalized Steiner formula.
+Theorem \ref{theorem:boolean_mean} is the two-dimensional capacity functional given by (3.31) in \cite{stochasticapp}, where (\ref{eq:interference:boolean_mean}) is the planar case of the generalized Seiner formula (6.29) in \cite{stochasticapp},  
+\begin{equation*}
+\E\big[\nu_d(\Xi\oplus K)\big] = \frac{1}{b_d}\sum\limits_{k=0}^{d}\frac{b_k b_{d-k}}{{d \choose k}}\overbar{V}_k(\Xi) V_{d-k}(K).
+\end{equation*}
+% b_d is the measure of unit ball in R^d
+$d$ is the dimension, $b_k$ is the measure of unit ball in dimension $k$, $V_k$ is the intrinsic volume in dimension $k$ and $\overbar{V}_k(\Xi) = \E[V_k(\Xi)]$ is mean intrinsic volume of $\Xi$ in dimension $k$. 
 
 By Theorem \ref{theorem:boolean_mean} and making $K = x$, we can compute $\E[\nu_2(\check{x}\oplus\Xi_0^{[t, t+\Delta t]})]$ as follows,
 \begin{equation}\label{eq:boolean_mean}
@@ -528,7 +537,7 @@ Fig. \ref{fig:clustering:tdma} illustrates the distributed clustering in 802.11 
 
 The directional antennas in mmWave allow concurrent transmissions and directional MAC protocols (reference required) has been proposed to solve the deafness problem and achieve higher resource reuse. In wearable networks, different devices may have heterogeneous QoS requirements and the number of interferers can be large. To better guarantee the QoS requirements of different BSSs and different devices, we propose a hierarchical MAC for wearable networks with clustering.
 
-In wearble networks, most transmissions within the BSS are between the PCP and non-PCP devices. We denote high-end transmissions as the transmission between the PCP and the wearable devices with (highly) directional antennas and high QoS requirements, e.g., augmented reality devices. Low-end transmissions are between the PCP and the wearable devices with semi/omni-directional antennas with low QoS requirements like fitness trackers. 
+In wearble networks, most transmissions within the PBSS are between the PCP and non-PCP devices. We denote high-end transmissions as the transmission between the PCP and the wearable devices with (highly) directional antennas and high QoS requirements, e.g., augmented reality devices. Low-end transmissions are between the PCP and the wearable devices with semi/omni-directional antennas with low QoS requirements like fitness trackers. 
 
 \begin{figure}
 	\centering
@@ -537,9 +546,9 @@ In wearble networks, most transmissions within the BSS are between the PCP and n
 	\label{fig:clustering:reuse}
 \end{figure}
 
-To guarantee basic channel access and QoS of high-end transmissions, each BSS is allocated with some reserved slots on which the BSS is the primary BSS and has higher transmission priority than other BSSs in the cluster, see Fig. \ref{fig:clustering:reuse}. The BSS schedules its high-end transmissions and (low-end transmissions if there is slots left) in its reserved slots. At the beginning of the its reserved slots, the BSS sends directional RTS/CTS while other BSSs listen to the RTS/CTS of BSS in the direction that otherwise the BSSs would use for transmission. After the primary user sends its RTS/CTS, other BSSs would try to reuse the channel according to their priorities either assigned by S-PCP or determined by sequence of the Beacon SPs. The BSS with the highest priority will send the RTS/CTS if it does not interfere with the primary BSS. The remaining BSSs listens to the RTS/CTS and try further reuse the channel according to their priorities. 
+To guarantee basic channel access and QoS of high-end transmissions, each PBSS is allocated with some reserved slots on which the PBSS is the primary PBSS and has higher transmission priority than other BSSs in the cluster, see Fig. \ref{fig:clustering:reuse}. The PBSS schedules its high-end transmissions and (low-end transmissions if there is slots left) in its reserved slots. At the beginning of the its reserved slots, the PBSS sends directional RTS/CTS while other BSSs listen to the RTS/CTS of PBSS in the direction that otherwise the BSSs would use for transmission. After the primary user sends its RTS/CTS, other BSSs would try to reuse the channel according to their priorities either assigned by S-PCP or determined by sequence of the Beacon SPs. The PBSS with the highest priority will send the RTS/CTS if it does not interfere with the primary PBSS. The remaining BSSs listens to the RTS/CTS and try further reuse the channel according to their priorities. 
 
-In our settings, the transmissions are within the BSSs and scheduled by the PCPs, thus there is no deafness problem. Also note that the transmissions of each BSS is scheduled and broadcast in the beacon sent in the BSS's Beacon SP, thus the BSSs know the transmissions scheduled in each slot and can use directional antenna to listen to the directional RTS/CTS. 
+In our settings, the transmissions are within the BSSs and scheduled by the PCPs, thus there is no deafness problem. Also note that the transmissions of each PBSS is scheduled and broadcast in the beacon sent in the PBSS's Beacon SP, thus the BSSs know the transmissions scheduled in each slot and can use directional antenna to listen to the directional RTS/CTS. 
 
 \subsection{Clustering for Wearable Network}\label{section:MAC:clustering}
 In this section, we discuss the principles of clustering and the factors influencing clustering in dense wearable networks.
@@ -552,14 +561,14 @@ Despite the basic principles of clustering, there are other factors influencing 
 
 The requirements of clustering are affected by the network scenario. If users move a lot, e.g., users getting off a subway train car or moving along the aisle, the channels changes fast and the basic requirements of clustering algorithm is to be fast in formation and maintenance. If users moves locally and are relatively stable, clusters can be optimized to form more stable clusters so that BSSs can better schedule their transmissions by learning their interference environment. The density of users may also influence the performance of clustering.
 
-Choosing the proper size of clusters is important in the design of clustering algorithm. Big clusters can reduce inter-cluster interference but a cluster would reserve more slots for beacon transmissions and the slots reserved for each BSS is limited. Furthermore, the connections between cluster members and cluster heads can be unstable in large clusters.
+Choosing the proper size of clusters is important in the design of clustering algorithm. Big clusters can reduce inter-cluster interference but a cluster would reserve more slots for beacon transmissions and the slots reserved for each PBSS is limited. Furthermore, the connections between cluster members and cluster heads can be unstable in large clusters.
 Small clusters provide enough resource for each cluster member and are easy to maintain but suffer from more inter-cluster interference.
 
 The heterogeneity of transmission capabilities and traffic patterns also affects clustering. How the directionality of antennas, the amount of traffic for high-end and low-end transmissions affects the clustering performance is not clear. 
 
 Other factors related to clustering includes the overhead of clustering algorithms, how to deal with user dynamics and the energy constraint of devices, etc.
 
-%Another question with wearable network clustering is what devices should participate in clustering. Devices of the same BSS are controlled by PCP and communicate with each other thus BSS is the basic unit in clustering. However, the interference environments of different devices can be completely different due to the short wave length and human body shadowing. Choosing the devices to participate in clustering requires the trade-off between the accuracy of channel estimation and the cost for measurement and signaling. 
+%Another question with wearable network clustering is what devices should participate in clustering. Devices of the same PBSS are controlled by PCP and communicate with each other thus PBSS is the basic unit in clustering. However, the interference environments of different devices can be completely different due to the short wave length and human body shadowing. Choosing the devices to participate in clustering requires the trade-off between the accuracy of channel estimation and the cost for measurement and signaling. 
 
 
 
@@ -588,35 +597,30 @@ The simulation results show that if the network is stable and makes local moveme
 \section{Analysis of Clustering}\label{section:clusteranalysis}
 In this section, we use propose a simple analytical model to evaluate the performance of clustering and channel selection for different scenarios.
 
-\subsection{Model of Clustering and Channel Selection}
-We consider the performance of BSSs in a typical cluster. Users are located on a 2-D plane following a HPPP with density $\lambda$. The cluster size is $K$ and there are $M$ channels. The cluster head of the typical cluster is located at the origin, with $K-1$ cluster members randomly distributed in the disc centered at the origin. The radius of the disc, $R_{\mathrm{cluster}}$, satisfies that 
-\begin{align*}
-\lambda\pi (R_{\mathrm{cluster}}^2 - r_{\min}^2) = K - 1,\\
-R_{\mathrm{cluster}} = \sqrt{\frac{K - 1}{\lambda\pi}+r_{\min}^2}.
-\end{align*}
-Channel selection makes neighboring clusters work on different channels and forms an inter-cluster interference protection region around the cluster with radius, 
-\begin{equation*}
-R_{\mathrm{protect}} = \sqrt{\frac{M\cdot K - 1}{\lambda \pi} + r_{\min}^2}.
-\end{equation*}
-All other users working on the same channel, i.e., the inter-cluster interferers, are distributed outside of the protection region following a HPPP with density $\frac{\lambda}{M}$.
-
-We only consider the LOS channel between PCPs in our analysis. The channel between any pair of PCPs are independent and the state of the channel is determined by the length of the channel, i.e. at any time $t$, a channel of length $d<r_{\max}$ is LOS channel with probability $\mathrm{P_{LOS}}(d)$. 
-
-In each BSS, there are three types of transmissions with different directionality and transmit power as follows,
-\begin{itemize}
-	\item Beacon: omni-directional, high power
-	\item Primary: directional, high power
-	\item Secondary: omni-directional, Low power
-\end{itemize}
-For each type of traffic, the directions of transmissions, i.e., from PCP to other devices or from other devices to PCP, affects the performance of the system.
-
-The antenna gain of directional antennas is modeled using a sector antenna model, see Fig. \ref{fig:clusteringanalysis:antenna}. The width of the main lobe is $\theta_t$ and $\theta_r$, for transmit antenna and receive antenna respectively. The antenna gain in the main lobe is $M_t$ and $M_r$ and the gain out side the main lobe is $m_t$ and $m_r$.
-
-The transceiver of one link point their beams to each other while other transmitters points their beams to a random direction uniformly distributed in $[0, 2\pi]$. The power receiver $i$ receives from transmitter $j$ is given as follows, 
+\subsection{System Model for cluster analysis}
+We consider the performance of BSSs in a typical cluster. Users are located on a 2-D plane following a HPPP with density $\lambda$. The cluster size is $K$ and there are $M$ channels. 
+The power receiver $i$ receives from transmitter $j$ is given as follows, 
 \begin{equation*}
 P_r(j,i) = P_t(j)\cdot G_t(j,i) \cdot G_r(i,j) \cdot PL(i,j).
 \end{equation*} 
-where $P_t$ is the transmit power of $j$, 
+where $P_t$ is the transmit power of $j$.
+
+We consider both the LOS channel and reflection over the ceiling in our analysis. If there is a LOS channel between two users, PL is approximated by the path loss of LOS channel, otherwise, PL is the PL of reflected channel. PL is 0 if both paths are blocked.
+The PL of a channel with length $d$ is as follow, 
+\begin{equation*}
+PL(d) = 
+\begin{cases}
+PL_{\LOS}(d), & w.p. ~ \mathrm{P_{LOS}}(d)\\
+PL_{\mathrm{reflection}}(d), & w.p. ~ \mathrm{P_{reflection}}(d) - \mathrm{P_{LOS}}(d) \\
+0, & w.p. ~ 1-\mathrm{P_{reflection}}(d)
+\end{cases},
+\end{equation*}
+where $PL_{\LOS}(d)$ and $PL_{\mathrm{reflection}}(d)$ are the path loss of LOS channel and reflected channel respectively, $\mathrm{P_{LOS}}(d)$ is the probability of having a LOS channel, $\mathrm{P_{reflection}}(d)$ is the probability of having a clear reflected channel. The detailed channel model follows our analysis in Section \ref{section:channel}. 
+
+The antenna gain of directional antennas is modeled using a sector antenna model.%, see Fig. \ref{fig:clusteringanalysis:antenna}. 
+The width of the main lobe is $\theta_t$ and $\theta_r$, for transmit antenna and receive antenna respectively. The antenna gain in the main lobe is $M_t$ and $M_r$ and the gain out side the main lobe is $m_t$ and $m_r$.
+
+The transceiver of one link point their beams to each other while other transmitters points their beams to a random direction uniformly distributed in $[0, 2\pi]$, thus the antenna gain is given as follows,
 \begin{equation*}
 G_t(j,i) = 
 \begin{cases}
@@ -631,47 +635,70 @@ M_r(i), & w.p. ~ \theta_r(i)/2\pi \\
 m_r(i), & w.p. ~ 1-\theta_r(i)/2\pi
 \end{cases},
 \end{equation*}
-\begin{equation*}
-PL(i,j) = 
-\begin{cases}
-\big(\frac{4\pi d(i,j) freq}{c}\big)^2, & w.p. ~ \mathrm{P_{LOS}}(d(i,j))\\
-0, & w.p. ~ 1-\mathrm{P_{LOS}}(d(i,j))
-\end{cases}.
-\end{equation*}
 The transmission is successful if there is no other transmitters such that the power received at the receiver exceeds some threshold, i.e., $P_r(i,j)< P_{\mathrm{threshold}}, ~ \forall j$. $P_{\mathrm{threshold}}$ depends on the type of traffic. 
 
-Notice that the transmit power, beam width and beam gain are related to the transmission type of $j$, which is influenced by the scheduling, clustering, as well as the traffic patterns of users.
+In each PBSS, there are three types of transmissions with different directionality and transmit power as follows,
+\begin{itemize}
+	\item Beacon: omni-directional, high power
+	\item Primary: directional, high power
+	\item Secondary: omni-directional, Low power
+\end{itemize}
+For each type of traffic, the directions of transmissions, i.e., from PCP to other devices or from other devices to PCP, affects the performance of the system. 
 
-After describing the channel model, we now introduce the model for MAC. Denote $T_{\mathrm{frame}}$ as the length of frame and $T_{\mathrm{beacon}}$ as the length of one Beacon SP. The cluster head reserves exact $K$ Beacon SPs thus $K\cdot T_{\mathrm{beacon}}$ is reserved for beacon transmission in each frame and $T_{\mathrm{data}} = T_{\mathrm{frame}} - K\cdot T_{\mathrm{beacon}}$ is used for data transmission. The proportion of data reserved for data transmission is given by
+Note that the transmit power, beam width and beam gain are related to the transmission type of $j$, which is influenced by the scheduling, clustering, as well as the traffic patterns of users.
+
+After describing the channel model, we now introduce the model for MAC. 
+The cluster head of the typical cluster is located at the origin, with $K-1$ cluster members randomly distributed in the disc centered at the origin, see Fig. \ref{fig:clusteranalysis:model}. The radius of the disc, $R_{\mathrm{cluster}}$, satisfies that 
+\begin{align*}
+\lambda\pi (R_{\mathrm{cluster}}^2 - r_{\min}^2) = K - 1,\\
+R_{\mathrm{cluster}} = \sqrt{\frac{K - 1}{\lambda\pi}+r_{\min}^2}.
+\end{align*}
+Channel selection makes neighboring clusters work on different channels and forms an inter-cluster interference protection region around the cluster with radius, 
+\begin{equation*}
+R_{\mathrm{protect}} = \sqrt{\frac{M\cdot K - 1}{\lambda \pi} + r_{\min}^2}.
+\end{equation*}
+All other users working on the same channel, i.e., the inter-cluster interferers, are distributed outside of the protection region following a HPPP with density $\frac{\lambda}{M}$.
+
+\begin{figure}
+	\centering
+	\includegraphics[width = 0.4\textwidth]{Clustering_model.pdf}
+	\caption{Model of a typical cluster using clustering and channel selection. Red circles represent users working on the same channel.}
+	\label{fig:clusteranalysis:model}
+\end{figure}
+
+Denote $T_{\mathrm{frame}}$ as the length of frame and $T_{\mathrm{beacon}}$ as the length of one Beacon SP. The cluster head reserves exact $K$ Beacon SPs thus $K\cdot T_{\mathrm{beacon}}$ is reserved for beacon transmission in each frame and $T_{\mathrm{data}} = T_{\mathrm{frame}} - K\cdot T_{\mathrm{beacon}}$ is used for data transmission. The proportion of data reserved for data transmission is given by
 \begin{equation*}
 p_{\mathrm{data}} = \frac{T_{\mathrm{data}}}{T_{\mathrm{frame}}}.
 \end{equation*}
-In each Beacon SP, the PCP of exactly one BSS of the cluster will transmit its beacon and the other devices will receive the beacon using omni-directional mode. 
+In each Beacon SP, the PCP of exactly one PBSS of the cluster will transmit its beacon and the other devices will receive the beacon using omni-directional mode. 
 
-We consider two types of scheduling method within the cluster, TDMA and ideal resource reuse (IRR). In TDMA scheduling, the fraction of that a BSS can access the channel in a frame is given by, 
+We assume that the system is full buffer and always schedule transmissions in their beacon period and will not change the scheduling before next beacon period. The PBSS does not support concurrent transmission thus there is at most one transmission in a PBSS. Each user will schedule primary transmissions in a proportion of $\rho_{\mathrm{primary}}\in[0,1]$ of slots for data transmission and schedule secondary transmissions in the rest $\rho_{\mathrm{secondary}} =1 - \rho_{\mathrm{primary}}$ proportion of the slots. 
+We consider two types of scheduling method within the cluster, TDMA and ideal resource reuse (IRR). In TDMA scheduling, the fraction of that a PBSS can access the channel in a frame is given by, 
 \begin{equation*}
 p_{\mathrm{access}}^{\mathrm{TDMA}} = p_{\mathrm{data}}/K.
 \end{equation*}
-In IRR, we assume there is ideal resources sharing mechanism among the BSSs in the cluster, i.e., independent set scheduling [ref required]. Let $N_{\mathrm{intra-cluster}}$ be the number of other BSSs in the same cluster that interferes with the data transmission of BSS, then the probability that the BSS can access the channel can be approximated by, 
+
+For IRR, we assume there is ideal resources sharing mechanism among the BSSs in the cluster, i.e., independent set scheduling [ref required]. Let $N_{\mathrm{intra-cluster}}$ be the number of other BSSs in the same cluster that interferes with the data transmission of PBSS at some slot for data transmission. $N_{\mathrm{intra-cluster}}$ is related to the type of transmission scheduled by the PBSS as well as the type of transmissions of other BSSs. The probability that the transmission of the PBSS can access the channel can be approximated by, 
 \begin{equation*}
 p_{\mathrm{access}}^{\mathrm{IRR}} = p_{\mathrm{data}}/\E[N_{\mathrm{intra-cluster}}].
 \end{equation*} 
-\% proportion of different types of traffic \\
-\% $E[N_{intra-cluster}]$
+% proportion of different types of traffic \\
+% $E[N_{intra-cluster}]$
 
-A BSS's transmission is successful if there is no strong interference from inter-cluster interference. Denote $N_{\mathrm{inter-cluster}}$ as the number of BSSs outside the the cluster. The probability of successful transmission is approximated as follows, 
+A PPBSS's transmission is successful if there is no strong interference from inter-cluster interference. Denote $N_{\mathrm{inter-cluster}}$ as the number of PBSSs outside the the cluster. The probability of successful transmission is approximated as follows, 
 \begin{equation*}
 p_{\mathrm{success}} = e^{-\E[N_{\mathrm{inter-cluster}}]}.
 \end{equation*} 
+The transmission patterns of users are influenced by intra-cluster interference thus differs for users at different relative locations within the cluster. We use the transmission pattern of a user $\sqrt{2}R_{\mathrm{cluster}}$ away from the cluster head as the typical transmission pattern for inter-cluster interferers to get the $\E[N_{\mathrm{inter-cluster}}]$.
 
-Based on the above analysis, we can evaluate the throughput of a BSS using the average successful transmission time (STT) of the user,
+Based on the above analysis, we can evaluate the throughput of a PBSS using the average successful transmission time (STT) of the user,
 \begin{equation*}
 STT = p_{\mathrm{data}}\times p_{\mathrm{access}} \times p_{\mathrm{success}}.
 \end{equation*}
 
 \subsection{Numerical Results and Discussion}
-In this section, we compute $STT$ for different scenarios and characterize the optimal cluster size. 
-Some common parameters are listed in Table \ref{tab:clusteranalysis:parameter}.
+In this section, we compute the $STT$ for different scenarios and characterize the optimal cluster size. 
+Parameters are listed in Table \ref{tab:clusteranalysis:parameter}.
 
 \begin{table}
 	\centering
@@ -681,11 +708,73 @@ Some common parameters are listed in Table \ref{tab:clusteranalysis:parameter}.
 		Parameter & Value \\
 		\hline
 		M & 4 \\
-		$\lambda$ & 1 $\mathrm{user/m^2}$ \\	
+		$h_{\mathrm{ceiling}}$ & 2.8 m \\
+		$\Gamma_{\mathrm{ceilin}}$ & 0.4654 \\
+		$\lambda$ & 1 $\mathrm{user/m^2}$ \\
+		$P_t^{\mathrm{high}}$ & 10 dBm \\
+		$P_t^{\mathrm{low}}$ & 7 dBm \\
+		$P_{\mathrm{threshold}}$ & -78 dBm \\
+		$\rho_{\mathrm{primary}}$ & 0.5 \\
+		$M_t$,$M_r$ ($\theta = 60\degree$) & 5 dB \\
+		$m_t$,$m_r$ ($\theta = 60\degree$) & -5 dB \\
+		$M_t$,$M_r$ ($\theta = 24\degree$) & 10 dB \\
+		$m_t$,$m_r$ ($\theta = 24\degree$) & -10 dB \\		
+		$T_{\mathrm{frame}}$ & 100 ms \\
+		$T_{\mathrm{beacon}}$ & 2 ms \\
 		\hline
 	\end{tabular}
 	\label{tab:clusteranalysis:parameter}	
 \end{table}
+% SINR not considered thus don't need noise figure ? 
+
+In Fig. \ref{fig:clusteranalysis:basic} we show how $STT$ and $p_{\mathrm{success}}$ change with cluster size for the use located at the center of the cluster.  $p_{\mathrm{success}}$ increases with $K$ while $p_{\mathrm{data}}$ and $p_{\mathrm{access}}$ decreases. $STT$ first increases with $K$, then saturates and decreases, indicating that large clusters may not provide good inter-cluster mitigation but increases the contention between users within the same cluster and signaling overhead. The STT of primary transmissions is maximized when cluster size is small while the STT of secondary transmissions is maximized when cluster is larger, showing that secondary transmissions benefit more from large clusters.  
+
+\begin{figure}[htp]
+	\centering
+	\subfloat[Successful transmission time (STT)]{\label{subfig:basic_stt} 									\includegraphics[width=0.4\textwidth]{Cluster_analysis_basic_stt.pdf} }
+	
+	\subfloat[Probability of successful transmission]{\label{subfig:basic_psuccess} \includegraphics[width=0.4\textwidth]{Cluster_analysis_basic_psuccess.pdf}}
+	
+	\caption[]{STT for data transmission \subref{subfig:basic_stt} and $p_{\mathrm{success}}$ \subref{subfig:basic_psuccess} for different cluster sizes. $\theta=60\degree$, $\rho_{\mathrm{primary}} = 0.5$. }
+	\label{fig:clusteranalysis:basic}
+\end{figure}
+
+In Fig. \ref{fig:clusteranalysis:directionality} we compares STT when the antennas for primary transmissions have different directionality. Results show that when antennas are highly directional, the optimal cluster size is smaller. The results suggest that highly directional devices are less dependent on clustering to mitigate interference, thus users with highly directional devices may favor small clusters or not joining clusters. 
+\begin{figure}
+	\centering
+	\includegraphics[width = 0.4\textwidth]{Cluster_analysis_directionality.pdf}
+	\caption{STT for antennas with different directionality.}
+	\label{fig:clusteranalysis:directionality}
+\end{figure}
+
+In Fig. \ref{fig:clusteranalysis:primary_ratio} we present the STT when users have different proportions of primary transmissions. Secondary transmissions, e.g., traffic from multiple active small wearable devices, requires larger clusters to reduce uncoordinated interference. 
+
+\begin{figure}
+	\centering
+	\includegraphics[width = 0.4\textwidth]{Cluster_analysis_primary_ratio.pdf}
+	\caption{STT for different tranffic patterns $\rho_{\mathrm{primary}}$.}
+	\label{fig:clusteranalysis:primary_ratio}
+\end{figure}
+
+In Fig. \ref{fig:clustereanalysis:optimal_cluster_size} we show how the optimal cluster size that maximizes STT changes with user densities. When user density is high, the optimal cluster size does not change very much, indicating that optimal cluster size is pretty robust to user densities. However, as we have discussed, the directionality and proportion of different types of traffic influence the optimal cluster size. 
+
+\begin{figure}
+	\centering
+	\includegraphics[width = 0.4\textwidth]{Cluster_analysis_optimal_cluster_size.pdf}
+	\caption{Cluster size that maximizes STT for different user densities.}
+	\label{fig:clustereanalysis:optimal_cluster_size}
+\end{figure}
+
+In Fig. \ref{fig:clusteranalysis:compare_mac} we compare the maximal total STT for different MAC protocols for different user densities. At each user density, the cluster size is chosen as the one that maximizes the total STT. For Aloha, users select channel randomly and the access probability is optimized to maximize total STT. Our first observation is that clustering and reuse provide moderate gain in STT, partly due to beacon overheads, but improves the probability of successful transmission. Our second observation is that the total STT first decreases with user density then starts to increase with density. Such a result is in line with our analysis of the interference environment that in very dense networks, close neighbors blocks the interference from distant interferers thus the interference in dense environment may not be the worst case. Our observation comes from the MAC perspective, and in fact sum interference will keep increasing with user density, although the increasing speed is smaller at high user densities. 
+
+\begin{figure}
+	\centering
+	\includegraphics[width = 0.4\textwidth]{Cluster_analysis_compare_mac.pdf}
+	\caption{Sum STT in different user densities for different MAC protocols, optimal Aloha, Cluster + TDMA and Cluster + IRR.}
+	\label{fig:clusteranalysis:compare_mac}
+\end{figure}
+
+\%Conclusion
 
 \section{Conclusion}\label{section:conclusion}
 
@@ -751,6 +840,9 @@ K. Sato \emph{et al.}, ``Measurements of Reflection and Transmission Characteris
 
 \bibitem{stochasticgeometry}
 F. Baccelli and B. Blaszczyszyn, ``Stochastic geometry and wireless networks, volume \Rom{1} - theory,'' \emph{Foundations and Trends in Networking}, vol. 3, no. 3-4, pp. 249-449, 2009.
+
+\bibitem{stochasticapp}
+S.N. Chiu, D. Stoyan, W.S. Kendall and J. Mecke, \emph{Stochastic Geometry and its Applications} (3rd ed). Hoboken: Wiley, 2013. 
 
 \bibitem{busyperiod_heavytraffic}
 P. Hall, ``Heavy Traffic Approximations for Busy Period in an M/G/$\infty$ Queue,'' \emph{Stochastic Processes and their Applications}, vol. 19, no. 2, pp. 259-269, 1985.
