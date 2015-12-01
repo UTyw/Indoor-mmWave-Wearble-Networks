@@ -14,12 +14,19 @@
 \usepackage{amsthm}
 \usepackage{amsfonts}
 \newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
 %\usepackage[normlem]{ulem}
 %\usepackage{algoithm}
 %\usepackage{algpseudocode}
 
 \DeclareMathOperator*{\argmax}{arg\,max}
-
+\DeclareMathOperator*{\unif}{unif}
+\DeclareMathOperator*{\E}{\mathrm{E}}
+\DeclareMathOperator*{\LOS}{\mathrm{LOS}}
+\DeclareMathOperator*{\NLOS}{\mathrm{NLOS}}
+%\newcommand*\conj[1]{\bar{#1}}
+%\newcommand*\mean[1]{\bar{#1}}
+\newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
 
 \begin{document}
 \title{Indoor mmWave Wearable Networks: Challenges to MAC Design}
@@ -93,6 +100,69 @@ Heterogeneous requirements, transmission capability and volume of different type
 \subsection{Factors affecting the optimal cluster size}
 
 \newpage
+\section{Introduction: detailed contribution}
+
+\section{Channel Analysis}
+The following is the proof of generalized Steiner formula in Stochastic geometry and its applications, 3rd ed.
+\begin{lemma}\label{lemma:steiner}
+	If the intrinsic volumes of $\Xi$, $V_k(\Xi)$, have finite first moments,
+	\begin{equation*}
+	\overbar{V}_k(\Xi) = \E[V_k(\Xi)]<\infty,
+	\end{equation*}
+	for $k=0,1,\ldots, d$, then Steiner formula is satisfied for $\Xi$ almost surely. For $r\geq 0$, 
+	\begin{equation}
+	\E[\nu_d(\Xi \oplus b(0,r))] = \sum\limits_{k=0}^{d}b_{d-k}\overbar{V}_k(\Xi)r^{d-k}.
+	\end{equation}
+\end{lemma}
+\begin{lemma}\label{lemma:characterization}
+	(Hadwiger's Characterization Theorem) Every non-negative, motion-invariant, monotone, C-additive convex body function $h$ can be written in the form, 
+	\begin{equation}\label{characterization}
+	h(K) = \sum\limits_{k=0}^{d}a_kV_k(K),
+	\end{equation}
+	where $a_k$ are non-negative constants depending on $h$.
+\end{lemma}
+\begin{theorem}
+	For convex and isotropic $\Xi$, $\Xi$ has a distribution invariant w.r.t. rotations about the origin $0$, the generalized Steiner formula holds for every compact convex set $K$. 
+	\begin{equation}
+	\E\big[\nu_d(\Xi\oplus K)\big] = \frac{1}{b_d}\sum\limits_{k=0}^{d}\frac{b_k b_{d-k}}{{d \choose k}}\overbar{V}_k(\Xi) V_{d-k}(K).
+	\end{equation}
+\end{theorem}
+\begin{proof}
+	$\Xi$ is convex and isotropic, thus $h(K)$ satisfies Lemma \ref{lemma:characterization}. Let $h(K) = \E[\nu_d(\Xi \oplus K)]$ then by (\ref{characterization}) we have, 
+	\begin{equation}\label{characterization:steiner}
+	\E[\nu_d(\Xi\oplus K)] = \sum\limits_{k=0}^{d}a_kV_k(K),
+	\end{equation}
+	where $a_k$ are constants related to $k$ and $\Xi$ and hold for all $K$. 
+	 
+	Let $K=b(0, r)$, then 
+	\begin{equation}\label{characterization:ball}
+	\begin{aligned}
+	\E[\nu_d(\Xi\oplus b(0,r))] &= \sum\limits_{k=0}^{d}a_kV_k(b(0,r))\\
+	& = \sum\limits_{k=0}^{d} a_k{d \choose k}\frac{b_d}{b_{d-k}}r^k,
+	\end{aligned}
+	\end{equation}
+	for all $r\geq 0$.
+	
+	By Lemma \ref{lemma:steiner}, 
+	\begin{equation}\label{steiner:ball}
+	\begin{aligned}
+	\E[\nu_d(\Xi\oplus b(0,r))] &= \sum\limits_{k=0}^{d}b_{d-k}\overbar{V}_k(\Xi)r^{d-k}\\
+	& = \sum\limits_{k=0}^{d}b_k\overbar{V}_{d-k}(\Xi)r^k,
+	\end{aligned}
+	\end{equation}
+	for all $r\geq 0$.
+	
+	By (\ref{characterization:ball}) and (\ref{steiner:ball}) and the equality of polynomials, we have 
+	\begin{equation*}
+	 a_k{d \choose k}\frac{b_d}{b_{d-k}} = b_k\overbar{V}_{d-k}(\Xi),
+	\end{equation*}
+	for $k = 0, 1,\ldots, d$, thus
+	\begin{equation}\label{ak}
+	a_k = \frac{b_k\overbar{V}_{d-k}(\Xi)}{{d\choose k}}\frac{b_{d-k}}{b_d},
+	\end{equation}
+	for $k = 0, 1,\ldots, d$. Replace the $a_k$ in (\ref{characterization:steiner}) with (\ref{ak}) then we prove the theorem.
+\end{proof}
+
 
 \section{Clustering and Channel Selection}
 Clustering improves spatial reuse and reduce interference \cite{80211ad}. Cluster head synchronizes the cluster members and schedules beacon transmissions in the cluster to mitigate intra-cluster interference, while other techniques like channel selection (FDM) and back off \cite{backoff} can be used to reduce inter-cluster interference. The 802.11ad Standard provides both distributed clustering and centralized clustering methods for directional devices working on mmWave. The links between PCPs/APs are unstable in dense wearable networks, thus the distributed clustering method fits better and we will use the distributed clustering algorithm in 802.11ad as the baseline.
@@ -222,6 +292,28 @@ The computational complexity with MDP approach is not affordable thus we need to
 
 
 In each slot, a BSS has the channel measurements from the previous frame. There will be some slots in which a BSS does not see interference from primary users. The BSS selects $K$ available slots to schedule its secondary transmission and keeps track of an alternative slot in case one of the reused slots is no longer available. The BSS will always have the measurements of the slots that they schedule secondary transmission. To keep track of the alternative slot, the BSS schedule $Sense$ on one of the rest of the slots. If the slot is sensed as available, it is an alternative slot and the BSS may either keep sensing that channel or sensed that channel again after some time, based on the variability of the channel. If the BSS sees interference from the primary user, it reschedule its secondary transmission on the alternative slot and scheduling sensing on the slot which has the highest probability of having no interference from primary users among the rest of the slots. If more than one slot reused become unavailable, the BSS reschedule transmissions on the slots with highest probabilities of not having interference from primary BSSs. At the same time, the BSS schedule sensing on the other slots.  
+
+Fig. \ref{fig:clustering:ap} illustrates the simulation result of AP-based clustering and channel selection. The locations of users follows a HPPP and we assume the users make local movements. The channels between users are modeled with the two-state Markov channel model \cite{timevaryingpathshadowing} with parameters derived from our analysis on the sensitivity of channels in Section \ref{section:channel:sensitivity}, see Fig. \ref{fig:clustering:markov}. The state of the channel between each pair of links is independent from other channels. At time $t = 0$, the channel between two users with a length of $d$ m, $d<r_{\max}$, the channel is LOS with probability 
+\begin{equation*}
+\mathrm{P}_{\mathrm{LOS}}(d) = e^{-\lambda d \E[D]}\cdot \mathrm{P}_{\mathrm{facing}}.
+\end{equation*}
+Then after every $\Delta t$, the state of the channel changes independently according to the state transition probability shown in Fig. \ref{fig:clustering:markov}, where
+\begin{equation*}
+\begin{aligned}
+\mathrm{P}_{\mathrm{block}}(d) & = \mathrm{P}\big(\{Y^{t+\Delta t} = 0\}|\{Y^{t} = 1\}\big) \\
+& = 1 - \frac{\mathrm{P}\big(\{Y^{t+\Delta t} = 1\}\cap\{Y^{t} = 1\}\big)}{\mathrm{P}_{\LOS}(d)}.
+\end{aligned}
+\end{equation*}
+For two-state Markov model, 
+\begin{equation*}
+\mathrm{P}_{\LOS}(d)\cdot \mathrm{P}_{\mathrm{block}}(d) = (1 - \mathrm{P}_{\LOS}(d)) \cdot \mathrm{P_{clear}}(d),
+\end{equation*}
+thus $\mathrm{P_{clear}}(d)$ is as follows,
+\begin{equation*}
+\mathrm{P_{clear}}(d) = \frac{\mathrm{P_{LOS}}(d)}{1 - \mathrm{P_{LOS}}(d)}\cdot\mathrm{P_{block}}(d).
+\end{equation*}
+
+The simulation results show that if the network is stable and makes local movements and we cluster the users according to the cluster principles we propose, the clusters will consist of BSSs in close proximity with the cluster head located at the center of the cluster. Channel selection would form protection region around the cluster with neighboring clusters mostly working on different channels.
 
 
 \end{document}

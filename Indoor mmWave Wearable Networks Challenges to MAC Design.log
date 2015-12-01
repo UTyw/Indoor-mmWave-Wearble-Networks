@@ -1,12 +1,21 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.5.14)  25 NOV 2015 23:23
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.6.27)  30 NOV 2015 02:28
 entering extended mode
- restricted \write18 enabled.
- %&-line parsing enabled.
-**"Indoor mmWave Wearable Networks Challenges to MAC Design.tex"
-(./Indoor mmWave Wearable Networks Challenges to MAC Design.tex
+**Indoor*mmWave*Wearable*Networks*Challenges*to*MAC*Design.tex
+
+("E:\Dropbox\Research\15 Fall\Indoor mmWave Wearble Networks\Indoor mmWave Wear
+able Networks Challenges to MAC Design.tex"
 LaTeX2e <2011/06/27>
-Babel <3.9h> and hyphenation patterns for 2 languages loaded.
-(./IEEEtran.cls
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2013-05-26, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
+ lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
+german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
+an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
+ishmax, welsh, loaded.
+("E:\Dropbox\Research\15 Fall\Indoor mmWave Wearble Networks\IEEEtran.cls"
 Document Class: IEEEtran 2014/09/17 V1.8a by Michael Shell
 -- See the "IEEEtran_HOWTO" manual for usage information.
 -- http://www.michaelshell.org/tex/ieeetran/
@@ -19,7 +28,7 @@ Document Class: IEEEtran 2014/09/17 V1.8a by Michael Shell
 \@IEEEtrantmptoksA=\toks14
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 458.
 
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 -- Using 8.5in x 11in (letter) paper.
@@ -112,31 +121,31 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
 \@IEEEtmpitemindent=\dimen124
 \c@IEEEbiography=\count93
 \@IEEEtranrubishbin=\box27
-) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks15
 )
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
-File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 
-(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+("C:\Program Files\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count94
@@ -144,24 +153,24 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen125
 \Gin@req@width=\dimen126
 )
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
 Package: amsmath 2013/01/14 v2.14 AMS math features
 \@mathmargin=\skip44
 
 For additional information on amsmath, use the `?' option.
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
 Package: amstext 2000/06/29 v2.01
 
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks16
 \ex@=\dimen127
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen128
 )
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count95
@@ -202,10 +211,10 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
 )
-(/usr/share/texlive/texmf-dist/tex/latex/subfig/subfig.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\subfig\subfig.sty"
 Package: subfig 2005/06/28 ver: 1.3 subfig package
 
-(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\caption\caption3.sty"
 Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 57.
 \captionmargin=\dimen136
@@ -232,7 +241,7 @@ Package caption Info: Unknown document class (or package),
 \sf@top=\skip50
 \sf@bottom=\skip51
 )
-(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\amscls\amsthm.sty"
 Package: amsthm 2004/08/06 v2.20
 \thm@style=\toks21
 \thm@bodyfont=\toks22
@@ -244,7 +253,7 @@ Package: amsthm 2004/08/06 v2.20
 \thm@headsep=\skip54
 \dth@everypar=\toks26
 )
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
@@ -252,8 +261,9 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )
 \c@theorem=\count114
+\c@lemma=\count115
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\textcomp.sty"
 Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
 Package textcomp Info: Sub-encoding information:
 (textcomp)               5 = only ISO-Adobe without \textcurrency
@@ -268,7 +278,7 @@ Package textcomp Info: Sub-encoding information:
 (textcomp)             See the documentation for details.
 Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 71.
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.def
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1enc.def"
 File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
 )
 LaTeX Info: Redefining \oldstylenums on input line 266.
@@ -334,316 +344,269 @@ Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 338.
 Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 339.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 340.
 )
-(/home/yikong/texmf/tex/latex/gensymb.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\was\gensymb.sty"
 Package: gensymb 2003/07/02 v1.0 (WaS)
 )
-(./Indoor mmWave Wearable Networks Challenges to MAC Design.aux)
-\openout1 = `"Indoor mmWave Wearable Networks Challenges to MAC Design.aux"'.
+("E:\Dropbox\Research\15 Fall\Indoor mmWave Wearble Networks\Indoor mmWave Wear
+able Networks Challenges to MAC Design.aux")
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 36.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 36.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 35.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 35.
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    ... okay on input line 36.
 
 -- Lines per column: 56 (exact).
-(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count115
+\scratchcounter=\count116
 \scratchdimen=\dimen144
 \scratchbox=\box30
-\nofMPsegments=\count116
-\nofMParguments=\count117
+\nofMPsegments=\count117
+\nofMParguments=\count118
 \everyMPshowfont=\toks27
-\MPscratchCnt=\count118
+\MPscratchCnt=\count119
 \MPscratchDim=\dimen145
-\MPnumerator=\count119
-\makeMPintoPDFobject=\count120
+\MPnumerator=\count120
+\makeMPintoPDFobject=\count121
 \everyMPtoPDFconversion=\toks28
-) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
-Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
-Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
-)
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is detected.
-)
-Package pdftexcmds Info: LuaTeX not detected.
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
-)
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
-Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
-
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
-Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
-Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
-))
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
-Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
-Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
-)))
-Package grfext Info: Graphics extension search list:
-(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 452.
-
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
-e
-))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
 \symgns@font=\mathgroup6
 LaTeX Font Info:    Overwriting symbol font `gns@font' in version `bold'
-(Font)                  TS1/ptm/m/n --> TS1/ptm/bx/n on input line 35.
-Package gensymb Info: Math companion symbols declared on input line 35.
-LaTeX Info: Redefining \degree on input line 35.
-LaTeX Info: Redefining \celsius on input line 35.
+(Font)                  TS1/ptm/m/n --> TS1/ptm/bx/n on input line 36.
+Package gensymb Info: Math companion symbols declared on input line 36.
+LaTeX Info: Redefining \degree on input line 36.
+LaTeX Info: Redefining \celsius on input line 36.
 Package gensymb Info: Using text companion symbols for \degree, \celsius and \p
-erthousand on input line 35.
-LaTeX Info: Redefining \ohm on input line 35.
-Package gensymb Info: Using \textohm for \ohm on input line 35.
-Package gensymb Info: Using \textmu for \micro on input line 35.
-LaTeX Font Info:    Try loading font information for U+msa on input line 45.
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+erthousand on input line 36.
+LaTeX Info: Redefining \ohm on input line 36.
+Package gensymb Info: Using \textohm for \ohm on input line 36.
+Package gensymb Info: Using \textmu for \micro on input line 36.
+LaTeX Font Info:    Try loading font information for U+msa on input line 46.
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 45.
+LaTeX Font Info:    Try loading font information for U+msb on input line 46.
 
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for TS1+ptm on input line 45.
+LaTeX Font Info:    Try loading font information for TS1+ptm on input line 46.
 
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ts1ptm.fd"
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+) [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 
 ] [2]
 Missing character: There is no d in font msbm10!
 Missing character: There is no d in font msbm10!
 
-Overfull \hbox (14.39565pt too wide) in paragraph at lines 133--133
+Overfull \hbox (14.39565pt too wide) in paragraph at lines 132--132
 [] 
  []
 
-[3] <./figures/Channel_ENB.pdf, id=28, 438.40889pt x 243.77473pt>
+<./figures/Channel_ENB.pdf, id=16, 438.40889pt x 243.77473pt>
 File: ./figures/Channel_ENB.pdf Graphic file (type pdf)
 
 <use ./figures/Channel_ENB.pdf>
-Package pdftex.def Info: ./figures/Channel_ENB.pdf used on input line 147.
+Package pdftex.def Info: ./figures/Channel_ENB.pdf used on input line 146.
 (pdftex.def)             Requested size: 206.39685pt x 114.76384pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 161--163
-$[]\OMS/cmsy/m/n/10 n\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x; ^^R\OT1/cmr/m/n/10 )$
- \OT1/ptm/m/n/10 is an in-de-pen-dently marked PPP and
+ [3]
+Underfull \hbox (badness 10000) in paragraph at lines 160--162
+$[]\OMS/cmsy/m/n/10 n\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x; \OT1/cmr/m/n/10 )$ \
+OT1/ptm/m/n/10 is an in-de-pen-dently marked PPP and
  []
 
 
-Overfull \hbox (6.97636pt too wide) in paragraph at lines 170--170
+Overfull \hbox (6.97636pt too wide) in paragraph at lines 169--169
 [] 
  []
 
 
-Overfull \hbox (16.2065pt too wide) detected at line 192
+Overfull \hbox (16.2065pt too wide) detected at line 191
 [] []
  []
 
-[4 <./figures/Channel_ENB.pdf>]
-<./figures/Channel_NLOS.pdf, id=43, 386.37749pt x 191.26155pt>
+<./figures/Channel_NLOS.pdf, id=29, 386.37749pt x 191.26155pt>
 File: ./figures/Channel_NLOS.pdf Graphic file (type pdf)
 
 <use ./figures/Channel_NLOS.pdf>
-Package pdftex.def Info: ./figures/Channel_NLOS.pdf used on input line 204.
+Package pdftex.def Info: ./figures/Channel_NLOS.pdf used on input line 203.
 (pdftex.def)             Requested size: 206.39685pt x 102.16777pt.
-
-Underfull \hbox (badness 1448) in paragraph at lines 283--284
+ [4 <E:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures/Channel
+_ENB.pdf>]
+Underfull \hbox (badness 1448) in paragraph at lines 282--283
 []\OT1/ptm/m/n/10 Denote $\OML/cmm/m/it/10 f[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10
  x[]; m[]; []\OMS/cmsy/m/n/10 n\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]; m[]\OT1/c
 mr/m/n/10 )\OML/cmm/m/it/10 ; m[]\OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 be the in-d
 i-ca-tor
  []
 
-[5 <./figures/Channel_NLOS.pdf>]
-<./figures/Channel_trace.pdf, id=56, 444.66125pt x 184.69pt>
+[5 <E:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures/Channel_
+NLOS.pdf>] <./figures/Channel_trace.pdf, id=55, 444.66125pt x 184.69pt>
 File: ./figures/Channel_trace.pdf Graphic file (type pdf)
 
 <use ./figures/Channel_trace.pdf>
-Package pdftex.def Info: ./figures/Channel_trace.pdf used on input line 322.
+Package pdftex.def Info: ./figures/Channel_trace.pdf used on input line 321.
 (pdftex.def)             Requested size: 154.80157pt x 64.29582pt.
 
-<./figures/Channel_boolean.pdf, id=57, 289.54272pt x 137.30397pt>
+<./figures/Channel_boolean.pdf, id=56, 289.54272pt x 137.30397pt>
 File: ./figures/Channel_boolean.pdf Graphic file (type pdf)
 
 <use ./figures/Channel_boolean.pdf>
-Package pdftex.def Info: ./figures/Channel_boolean.pdf used on input line 323.
+Package pdftex.def Info: ./figures/Channel_boolean.pdf used on input line 322.
 (pdftex.def)             Requested size: 154.80157pt x 73.40974pt.
 
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 356.
+(amsmath)                 on input line 355.
 
-[6 <./figures/Channel_trace.pdf> <./figures/Channel_boolean.pdf>] [7]
-<./figures/Channel_en_si.pdf, id=74, 341.275pt x 255.95625pt>
+[6 <E:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures/Channel_
+trace.pdf> <E:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures/
+Channel_boolean.pdf>] [7]
+<./figures/Channel_en_si.pdf, id=73, 341.275pt x 255.95625pt>
 File: ./figures/Channel_en_si.pdf Graphic file (type pdf)
 
 <use ./figures/Channel_en_si.pdf>
-Package pdftex.def Info: ./figures/Channel_en_si.pdf used on input line 465.
+Package pdftex.def Info: ./figures/Channel_en_si.pdf used on input line 464.
 (pdftex.def)             Requested size: 206.39685pt x 154.80127pt.
 
-<./figures/Channel_si_pdf.pdf, id=75, 341.275pt x 255.95625pt>
+<./figures/Channel_si_pdf.pdf, id=74, 341.275pt x 255.95625pt>
 File: ./figures/Channel_si_pdf.pdf Graphic file (type pdf)
 
 <use ./figures/Channel_si_pdf.pdf>
-Package pdftex.def Info: ./figures/Channel_si_pdf.pdf used on input line 473.
+Package pdftex.def Info: ./figures/Channel_si_pdf.pdf used on input line 472.
 (pdftex.def)             Requested size: 206.39685pt x 154.80127pt.
 
-<./figures/Channel_translation_range.pdf, id=76, 227.85126pt x 170.6375pt>
+<./figures/Channel_translation_range.pdf, id=75, 227.85126pt x 170.6375pt>
 File: ./figures/Channel_translation_range.pdf Graphic file (type pdf)
 
 <use ./figures/Channel_translation_range.pdf>
 Package pdftex.def Info: ./figures/Channel_translation_range.pdf used on input 
-line 486.
+line 485.
 (pdftex.def)             Requested size: 154.80157pt x 115.93301pt.
 
-<./figures/Channel_sensitivity.pdf, id=77, 341.275pt x 255.95625pt>
+<./figures/Channel_sensitivity.pdf, id=76, 341.275pt x 255.95625pt>
 File: ./figures/Channel_sensitivity.pdf Graphic file (type pdf)
 
 <use ./figures/Channel_sensitivity.pdf>
 Package pdftex.def Info: ./figures/Channel_sensitivity.pdf used on input line 4
-95.
+94.
 (pdftex.def)             Requested size: 206.39685pt x 154.80127pt.
- [8 <./figures/Channel_en_si.pdf> <./figures/Channel_si_pdf.pdf> <./figures/Cha
-nnel_translation_range.pdf>]
-<./figures/Channel_sensitivity_average.pdf, id=98, 284.06125pt x 204.765pt>
+ [8 <E:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures/Channel
+_en_si.pdf> <E:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures
+/Channel_si_pdf.pdf> <E:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Network
+s/figures/Channel_translation_range.pdf> <E:/Dropbox/Research/15 Fall/Indoor mm
+Wave Wearble Networks/figures/Channel_sensitivity.pdf>]
+<./figures/Channel_sensitivity_average.pdf, id=102, 284.06125pt x 204.765pt>
 File: ./figures/Channel_sensitivity_average.pdf Graphic file (type pdf)
 
 <use ./figures/Channel_sensitivity_average.pdf>
 Package pdftex.def Info: ./figures/Channel_sensitivity_average.pdf used on inpu
-t line 504.
+t line 503.
 (pdftex.def)             Requested size: 154.80157pt x 111.59314pt.
 
-<./figures/Channel_constant_velocity_model.pdf, id=99, 341.275pt x 255.95625pt>
+<./figures/Channel_constant_velocity_model.pdf, id=103, 341.275pt x 255.95625pt
+>
 File: ./figures/Channel_constant_velocity_model.pdf Graphic file (type pdf)
-<use ./figures/Channel_constant_velocity_model.pdf>
+ <use ./figures/Channel_constant_velocity_model.pdf>
 Package pdftex.def Info: ./figures/Channel_constant_velocity_model.pdf used on 
-input line 513.
+input line 512.
 (pdftex.def)             Requested size: 206.39685pt x 154.80127pt.
 
-<./figures/Channel_constant_velocity_model_frequency.pdf, id=100, 341.275pt x 2
+<./figures/Channel_constant_velocity_model_frequency.pdf, id=104, 341.275pt x 2
 55.95625pt>
 File: ./figures/Channel_constant_velocity_model_frequency.pdf Graphic file (typ
 e pdf)
  <use ./figures/Channel_constant_velocity_model_frequency.pdf>
 Package pdftex.def Info: ./figures/Channel_constant_velocity_model_frequency.pd
-f used on input line 515.
+f used on input line 514.
 (pdftex.def)             Requested size: 206.39685pt x 154.80127pt.
 
-[9 <./figures/Channel_sensitivity.pdf> <./figures/Channel_sensitivity_average.p
-df> <./figures/Channel_constant_velocity_model.pdf> <./figures/Channel_constant
-_velocity_model_frequency.pdf>]
-<./figures/Clustering_tdma.pdf, id=124, 635.37375pt x 363.3575pt>
+[9 <E:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures/Channel_
+sensitivity_average.pdf> <E:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Net
+works/figures/Channel_constant_velocity_model.pdf> <E:/Dropbox/Research/15 Fall
+/Indoor mmWave Wearble Networks/figures/Channel_constant_velocity_model_frequen
+cy.pdf>] <./figures/Clustering_tdma.pdf, id=123, 635.37375pt x 363.3575pt>
 File: ./figures/Clustering_tdma.pdf Graphic file (type pdf)
 
 <use ./figures/Clustering_tdma.pdf>
-Package pdftex.def Info: ./figures/Clustering_tdma.pdf used on input line 533.
+Package pdftex.def Info: ./figures/Clustering_tdma.pdf used on input line 566.
 (pdftex.def)             Requested size: 206.39685pt x 118.03433pt.
 
-<./figures/Clustering_reuse.pdf, id=125, 637.38126pt x 363.3575pt>
+<./figures/Clustering_reuse.pdf, id=124, 637.38126pt x 363.3575pt>
 File: ./figures/Clustering_reuse.pdf Graphic file (type pdf)
 
 <use ./figures/Clustering_reuse.pdf>
-Package pdftex.def Info: ./figures/Clustering_reuse.pdf used on input line 544.
+Package pdftex.def Info: ./figures/Clustering_reuse.pdf used on input line 577.
 
 (pdftex.def)             Requested size: 206.39685pt x 117.66286pt.
- [10 <./figures/Clustering_tdma.pdf> <./figures/Clustering_reuse.pdf>]
-
-LaTeX Warning: Reference `fig:clustering:ap' on page 11 undefined on input line
- 575.
-
-
-LaTeX Warning: Reference `fig:clustering:markov' on page 11 undefined on input 
-line 575.
-
-
-LaTeX Warning: Reference `fig:clustering:markov' on page 11 undefined on input 
-line 579.
-
-[11] <./figures/Clustering_model.pdf, id=138, 578.16pt x 393.47pt>
+ [10 <E:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures/Cluste
+ring_tdma.pdf>] [11 <E:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks
+/figures/Clustering_reuse.pdf>]
+<./figures/Clustering_model.pdf, id=137, 578.16pt x 393.47pt>
 File: ./figures/Clustering_model.pdf Graphic file (type pdf)
 
 <use ./figures/Clustering_model.pdf>
-Package pdftex.def Info: ./figures/Clustering_model.pdf used on input line 664.
+Package pdftex.def Info: ./figures/Clustering_model.pdf used on input line 654.
 
 (pdftex.def)             Requested size: 206.39685pt x 140.46031pt.
 
-Underfull \hbox (badness 1577) in paragraph at lines 688--689
-[]\OT1/ptm/m/n/10 A PPBSS's trans-mis-sion is suc-cess-ful if there is no
- []
-
-<./figures/Cluster_analysis_basic_stt.pdf, id=139, 455.7025pt x 341.275pt>
+<./figures/Cluster_analysis_basic_stt.pdf, id=138, 455.7025pt x 341.275pt>
 File: ./figures/Cluster_analysis_basic_stt.pdf Graphic file (type pdf)
 
 <use ./figures/Cluster_analysis_basic_stt.pdf>
 Package pdftex.def Info: ./figures/Cluster_analysis_basic_stt.pdf used on input
- line 734.
+ line 724.
 (pdftex.def)             Requested size: 206.39685pt x 154.57214pt.
 
-<./figures/Cluster_analysis_basic_psuccess.pdf, id=140, 455.7025pt x 341.275pt>
+<./figures/Cluster_analysis_basic_psuccess.pdf, id=139, 455.7025pt x 341.275pt>
 File: ./figures/Cluster_analysis_basic_psuccess.pdf Graphic file (type pdf)
 <use ./figures/Cluster_analysis_basic_psuccess.pdf>
 Package pdftex.def Info: ./figures/Cluster_analysis_basic_psuccess.pdf used on 
-input line 736.
+input line 726.
 (pdftex.def)             Requested size: 206.39685pt x 154.57214pt.
 
-<./figures/Cluster_analysis_directionality.pdf, id=141, 455.7025pt x 341.275pt>
+<./figures/Cluster_analysis_directionality.pdf, id=140, 455.7025pt x 341.275pt>
 File: ./figures/Cluster_analysis_directionality.pdf Graphic file (type pdf)
 <use ./figures/Cluster_analysis_directionality.pdf>
 Package pdftex.def Info: ./figures/Cluster_analysis_directionality.pdf used on 
-input line 745.
+input line 735.
 (pdftex.def)             Requested size: 206.39685pt x 154.57214pt.
- [12 <./figures/Clustering_model.pdf>]
-<./figures/Cluster_analysis_primary_ratio.pdf, id=148, 455.7025pt x 341.275pt>
+ [12 <E:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures/Cluste
+ring_model.pdf>]
+<./figures/Cluster_analysis_primary_ratio.pdf, id=147, 455.7025pt x 341.275pt>
 File: ./figures/Cluster_analysis_primary_ratio.pdf Graphic file (type pdf)
 
 <use ./figures/Cluster_analysis_primary_ratio.pdf>
 Package pdftex.def Info: ./figures/Cluster_analysis_primary_ratio.pdf used on i
-nput line 754.
+nput line 744.
+(pdftex.def)             Requested size: 206.39685pt x 154.57214pt.
+
+<./figures/Cluster_analysis_location.pdf, id=148, 455.7025pt x 341.275pt>
+File: ./figures/Cluster_analysis_location.pdf Graphic file (type pdf)
+
+<use ./figures/Cluster_analysis_location.pdf>
+Package pdftex.def Info: ./figures/Cluster_analysis_location.pdf used on input 
+line 754.
 (pdftex.def)             Requested size: 206.39685pt x 154.57214pt.
 
 <./figures/Cluster_analysis_optimal_cluster_size.pdf, id=149, 455.7025pt x 341.
@@ -652,19 +615,25 @@ File: ./figures/Cluster_analysis_optimal_cluster_size.pdf Graphic file (type pd
 f)
  <use ./figures/Cluster_analysis_optimal_cluster_size.pdf>
 Package pdftex.def Info: ./figures/Cluster_analysis_optimal_cluster_size.pdf us
-ed on input line 763.
+ed on input line 764.
 (pdftex.def)             Requested size: 206.39685pt x 154.57214pt.
- [13 <./figures/Cluster_analysis_basic_stt.pdf> <./figures/Cluster_analysis_bas
-ic_psuccess.pdf> <./figures/Cluster_analysis_directionality.pdf> <./figures/Clu
-ster_analysis_primary_ratio.pdf> <./figures/Cluster_analysis_optimal_cluster_si
-ze.pdf>]
+ [13 <E:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures/Cluste
+r_analysis_basic_stt.pdf> <E:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Ne
+tworks/figures/Cluster_analysis_basic_psuccess.pdf> <E:/Dropbox/Research/15 Fal
+l/Indoor mmWave Wearble Networks/figures/Cluster_analysis_directionality.pdf> <
+E:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures/Cluster_anal
+ysis_primary_ratio.pdf> <E:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Netw
+orks/figures/Cluster_analysis_location.pdf>]
 <./figures/Cluster_analysis_compare_mac.pdf, id=173, 455.7025pt x 341.275pt>
 File: ./figures/Cluster_analysis_compare_mac.pdf Graphic file (type pdf)
 
 <use ./figures/Cluster_analysis_compare_mac.pdf>
 Package pdftex.def Info: ./figures/Cluster_analysis_compare_mac.pdf used on inp
-ut line 772.
+ut line 773.
 (pdftex.def)             Requested size: 206.39685pt x 154.57214pt.
+ [14 <E:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures/Cluste
+r_analysis_optimal_cluster_size.pdf> <E:/Dropbox/Research/15 Fall/Indoor mmWave
+ Wearble Networks/figures/Cluster_analysis_compare_mac.pdf>]
 Missing character: There is no â in font ptmri7t!
 Missing character: There is no € in font ptmri7t!
 Missing character: There is no ” in font ptmri7t!
@@ -695,50 +664,46 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[14 <./figures/Cluster_analysis_compare_mac.pdf>]
-(./Indoor mmWave Wearable Networks Challenges to MAC Design.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+[15]
+("E:\Dropbox\Research\15 Fall\Indoor mmWave Wearble Networks\Indoor mmWave Wear
+able Networks Challenges to MAC Design.aux") ) 
 Here is how much of TeX's memory you used:
- 4530 strings out of 495028
- 73680 string characters out of 6181497
- 134532 words of memory out of 5000000
- 7646 multiletter control sequences out of 15000+600000
- 48906 words of font info for 105 fonts, out of 8000000 for 9000
- 14 hyphenation exceptions out of 8191
- 38i,19n,48p,2097b,351s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-urw/times/utmri8a.pfb>
+ 4189 strings out of 493921
+ 67962 string characters out of 3147258
+ 126395 words of memory out of 3000000
+ 7419 multiletter control sequences out of 15000+200000
+ 48906 words of font info for 105 fonts, out of 3000000 for 9000
+ 841 hyphenation exceptions out of 8191
+ 36i,19n,48p,2071b,351s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX 2.9/font
+s/enc/dvips/fontname/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmbx8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cme
+x8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
+C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Progra
+m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmmi9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfont
+s/cm/cmr5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.
+pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Pr
+ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program File
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Program Files/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmsy9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm
+10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm7.p
+fb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Fi
+les/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Program Files/MiKTeX 2.9/f
+onts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/ti
+mes/utmri8a.pfb>
 Output written on "Indoor mmWave Wearable Networks Challenges to MAC Design.pdf
-" (14 pages, 616199 bytes).
+" (15 pages, 663624 bytes).
 PDF statistics:
- 263 PDF objects out of 1000 (max. 8388607)
- 189 compressed objects within 2 object streams
+ 267 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 101 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 106 words of extra memory for PDF output out of 10000 (max. 10000000)
 
