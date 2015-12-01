@@ -585,7 +585,7 @@ In our settings, the transmissions are within the BSSs and scheduled by the PCPs
 
 
 \section{Analysis of Clustering}\label{section:clusteranalysis}
-In this section, we use a simple analytical model to evaluate the performance of clustering and channel selection for different scenarios.
+In this section, we use an analytical model to evaluate the performance of clustering and channel selection for different scenarios based on our model for interference.
 
 \subsection{System Model for cluster analysis}
 We consider the performance of PBSSs in a typical cluster following the clustering principles we propose. Users are located on a 2-D plane following a HPPP with density $\lambda$. The cluster size is $K$ and there are $M$ channels. 
@@ -633,12 +633,13 @@ In each PBSS, there are three types of transmissions with different directionali
 	\item Primary: directional, high power
 	\item Secondary: omni-directional, Low power
 \end{itemize}
-For each type of traffic, the directions of transmissions, i.e., from PCP to other devices or from non-PCP devices to PCP, affects transmit power $P_t$, the gain of antennas $G$ and beam width $\theta$.
+
+%For each type of traffic, the directions of transmissions, i.e., from PCP to other devices or from non-PCP devices to PCP, affects transmit power $P_t$, the gain of antennas $G$ and beam width $\theta$.
 
 %Note that the transmit power, beam width and beam gain are related to the transmission type of $j$, which is influenced by the scheduling, clustering, as well as the traffic patterns of users.
 
-After describing the channel model, we now introduce the model for MAC. 
-The cluster head of the typical cluster is located at the origin, with $K-1$ cluster members randomly distributed in the disc centered at the origin, see Fig. \ref{fig:clusteranalysis:model}. The radius of the disc, $R_{\mathrm{cluster}}$, satisfies that 
+After describing the model for channel and devices, we now introduce the model for MAC. 
+The cluster head of the typical cluster is located at the origin $0$, with $K-1$ cluster members randomly distributed in the disc centered at $0$, see Fig. \ref{fig:clusteranalysis:model}. The radius of the disc, $R_{\mathrm{cluster}}$, satisfies that 
 \begin{align*}
 \lambda\pi (R_{\mathrm{cluster}}^2 - r_{\min}^2) = K - 1,\\
 R_{\mathrm{cluster}} = \sqrt{\frac{K - 1}{\lambda\pi}+r_{\min}^2}.
@@ -647,7 +648,7 @@ Channel selection makes neighboring clusters work on different channels and form
 \begin{equation*}
 R_{\mathrm{protect}} = \sqrt{\frac{M\cdot K - 1}{\lambda \pi} + r_{\min}^2}.
 \end{equation*}
-All other users working on the same channel, i.e., the inter-cluster interferers, are distributed outside of the protection region following a HPPP with density $\frac{\lambda}{M}$.
+All other users working on the same channel, i.e., the inter-cluster interferers, are distributed outside of the protection region following a HPPP with density $\frac{\lambda}{M}$ and work independently.
 
 \begin{figure}
 	\centering
@@ -656,30 +657,47 @@ All other users working on the same channel, i.e., the inter-cluster interferers
 	\label{fig:clusteranalysis:model}
 \end{figure}
 
+We define that a transmission of a PBSS is interfered by a transmission from another PBSS if the signal received at the receiver of the transmission exceeds a threshold, $P_{\mathrm{threshold}}$. 
+Two transmissions of two PBSSs interfere with each other if either transmission is interfered by the other transmission. 
+A transmission fails if it is interfered by another transmission. Two transmissions can not be scheduled in the same slot if they interfere with each other and belong to PBSSs of the same cluster.
+
 Denote $T_{\mathrm{frame}}$ as the length of frame and $T_{\mathrm{beacon}}$ as the length of one Beacon SP. The cluster head reserves exact $K$ Beacon SPs thus $K\cdot T_{\mathrm{beacon}}$ is reserved for beacon transmission in each frame and $T_{\mathrm{data}} = T_{\mathrm{frame}} - K\cdot T_{\mathrm{beacon}}$ is used for data transmission. The proportion of data reserved for data transmission is given by
 \begin{equation*}
 p_{\mathrm{data}} = \frac{T_{\mathrm{data}}}{T_{\mathrm{frame}}}.
 \end{equation*}
 In each Beacon SP, the PCP of exactly one PBSS of the cluster will transmit its beacon and the other devices will receive the beacon using omni-directional mode. 
 
-We assume that the each PBSS is full-buffer and try to schedule transmission in all slots. A PBSS schedules transmissions in its beacon period and will not change the scheduling until its next beacon period. PBSSs do not support concurrent transmission within a PBSS thus there is at most one transmission in a PBSS. Each user will schedule primary transmissions in a proportion of $\rho_{\mathrm{primary}}\in[0,1]$ of slots for data transmission and schedule secondary transmissions in the rest $\rho_{\mathrm{secondary}} =1 - \rho_{\mathrm{primary}}$ proportion of the slots. 
-We consider two types of scheduling within the cluster, TDMA and ideal resource reuse (IRR). In TDMA scheduling, PBSSs share the slots equally within the cluster and the fraction of time that a PBSS can access the channel in a frame is given by, 
+We assume that the PBSSs are full-buffer and try to schedule transmission in all slots. A PBSS schedules transmissions in its beacon period and will not change the scheduling until its next beacon period. PBSSs do not support concurrent transmission within a PBSS thus there is at most one transmission in a PBSS. Each user will schedule primary transmissions in a proportion of $\rho_{\mathrm{primary}}\in[0,1]$ of slots for data transmission and schedule secondary transmissions in the rest $\rho_{\mathrm{secondary}} =1 - \rho_{\mathrm{primary}}$ proportion of the slots. 
+
+We consider two types of scheduling within the cluster, TDMA and hierarchical resource reuse (HRR). In TDMA scheduling, PBSSs share the slots equally within the cluster and the fraction of time that a PBSS can access the channel in a frame is given by, 
 \begin{equation*}
 p_{\mathrm{access}}^{\mathrm{TDMA}} = p_{\mathrm{data}}/K.
 \end{equation*}
+A PBSS will schedule primary transmissions in $\rho_{\mathrm{primary}}p_{\mathrm{data}}/K$ slots, and secondary transmissions in $(1-\rho_{\mathrm{primary}})p_{\mathrm{data}}/K$ of the slots. 
 
-For IRR, we assume there is an ideal resource sharing mechanism among the PBSSs in the cluster, i.e., independent set scheduling [ref required]. Let $N_{\mathrm{intra-cluster}}$ be the number of other PBSSs in the same cluster that interferes with the data transmission of PBSS at some slot for data transmission. $N_{\mathrm{intra-cluster}}$ is related to the type of transmission scheduled by the PBSS as well as the type of transmissions of other PBSSs. The probability that the transmission is scheduled can be approximated by, 
+In HRR, each PBSS is allocated $1/K$ of the slots for data transmission in a frame where the PBSS has higher priority than other PBSSs in the cluster. The PBSS first schedules primary transmission in the reserved slots and schedules other transmissions by reusing the slots allocated to other PBSSs. If $\rho_{\mathrm{primary}}\leq 1/K$, the PBSS also schedules secondary transmissions in the allocated slots. 
+
+In the allocated $1/K$ of the slots, the PBSS has the access to the channel. When trying to reuse other slots, the PBSS shall not interfere with the transmissions of the original user in the slots and share the channel with other PBSSs.
+The probability that a PBSS can reuse the slots in approximated by
 \begin{equation*}
-p_{\mathrm{access}}^{\mathrm{IRR}} = p_{\mathrm{data}}/(1+\E[N_{\mathrm{intra-cluster}}]).
-\end{equation*} 
+\mathrm{P}_{\mathrm{clear}}\cdot \frac{1}{1+\E[N_{\mathrm{intra-cluster}}']},
+\end{equation*}
+where $\mathrm{P}_{\mathrm{clear}}$ is the probability that the PBSS does not interfere with the PBSS owning the slots, $\E[N_{\mathrm{intra-cluster}}']$ is the expected number of PBSSs in the cluster that also try to reuse the slots and interferes with the transmission.
+
+\% Stop here on 11/30
+%we assume there is an ideal resource sharing mechanism among the PBSSs in the cluster, i.e., independent set scheduling [ref required]. Let $N_{\mathrm{intra-cluster}}$ be the number of other PBSSs in the same cluster that interferes with the data transmission of PBSS at some slot for data transmission. $N_{\mathrm{intra-cluster}}$ is related to the type of transmission scheduled by the PBSS as well as the type of transmissions of other PBSSs. The probability that the transmission is scheduled can be approximated by, 
+%\begin{equation*}
+%p_{\mathrm{access}}^{\mathrm{IRR}} = p_{\mathrm{data}}/(1+\E[N_{\mathrm{intra-cluster}}]).
+%\end{equation*} 
 % proportion of different types of traffic \\
 % $E[N_{intra-cluster}]$
 
-A PBSS's transmission is successful if there is no strong inter-cluster interference. Denote $N_{\mathrm{inter-cluster}}$ as the number of inter-cluster interference outside the cluster. Inter-cluster interferers are mutually independent and the spatial distribution follows HPPP thus $N_{\mathrm{inter-cluster}}$ follows poisson distribution. The probability of successful transmission is then approximated as follows, 
+A PBSS's transmission is successful if the transmission is not interfered by transmissions outside the cluster. Denote $N_{\mathrm{inter-cluster}}$ as the number of transmissions outside the cluster that interfere the transmission. Inter-cluster interferers are mutually independent and the spatial distribution follows HPPP thus $N_{\mathrm{inter-cluster}}$ follows poisson distribution. The probability of successful transmission is then approximated as follows, 
 \begin{equation*}
 p_{\mathrm{success}} = e^{-\E[N_{\mathrm{inter-cluster}}]}.
 \end{equation*} 
-The transmission patterns of users is related to $N_{\mathrm{intra-cluster}}$, which depends on the distances to other PBSSs within the cluster. As a result, PBSSs located at different locations have different transmission patterns. We use the transmission pattern of a user $\sqrt{2}R_{\mathrm{cluster}}$ away from the cluster head as the typical transmission pattern for inter-cluster interferers to get the $\E[N_{\mathrm{inter-cluster}}]$.
+
+$N_{\mathrm{intra-cluster}}$ is related to the transmission patterns of users, which depends on the distances to other PBSSs within the cluster. PBSSs located at different locations have different transmission patterns. We use the transmission pattern of a user $\sqrt{2}R_{\mathrm{cluster}}$ away from the cluster head as the typical transmission pattern for inter-cluster interferers to get the $\E[N_{\mathrm{inter-cluster}}]$.
 
 Based on the above analysis, we can evaluate the throughput of a PBSS using the average successful transmission time (STT) of the user,
 \begin{equation*}
@@ -702,7 +720,7 @@ The parameters used are listed in Table \ref{tab:clusteranalysis:parameter}.
 		$\Gamma_{\mathrm{ceilin}}$ & 0.4654 \\
 		$\lambda$ & 1 $\mathrm{user/m^2}$ \\
 		$P_t^{\mathrm{high}}$ & 10 dBm \\
-		$P_t^{\mathrm{low}}$ & 7 dBm \\
+		$P_t^{\mathrm{low}}$ & 4 dBm \\
 		$P_{\mathrm{threshold}}$ & -78 dBm \\
 		$\rho_{\mathrm{primary}}$ & 0.5 \\
 		$M_t$,$M_r$ ($\theta = 60\degree$) & 5 dB \\
@@ -775,7 +793,7 @@ In Fig. \ref{fig:clusteranalysis:compare_mac} we compare the STT for different M
 	\label{fig:clusteranalysis:compare_mac}
 \end{figure}
 
-\%Conclusion?
+\%Conclusion for analysis of clusters?
 
 \section{Conclusion}\label{section:conclusion}
 Our analysis of strong interferers show that enabling mmWave wearable networks in high user densities does seem feasible from MAC design perspective. Blockage and directionality help limit the number of strong interferers to a few that are close by. PBSSs may coordinate with close neighbors through coarse grain coordination at reasonable overheads while treating interference from distant PBSSs as 

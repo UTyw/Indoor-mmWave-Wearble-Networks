@@ -1,21 +1,12 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.6.27)  30 NOV 2015 02:28
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.7.10)  1 DEC 2015 13:01
 entering extended mode
 **Indoor*mmWave*Wearable*Networks*Challenges*to*MAC*Design.tex
 
-("E:\Dropbox\Research\15 Fall\Indoor mmWave Wearble Networks\Indoor mmWave Wear
+("F:\Dropbox\Research\15 Fall\Indoor mmWave Wearble Networks\Indoor mmWave Wear
 able Networks Challenges to MAC Design.tex"
-LaTeX2e <2011/06/27>
-Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
-abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
-croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
-lician, german, german-x-2013-05-26, greek, gujarati, hindi, hungarian, iceland
-ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
- lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
-german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
-ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
-an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
-ishmax, welsh, loaded.
-("E:\Dropbox\Research\15 Fall\Indoor mmWave Wearble Networks\IEEEtran.cls"
+LaTeX2e <2014/05/01>
+Babel <3.9k> and hyphenation patterns for 68 languages loaded.
+("F:\Dropbox\Research\15 Fall\Indoor mmWave Wearble Networks\IEEEtran.cls"
 Document Class: IEEEtran 2014/09/17 V1.8a by Michael Shell
 -- See the "IEEEtran_HOWTO" manual for usage information.
 -- http://www.michaelshell.org/tex/ieeetran/
@@ -122,10 +113,10 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
 \c@IEEEbiography=\count93
 \@IEEEtranrubishbin=\box27
 ) ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
-Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+Package: graphicx 2014/04/25 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
-Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+Package: keyval 2014/05/08 v1.15 key=value parser (DPC)
 \KV@toks@=\toks15
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
@@ -347,7 +338,7 @@ Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 340.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\was\gensymb.sty"
 Package: gensymb 2003/07/02 v1.0 (WaS)
 )
-("E:\Dropbox\Research\15 Fall\Indoor mmWave Wearble Networks\Indoor mmWave Wear
+("F:\Dropbox\Research\15 Fall\Indoor mmWave Wearble Networks\Indoor mmWave Wear
 able Networks Challenges to MAC Design.aux")
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
 LaTeX Font Info:    ... okay on input line 36.
@@ -450,7 +441,7 @@ File: ./figures/Channel_NLOS.pdf Graphic file (type pdf)
 <use ./figures/Channel_NLOS.pdf>
 Package pdftex.def Info: ./figures/Channel_NLOS.pdf used on input line 203.
 (pdftex.def)             Requested size: 206.39685pt x 102.16777pt.
- [4 <E:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures/Channel
+ [4 <F:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures/Channel
 _ENB.pdf>]
 Underfull \hbox (badness 1448) in paragraph at lines 282--283
 []\OT1/ptm/m/n/10 Denote $\OML/cmm/m/it/10 f[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10
@@ -459,7 +450,7 @@ mr/m/n/10 )\OML/cmm/m/it/10 ; m[]\OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 be the in-d
 i-ca-tor
  []
 
-[5 <E:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures/Channel_
+[5 <F:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures/Channel_
 NLOS.pdf>] <./figures/Channel_trace.pdf, id=55, 444.66125pt x 184.69pt>
 File: ./figures/Channel_trace.pdf Graphic file (type pdf)
 
@@ -479,8 +470,8 @@ Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
 (amsmath)                 on input line 355.
 
-[6 <E:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures/Channel_
-trace.pdf> <E:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures/
+[6 <F:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures/Channel_
+trace.pdf> <F:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures/
 Channel_boolean.pdf>] [7]
 <./figures/Channel_en_si.pdf, id=73, 341.275pt x 255.95625pt>
 File: ./figures/Channel_en_si.pdf Graphic file (type pdf)
@@ -511,10 +502,10 @@ File: ./figures/Channel_sensitivity.pdf Graphic file (type pdf)
 Package pdftex.def Info: ./figures/Channel_sensitivity.pdf used on input line 4
 94.
 (pdftex.def)             Requested size: 206.39685pt x 154.80127pt.
- [8 <E:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures/Channel
-_en_si.pdf> <E:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures
-/Channel_si_pdf.pdf> <E:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Network
-s/figures/Channel_translation_range.pdf> <E:/Dropbox/Research/15 Fall/Indoor mm
+ [8 <F:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures/Channel
+_en_si.pdf> <F:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures
+/Channel_si_pdf.pdf> <F:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Network
+s/figures/Channel_translation_range.pdf> <F:/Dropbox/Research/15 Fall/Indoor mm
 Wave Wearble Networks/figures/Channel_sensitivity.pdf>]
 <./figures/Channel_sensitivity_average.pdf, id=102, 284.06125pt x 204.765pt>
 File: ./figures/Channel_sensitivity_average.pdf Graphic file (type pdf)
@@ -541,9 +532,9 @@ Package pdftex.def Info: ./figures/Channel_constant_velocity_model_frequency.pd
 f used on input line 514.
 (pdftex.def)             Requested size: 206.39685pt x 154.80127pt.
 
-[9 <E:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures/Channel_
-sensitivity_average.pdf> <E:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Net
-works/figures/Channel_constant_velocity_model.pdf> <E:/Dropbox/Research/15 Fall
+[9 <F:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures/Channel_
+sensitivity_average.pdf> <F:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Net
+works/figures/Channel_constant_velocity_model.pdf> <F:/Dropbox/Research/15 Fall
 /Indoor mmWave Wearble Networks/figures/Channel_constant_velocity_model_frequen
 cy.pdf>] <./figures/Clustering_tdma.pdf, id=123, 635.37375pt x 363.3575pt>
 File: ./figures/Clustering_tdma.pdf Graphic file (type pdf)
@@ -559,81 +550,92 @@ File: ./figures/Clustering_reuse.pdf Graphic file (type pdf)
 Package pdftex.def Info: ./figures/Clustering_reuse.pdf used on input line 577.
 
 (pdftex.def)             Requested size: 206.39685pt x 117.66286pt.
- [10 <E:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures/Cluste
-ring_tdma.pdf>] [11 <E:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks
-/figures/Clustering_reuse.pdf>]
-<./figures/Clustering_model.pdf, id=137, 578.16pt x 393.47pt>
+ [10 <F:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures/Cluste
+ring_tdma.pdf>]
+<./figures/Clustering_model.pdf, id=131, 578.16pt x 393.47pt>
 File: ./figures/Clustering_model.pdf Graphic file (type pdf)
 
 <use ./figures/Clustering_model.pdf>
-Package pdftex.def Info: ./figures/Clustering_model.pdf used on input line 654.
+Package pdftex.def Info: ./figures/Clustering_model.pdf used on input line 655.
 
 (pdftex.def)             Requested size: 206.39685pt x 140.46031pt.
+ [11 <F:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures/Cluste
+ring_reuse.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 675--677
+\OT1/ptm/m/n/10 A PBSS will sched-ule pri-mary trans-mis-sions in
+ []
+
+
+Underfull \hbox (badness 5050) in paragraph at lines 675--677
+$\OML/cmm/m/it/10 []p[]=K$ \OT1/ptm/m/n/10 slots, and sec-ondary trans-mis-sio
+ns in
+ []
 
 <./figures/Cluster_analysis_basic_stt.pdf, id=138, 455.7025pt x 341.275pt>
 File: ./figures/Cluster_analysis_basic_stt.pdf Graphic file (type pdf)
 
 <use ./figures/Cluster_analysis_basic_stt.pdf>
 Package pdftex.def Info: ./figures/Cluster_analysis_basic_stt.pdf used on input
- line 724.
+ line 742.
 (pdftex.def)             Requested size: 206.39685pt x 154.57214pt.
 
 <./figures/Cluster_analysis_basic_psuccess.pdf, id=139, 455.7025pt x 341.275pt>
 File: ./figures/Cluster_analysis_basic_psuccess.pdf Graphic file (type pdf)
 <use ./figures/Cluster_analysis_basic_psuccess.pdf>
 Package pdftex.def Info: ./figures/Cluster_analysis_basic_psuccess.pdf used on 
-input line 726.
+input line 744.
 (pdftex.def)             Requested size: 206.39685pt x 154.57214pt.
 
 <./figures/Cluster_analysis_directionality.pdf, id=140, 455.7025pt x 341.275pt>
 File: ./figures/Cluster_analysis_directionality.pdf Graphic file (type pdf)
 <use ./figures/Cluster_analysis_directionality.pdf>
 Package pdftex.def Info: ./figures/Cluster_analysis_directionality.pdf used on 
-input line 735.
+input line 753.
 (pdftex.def)             Requested size: 206.39685pt x 154.57214pt.
- [12 <E:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures/Cluste
+ [12 <F:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures/Cluste
 ring_model.pdf>]
 <./figures/Cluster_analysis_primary_ratio.pdf, id=147, 455.7025pt x 341.275pt>
 File: ./figures/Cluster_analysis_primary_ratio.pdf Graphic file (type pdf)
 
 <use ./figures/Cluster_analysis_primary_ratio.pdf>
 Package pdftex.def Info: ./figures/Cluster_analysis_primary_ratio.pdf used on i
-nput line 744.
+nput line 762.
 (pdftex.def)             Requested size: 206.39685pt x 154.57214pt.
-
-<./figures/Cluster_analysis_location.pdf, id=148, 455.7025pt x 341.275pt>
+ [13 <F:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures/Cluste
+r_analysis_basic_stt.pdf> <F:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Ne
+tworks/figures/Cluster_analysis_basic_psuccess.pdf> <F:/Dropbox/Research/15 Fal
+l/Indoor mmWave Wearble Networks/figures/Cluster_analysis_directionality.pdf> <
+F:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures/Cluster_anal
+ysis_primary_ratio.pdf>]
+<./figures/Cluster_analysis_location.pdf, id=168, 455.7025pt x 341.275pt>
 File: ./figures/Cluster_analysis_location.pdf Graphic file (type pdf)
 
 <use ./figures/Cluster_analysis_location.pdf>
 Package pdftex.def Info: ./figures/Cluster_analysis_location.pdf used on input 
-line 754.
+line 772.
 (pdftex.def)             Requested size: 206.39685pt x 154.57214pt.
 
-<./figures/Cluster_analysis_optimal_cluster_size.pdf, id=149, 455.7025pt x 341.
+<./figures/Cluster_analysis_optimal_cluster_size.pdf, id=169, 455.7025pt x 341.
 275pt>
 File: ./figures/Cluster_analysis_optimal_cluster_size.pdf Graphic file (type pd
 f)
  <use ./figures/Cluster_analysis_optimal_cluster_size.pdf>
 Package pdftex.def Info: ./figures/Cluster_analysis_optimal_cluster_size.pdf us
-ed on input line 764.
+ed on input line 782.
 (pdftex.def)             Requested size: 206.39685pt x 154.57214pt.
- [13 <E:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures/Cluste
-r_analysis_basic_stt.pdf> <E:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Ne
-tworks/figures/Cluster_analysis_basic_psuccess.pdf> <E:/Dropbox/Research/15 Fal
-l/Indoor mmWave Wearble Networks/figures/Cluster_analysis_directionality.pdf> <
-E:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures/Cluster_anal
-ysis_primary_ratio.pdf> <E:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Netw
-orks/figures/Cluster_analysis_location.pdf>]
-<./figures/Cluster_analysis_compare_mac.pdf, id=173, 455.7025pt x 341.275pt>
+
+<./figures/Cluster_analysis_compare_mac.pdf, id=170, 455.7025pt x 341.275pt>
 File: ./figures/Cluster_analysis_compare_mac.pdf Graphic file (type pdf)
 
 <use ./figures/Cluster_analysis_compare_mac.pdf>
 Package pdftex.def Info: ./figures/Cluster_analysis_compare_mac.pdf used on inp
-ut line 773.
+ut line 791.
 (pdftex.def)             Requested size: 206.39685pt x 154.57214pt.
- [14 <E:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures/Cluste
-r_analysis_optimal_cluster_size.pdf> <E:/Dropbox/Research/15 Fall/Indoor mmWave
- Wearble Networks/figures/Cluster_analysis_compare_mac.pdf>]
+ [14 <F:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures/Cluste
+r_analysis_location.pdf> <F:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Net
+works/figures/Cluster_analysis_optimal_cluster_size.pdf> <F:/Dropbox/Research/1
+5 Fall/Indoor mmWave Wearble Networks/figures/Cluster_analysis_compare_mac.pdf>
+]
 Missing character: There is no â in font ptmri7t!
 Missing character: There is no € in font ptmri7t!
 Missing character: There is no ” in font ptmri7t!
@@ -652,7 +654,7 @@ Missing character: There is no ” in font ptmri7t!
 Missing character: There is no â in font ptmri7t!
 Missing character: There is no € in font ptmri7t!
 Missing character: There is no ” in font ptmri7t!
-
+ [15]
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -664,16 +666,18 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[15]
-("E:\Dropbox\Research\15 Fall\Indoor mmWave Wearble Networks\Indoor mmWave Wear
+[16
+
+]
+("F:\Dropbox\Research\15 Fall\Indoor mmWave Wearble Networks\Indoor mmWave Wear
 able Networks Challenges to MAC Design.aux") ) 
 Here is how much of TeX's memory you used:
- 4189 strings out of 493921
- 67962 string characters out of 3147258
- 126395 words of memory out of 3000000
- 7419 multiletter control sequences out of 15000+200000
+ 4188 strings out of 493706
+ 67958 string characters out of 3144580
+ 130389 words of memory out of 3000000
+ 7445 multiletter control sequences out of 15000+200000
  48906 words of font info for 105 fonts, out of 3000000 for 9000
- 841 hyphenation exceptions out of 8191
+ 1025 hyphenation exceptions out of 8191
  36i,19n,48p,2071b,351s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/font
 s/enc/dvips/fontname/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
@@ -701,9 +705,9 @@ les/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Program Files/MiKTeX 2.9/f
 onts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/ti
 mes/utmri8a.pfb>
 Output written on "Indoor mmWave Wearable Networks Challenges to MAC Design.pdf
-" (15 pages, 663624 bytes).
+" (16 pages, 664368 bytes).
 PDF statistics:
- 267 PDF objects out of 1000 (max. 8388607)
+ 270 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  106 words of extra memory for PDF output out of 10000 (max. 10000000)
 
