@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.7.10)  29 NOV 2015 19:15
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.7.10)  5 JAN 2016 10:24
 entering extended mode
 **Not*used*parts.tex
 ("F:\Dropbox\Research\15 Fall\Indoor mmWave Wearble Networks\Not used parts.tex
@@ -308,49 +308,49 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 125.
+(amsmath)                 on input line 127.
 
 
-LaTeX Warning: Citation `80211ad' on page 2 undefined on input line 166.
+LaTeX Warning: Citation `80211ad' on page 2 undefined on input line 168.
 
 
-LaTeX Warning: Citation `backoff' on page 2 undefined on input line 166.
+LaTeX Warning: Citation `backoff' on page 2 undefined on input line 168.
 
 [2]
 
-LaTeX Warning: Citation `apcluster' on page 3 undefined on input line 185.
+LaTeX Warning: Citation `apcluster' on page 3 undefined on input line 187.
 
 
-LaTeX Warning: Citation `apvanet' on page 3 undefined on input line 210.
+LaTeX Warning: Citation `apvanet' on page 3 undefined on input line 212.
 
 
-LaTeX Warning: Citation `apd2d' on page 3 undefined on input line 210.
+LaTeX Warning: Citation `apd2d' on page 3 undefined on input line 212.
 
 [3]
 
-LaTeX Warning: Reference `section:channel' on page 4 undefined on input line 24
-9.
+LaTeX Warning: Reference `section:channel' on page 4 undefined on input line 25
+1.
 
 [4] [5]
 
 LaTeX Warning: Reference `fig:clustering:ap' on page 6 undefined on input line 
-294.
+296.
 
 
 LaTeX Warning: Citation `timevaryingpathshadowing' on page 6 undefined on input
- line 294.
+ line 296.
 
 
 LaTeX Warning: Reference `section:channel:sensitivity' on page 6 undefined on i
-nput line 294.
+nput line 296.
 
 
 LaTeX Warning: Reference `fig:clustering:markov' on page 6 undefined on input l
-ine 294.
+ine 296.
 
 
 LaTeX Warning: Reference `fig:clustering:markov' on page 6 undefined on input l
-ine 298.
+ine 300.
 
 
 ** Conference Paper **
@@ -373,7 +373,7 @@ LaTeX Warning: There were undefined references.
 Here is how much of TeX's memory you used:
  3443 strings out of 493706
  53768 string characters out of 3144580
- 125218 words of memory out of 3000000
+ 125220 words of memory out of 3000000
  6754 multiletter control sequences out of 15000+200000
  36891 words of font info for 72 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
@@ -390,7 +390,7 @@ gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program File
 s/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/font
 s/type1/urw/times/utmbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/time
 s/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on "Not used parts.pdf" (6 pages, 189943 bytes).
+Output written on "Not used parts.pdf" (6 pages, 190089 bytes).
 PDF statistics:
  74 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

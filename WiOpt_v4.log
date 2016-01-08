@@ -1,0 +1,653 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.7.10)  8 JAN 2016 15:10
+entering extended mode
+**WiOpt_v4.tex
+("F:\Dropbox\Research\15 Fall\Indoor mmWave Wearble Networks\WiOpt_v4.tex"
+LaTeX2e <2014/05/01>
+Babel <3.9k> and hyphenation patterns for 68 languages loaded.
+("F:\Dropbox\Research\15 Fall\Indoor mmWave Wearble Networks\IEEEtran.cls"
+Document Class: IEEEtran 2014/09/17 V1.8a by Michael Shell
+-- See the "IEEEtran_HOWTO" manual for usage information.
+-- http://www.michaelshell.org/tex/ieeetran/
+\@IEEEtrantmpdimenA=\dimen102
+\@IEEEtrantmpdimenB=\dimen103
+\@IEEEtrantmpdimenC=\dimen104
+\@IEEEtrantmpcountA=\count79
+\@IEEEtrantmpcountB=\count80
+\@IEEEtrantmpcountC=\count81
+\@IEEEtrantmptoksA=\toks14
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 458.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+-- Using 8.5in x 11in (letter) paper.
+-- Using PDF output.
+\@IEEEnormalsizeunitybaselineskip=\dimen105
+-- This is a 10 point document.
+\CLASSINFOnormalsizebaselineskip=\dimen106
+\CLASSINFOnormalsizeunitybaselineskip=\dimen107
+\IEEEnormaljot=\dimen108
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <11> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <11> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <17> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <20> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+
+\IEEEquantizedlength=\dimen109
+\IEEEquantizedlengthdiff=\dimen110
+\IEEEquantizedtextheightdiff=\dimen111
+\IEEEilabelindentA=\dimen112
+\IEEEilabelindentB=\dimen113
+\IEEEilabelindent=\dimen114
+\IEEEelabelindent=\dimen115
+\IEEEdlabelindent=\dimen116
+\IEEElabelindent=\dimen117
+\IEEEiednormlabelsep=\dimen118
+\IEEEiedmathlabelsep=\dimen119
+\IEEEiedtopsep=\skip41
+\c@section=\count82
+\c@subsection=\count83
+\c@subsubsection=\count84
+\c@paragraph=\count85
+\c@IEEEsubequation=\count86
+\abovecaptionskip=\skip42
+\belowcaptionskip=\skip43
+\c@figure=\count87
+\c@table=\count88
+\@IEEEeqnnumcols=\count89
+\@IEEEeqncolcnt=\count90
+\@IEEEsubeqnnumrollback=\count91
+\@IEEEquantizeheightA=\dimen120
+\@IEEEquantizeheightB=\dimen121
+\@IEEEquantizeheightC=\dimen122
+\@IEEEquantizeprevdepth=\dimen123
+\@IEEEquantizemultiple=\count92
+\@IEEEquantizeboxA=\box26
+\@IEEEtmpitemindent=\dimen124
+\c@IEEEbiography=\count93
+\@IEEEtranrubishbin=\box27
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 2014/04/25 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 2014/05/08 v1.15 key=value parser (DPC)
+\KV@toks@=\toks15
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count94
+))
+\Gin@req@height=\dimen125
+\Gin@req@width=\dimen126
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip44
+
+For additional information on amsmath, use the `?' option.
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+Package: amstext 2000/06/29 v2.01
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks16
+\ex@=\dimen127
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen128
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count95
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count96
+\leftroot@=\count97
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count98
+\DOTSCASE@=\count99
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box28
+\strutbox@=\box29
+\big@size=\dimen129
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count100
+\c@MaxMatrixCols=\count101
+\dotsspace@=\muskip10
+\c@parentequation=\count102
+\dspbrk@lvl=\count103
+\tag@help=\toks17
+\row@=\count104
+\column@=\count105
+\maxfields@=\count106
+\andhelp@=\toks18
+\eqnshift@=\dimen130
+\alignsep@=\dimen131
+\tagshift@=\dimen132
+\tagwidth@=\dimen133
+\totwidth@=\dimen134
+\lineht@=\dimen135
+\@envbody=\toks19
+\multlinegap=\skip45
+\multlinetaggap=\skip46
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\subfig\subfig.sty"
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\caption\caption3.sty"
+Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 57.
+\captionmargin=\dimen136
+\captionmargin@=\dimen137
+\captionwidth=\dimen138
+\caption@tempdima=\dimen139
+\caption@indent=\dimen140
+\caption@parindent=\dimen141
+\caption@hangindent=\dimen142
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used.
+)
+\c@KVtest=\count107
+\sf@farskip=\skip47
+\sf@captopadj=\dimen143
+\sf@capskip=\skip48
+\sf@nearskip=\skip49
+\c@subfigure=\count108
+\c@subfigure@save=\count109
+\c@lofdepth=\count110
+\c@subtable=\count111
+\c@subtable@save=\count112
+\c@lotdepth=\count113
+\sf@top=\skip50
+\sf@bottom=\skip51
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amscls\amsthm.sty"
+Package: amsthm 2004/08/06 v2.20
+\thm@style=\toks21
+\thm@bodyfont=\toks22
+\thm@headfont=\toks23
+\thm@notefont=\toks24
+\thm@headpunct=\toks25
+\thm@preskip=\skip52
+\thm@postskip=\skip53
+\thm@headsep=\skip54
+\dth@everypar=\toks26
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+\c@theorem=\count114
+\c@lemma=\count115
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\textcomp.sty"
+Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
+Package textcomp Info: Sub-encoding information:
+(textcomp)               5 = only ISO-Adobe without \textcurrency
+(textcomp)               4 = 5 + \texteuro
+(textcomp)               3 = 4 + \textohm
+(textcomp)               2 = 3 + \textestimated + \textcurrency
+(textcomp)               1 = TS1 - \textcircled - \t
+(textcomp)               0 = TS1 (full)
+(textcomp)             Font families with sub-encoding setting implement
+(textcomp)             only a restricted character set as indicated.
+(textcomp)             Family '?' is the default used for unknown fonts.
+(textcomp)             See the documentation for details.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 71.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1enc.def"
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+)
+LaTeX Info: Redefining \oldstylenums on input line 266.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 281.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 282.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 283.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 284.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 285.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 286.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 287.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 288.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 289.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 290.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 291.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 292.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 293.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 294.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 295.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 296.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 297.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 298.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 299.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 300.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 301.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 302.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 303.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 304.
+
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 305.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 306.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 307.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 308.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 309.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 310.
+Package textcomp Info: Setting lmr sub-encoding to TS1/0 on input line 311.
+Package textcomp Info: Setting lmdh sub-encoding to TS1/0 on input line 312.
+Package textcomp Info: Setting lmss sub-encoding to TS1/0 on input line 313.
+Package textcomp Info: Setting lmssq sub-encoding to TS1/0 on input line 314.
+Package textcomp Info: Setting lmvtt sub-encoding to TS1/0 on input line 315.
+Package textcomp Info: Setting qhv sub-encoding to TS1/0 on input line 316.
+Package textcomp Info: Setting qag sub-encoding to TS1/0 on input line 317.
+Package textcomp Info: Setting qbk sub-encoding to TS1/0 on input line 318.
+Package textcomp Info: Setting qcr sub-encoding to TS1/0 on input line 319.
+Package textcomp Info: Setting qcs sub-encoding to TS1/0 on input line 320.
+Package textcomp Info: Setting qpl sub-encoding to TS1/0 on input line 321.
+Package textcomp Info: Setting qtm sub-encoding to TS1/0 on input line 322.
+Package textcomp Info: Setting qzc sub-encoding to TS1/0 on input line 323.
+Package textcomp Info: Setting qhvc sub-encoding to TS1/0 on input line 324.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 325.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 326.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 327.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 328.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 329.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 330.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 331.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 332.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 333.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 334.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 335.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 336.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 337.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 338.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 339.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 340.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\was\gensymb.sty"
+Package: gensymb 2003/07/02 v1.0 (WaS)
+)
+("F:\Dropbox\Research\15 Fall\Indoor mmWave Wearble Networks\WiOpt_v4.aux")
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 36.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 36.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
+File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 36.
+
+-- Lines per column: 56 (exact).
+("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count116
+\scratchdimen=\dimen144
+\scratchbox=\box30
+\nofMPsegments=\count117
+\nofMParguments=\count118
+\everyMPshowfont=\toks27
+\MPscratchCnt=\count119
+\MPscratchDim=\dimen145
+\MPnumerator=\count120
+\makeMPintoPDFobject=\count121
+\everyMPtoPDFconversion=\toks28
+)
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: End \AtBeginDocument code.
+\symgns@font=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `gns@font' in version `bold'
+(Font)                  TS1/ptm/m/n --> TS1/ptm/bx/n on input line 36.
+Package gensymb Info: Math companion symbols declared on input line 36.
+LaTeX Info: Redefining \degree on input line 36.
+LaTeX Info: Redefining \celsius on input line 36.
+Package gensymb Info: Using text companion symbols for \degree, \celsius and \p
+erthousand on input line 36.
+LaTeX Info: Redefining \ohm on input line 36.
+Package gensymb Info: Using \textohm for \ohm on input line 36.
+Package gensymb Info: Using \textmu for \micro on input line 36.
+LaTeX Font Info:    Try loading font information for U+msa on input line 101.
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 101.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for TS1+ptm on input line 101.
+
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ts1ptm.fd"
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+) [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
+
+
+] [2]
+<./figures/Channel_selfblockage.pdf, id=19, 640.3925pt x 239.89626pt>
+File: ./figures/Channel_selfblockage.pdf Graphic file (type pdf)
+
+<use ./figures/Channel_selfblockage.pdf>
+Package pdftex.def Info: ./figures/Channel_selfblockage.pdf used on input line 
+183.
+(pdftex.def)             Requested size: 154.80157pt x 57.98991pt.
+
+<./figures/Channel_ENB_wiopt16.pdf, id=20, 786.94pt x 364.36125pt>
+File: ./figures/Channel_ENB_wiopt16.pdf Graphic file (type pdf)
+
+<use ./figures/Channel_ENB_wiopt16.pdf>
+Package pdftex.def Info: ./figures/Channel_ENB_wiopt16.pdf used on input line 2
+08.
+(pdftex.def)             Requested size: 154.80157pt x 71.67006pt.
+
+<./figures/Channel_NLOS_wiopt16.pdf, id=21, 733.74126pt x 363.3575pt>
+File: ./figures/Channel_NLOS_wiopt16.pdf Graphic file (type pdf)
+
+<use ./figures/Channel_NLOS_wiopt16.pdf>
+Package pdftex.def Info: ./figures/Channel_NLOS_wiopt16.pdf used on input line 
+209.
+(pdftex.def)             Requested size: 206.39685pt x 102.21066pt.
+LaTeX Font Info:    Font shape `TS1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `TS1/ptm/b/n' tried instead on input line 251.
+LaTeX Font Info:    Font shape `TS1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `TS1/ptm/b/n' tried instead on input line 251.
+LaTeX Font Info:    Font shape `TS1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `TS1/ptm/b/n' tried instead on input line 251.
+ [3 <F:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures/Channel
+_selfblockage.pdf> <F:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/
+figures/Channel_ENB_wiopt16.pdf> <F:/Dropbox/Research/15 Fall/Indoor mmWave Wea
+rble Networks/figures/Channel_NLOS_wiopt16.pdf>]
+Underfull \hbox (badness 1742) in paragraph at lines 256--257
+\OT1/ptm/b/n/10 Theorem 1. \OT1/ptm/m/it/10 If user lo-ca-tions fol-low HPPP wi
+th den-
+ []
+
+
+Overfull \hbox (4.09712pt too wide) detected at line 276
+ []$[]  \OT1/cmr/m/n/10 E[\OML/cmm/m/it/10 N[]\OT1/cmr/m/n/10 ] = P[] [] [][](\
+OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 x\OMS/cmsy/m/n/10 j 2 \OT1/cmr/m/n/10 [\OML/c
+mm/m/it/10 r[]; r[]\OT1/cmr/m/n/10 ]) \OMS/cmsy/m/n/10  \OML/cmm/m/it/10 e[]$ 
+
+ []
+
+<./figures/Channel_en_si.pdf, id=40, 341.275pt x 273.02pt>
+File: ./figures/Channel_en_si.pdf Graphic file (type pdf)
+
+<use ./figures/Channel_en_si.pdf>
+Package pdftex.def Info: ./figures/Channel_en_si.pdf used on input line 292.
+(pdftex.def)             Requested size: 154.80157pt x 123.84102pt.
+
+<./figures/Channel_si_pdf.pdf, id=41, 341.275pt x 255.95625pt>
+File: ./figures/Channel_si_pdf.pdf Graphic file (type pdf)
+
+<use ./figures/Channel_si_pdf.pdf>
+Package pdftex.def Info: ./figures/Channel_si_pdf.pdf used on input line 302.
+(pdftex.def)             Requested size: 154.80157pt x 116.10095pt.
+
+<./figures/Channel_jamming_01.pdf, id=42, 255.95625pt x 255.95625pt>
+File: ./figures/Channel_jamming_01.pdf Graphic file (type pdf)
+
+<use ./figures/Channel_jamming_01.pdf>
+Package pdftex.def Info: ./figures/Channel_jamming_01.pdf used on input line 30
+9.
+(pdftex.def)             Requested size: 77.39685pt x 77.39673pt.
+
+<./figures/Channel_jamming_05.pdf, id=43, 255.95625pt x 255.95625pt>
+File: ./figures/Channel_jamming_05.pdf Graphic file (type pdf)
+
+<use ./figures/Channel_jamming_05.pdf>
+Package pdftex.def Info: ./figures/Channel_jamming_05.pdf used on input line 31
+0.
+(pdftex.def)             Requested size: 77.39685pt x 77.39673pt.
+
+<./figures/Channel_jamming_15.pdf, id=44, 255.95625pt x 255.95625pt>
+File: ./figures/Channel_jamming_15.pdf Graphic file (type pdf)
+
+<use ./figures/Channel_jamming_15.pdf>
+Package pdftex.def Info: ./figures/Channel_jamming_15.pdf used on input line 31
+1.
+(pdftex.def)             Requested size: 77.39685pt x 77.39673pt.
+ [4 <F:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures/Channel
+_en_si.pdf> <F:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures
+/Channel_si_pdf.pdf> <F:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Network
+s/figures/Channel_jamming_01.pdf> <F:/Dropbox/Research/15 Fall/Indoor mmWave We
+arble Networks/figures/Channel_jamming_05.pdf> <F:/Dropbox/Research/15 Fall/Ind
+oor mmWave Wearble Networks/figures/Channel_jamming_15.pdf>]
+<./figures/Channel_sensitivity.pdf, id=83, 255.95625pt x 204.765pt>
+File: ./figures/Channel_sensitivity.pdf Graphic file (type pdf)
+
+<use ./figures/Channel_sensitivity.pdf>
+Package pdftex.def Info: ./figures/Channel_sensitivity.pdf used on input line 3
+98.
+(pdftex.def)             Requested size: 118.6778pt x 94.9429pt.
+
+<./figures/Channel_sensitivity_average.pdf, id=84, 255.95625pt x 204.765pt>
+File: ./figures/Channel_sensitivity_average.pdf Graphic file (type pdf)
+
+<use ./figures/Channel_sensitivity_average.pdf>
+Package pdftex.def Info: ./figures/Channel_sensitivity_average.pdf used on inpu
+t line 399.
+(pdftex.def)             Requested size: 118.6778pt x 94.9429pt.
+ [5 <F:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures/Channel
+_sensitivity.pdf> <F:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/f
+igures/Channel_sensitivity_average.pdf>] <./figures/Clustering_reuse.pdf, id=13
+3, 637.38126pt x 363.3575pt>
+File: ./figures/Clustering_reuse.pdf Graphic file (type pdf)
+
+<use ./figures/Clustering_reuse.pdf>
+Package pdftex.def Info: ./figures/Clustering_reuse.pdf used on input line 440.
+
+(pdftex.def)             Requested size: 206.39685pt x 117.66286pt.
+
+<./figures/Clustering_model.pdf, id=134, 631.35875pt x 428.60126pt>
+File: ./figures/Clustering_model.pdf Graphic file (type pdf)
+
+<use ./figures/Clustering_model.pdf>
+Package pdftex.def Info: ./figures/Clustering_model.pdf used on input line 495.
+
+(pdftex.def)             Requested size: 154.80157pt x 105.08997pt.
+ [6 <F:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures/Cluster
+ing_reuse.pdf> <F:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figu
+res/Clustering_model.pdf>]
+Underfull \hbox (badness 5403) in paragraph at lines 521--523
+\OT1/ptm/m/n/10 slots, and sec-ondary trans-mis-sions in the rest $\OT1/cmr/m/n
+/10 (1 \OMS/cmsy/m/n/10  $
+ []
+
+<./figures/Cluster_analysis_basic_stt.pdf, id=144, 455.7025pt x 273.02pt>
+File: ./figures/Cluster_analysis_basic_stt.pdf Graphic file (type pdf)
+
+<use ./figures/Cluster_analysis_basic_stt.pdf>
+Package pdftex.def Info: ./figures/Cluster_analysis_basic_stt.pdf used on input
+ line 589.
+(pdftex.def)             Requested size: 206.39685pt x 123.65771pt.
+
+<./figures/Cluster_analysis_basic_psuccess.pdf, id=145, 455.7025pt x 273.02pt>
+File: ./figures/Cluster_analysis_basic_psuccess.pdf Graphic file (type pdf)
+
+<use ./figures/Cluster_analysis_basic_psuccess.pdf>
+Package pdftex.def Info: ./figures/Cluster_analysis_basic_psuccess.pdf used on 
+input line 590.
+(pdftex.def)             Requested size: 206.39685pt x 123.65771pt.
+
+<./figures/Cluster_analysis_primary_ratio.pdf, id=146, 341.275pt x 273.02pt>
+File: ./figures/Cluster_analysis_primary_ratio.pdf Graphic file (type pdf)
+
+<use ./figures/Cluster_analysis_primary_ratio.pdf>
+Package pdftex.def Info: ./figures/Cluster_analysis_primary_ratio.pdf used on i
+nput line 603.
+(pdftex.def)             Requested size: 154.80157pt x 123.84102pt.
+ [7 <F:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures/Cluster
+_analysis_basic_stt.pdf> <F:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Net
+works/figures/Cluster_analysis_basic_psuccess.pdf>]
+<./figures/Cluster_analysis_optimal_cluster_size.pdf, id=174, 341.275pt x 273.0
+2pt>
+File: ./figures/Cluster_analysis_optimal_cluster_size.pdf Graphic file (type pd
+f)
+ <use ./figures/Cluster_analysis_optimal_cluster_size.pdf>
+Package pdftex.def Info: ./figures/Cluster_analysis_optimal_cluster_size.pdf us
+ed on input line 614.
+(pdftex.def)             Requested size: 154.80157pt x 123.84102pt.
+
+<./figures/Cluster_analysis_compare_mac.pdf, id=175, 341.275pt x 273.02pt>
+File: ./figures/Cluster_analysis_compare_mac.pdf Graphic file (type pdf)
+
+<use ./figures/Cluster_analysis_compare_mac.pdf>
+Package pdftex.def Info: ./figures/Cluster_analysis_compare_mac.pdf used on inp
+ut line 630.
+(pdftex.def)             Requested size: 154.80157pt x 123.84102pt.
+Missing character: There is no â in font ptmri7t!
+Missing character: There is no € in font ptmri7t!
+Missing character: There is no ” in font ptmri7t!
+Missing character: There is no â in font ptmri7t!
+Missing character: There is no € in font ptmri7t!
+Missing character: There is no ” in font ptmri7t!
+Missing character: There is no â in font ptmri7t!
+Missing character: There is no € in font ptmri7t!
+Missing character: There is no ” in font ptmri7t!
+Missing character: There is no â in font ptmri7t!
+Missing character: There is no € in font ptmri7t!
+Missing character: There is no ” in font ptmri7t!
+Missing character: There is no â in font ptmri7t!
+Missing character: There is no € in font ptmri7t!
+Missing character: There is no ” in font ptmri7t!
+Missing character: There is no â in font ptmri7t!
+Missing character: There is no € in font ptmri7t!
+Missing character: There is no ” in font ptmri7t!
+ [8 <F:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures/Cluster
+_analysis_primary_ratio.pdf> <F:/Dropbox/Research/15 Fall/Indoor mmWave Wearble
+ Networks/figures/Cluster_analysis_optimal_cluster_size.pdf> <F:/Dropbox/Resear
+ch/15 Fall/Indoor mmWave Wearble Networks/figures/Cluster_analysis_compare_mac.
+pdf>]
+
+** Conference Paper **
+Before submitting the final camera ready copy, remember to:
+
+ 1. Manually equalize the lengths of two columns on the last page
+ of your paper;
+
+ 2. Ensure that any PostScript and/or PDF output post-processing
+ uses only Type 1 fonts and that every step in the generation
+ process uses the appropriate paper size.
+
+[9
+
+] ("F:\Dropbox\Research\15 Fall\Indoor mmWave Wearble Networks\WiOpt_v4.aux") )
+ 
+Here is how much of TeX's memory you used:
+ 4127 strings out of 493706
+ 66051 string characters out of 3144580
+ 126995 words of memory out of 3000000
+ 7388 multiletter control sequences out of 15000+200000
+ 48111 words of font info for 104 fonts, out of 3000000 for 9000
+ 1025 hyphenation exceptions out of 8191
+ 36i,16n,47p,543b,330s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Program Files/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb
+><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Prog
+ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Program Fil
+es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
+ts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy
+10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C
+:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program
+ Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/
+fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/symbols/msbm7.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
+ype1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/ut
+mbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Pro
+gram Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on WiOpt_v4.pdf (9 pages, 716288 bytes).
+PDF statistics:
+ 305 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 86 words of extra memory for PDF output out of 10000 (max. 10000000)
+

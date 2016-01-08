@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.12.2)  19 DEC 2015 08:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.12.2)  30 DEC 2015 21:48
 entering extended mode
-**"Indoor mmWave Wearable Networks Challenges to MAC Design.tex"
-("Indoor mmWave Wearable Networks Challenges to MAC Design.tex"
+**WiOpt_v2.tex
+(WiOpt_v2.tex
 LaTeX2e <2015/10/01> patch level 2
 Babel <3.9m> and hyphenation patterns for 69 languages loaded.
 (IEEEtran.cls
@@ -336,8 +336,7 @@ Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\was\gensymb.sty"
 Package: gensymb 2003/07/02 v1.0 (WaS)
-)
-("Indoor mmWave Wearable Networks Challenges to MAC Design.aux")
+) (WiOpt_v2.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
 LaTeX Font Info:    ... okay on input line 36.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
@@ -387,16 +386,16 @@ erthousand on input line 36.
 LaTeX Info: Redefining \ohm on input line 36.
 Package gensymb Info: Using \textohm for \ohm on input line 36.
 Package gensymb Info: Using \textmu for \micro on input line 36.
-LaTeX Font Info:    Try loading font information for U+msa on input line 46.
+LaTeX Font Info:    Try loading font information for U+msa on input line 93.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 46.
+LaTeX Font Info:    Try loading font information for U+msb on input line 93.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for TS1+ptm on input line 46.
+LaTeX Font Info:    Try loading font information for TS1+ptm on input line 93.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ts1ptm.fd"
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
@@ -404,237 +403,169 @@ File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 
 
 ] [2]
-Missing character: There is no d in font msbm10!
-Missing character: There is no d in font msbm10!
+<./figures/Channel_selfblockage.pdf, id=18, 687.56876pt x 245.91875pt>
+File: ./figures/Channel_selfblockage.pdf Graphic file (type pdf)
 
-Overfull \hbox (14.39565pt too wide) in paragraph at lines 158--158
-[] 
- []
+<use ./figures/Channel_selfblockage.pdf>
+Package pdftex.def Info: ./figures/Channel_selfblockage.pdf used on input line 
+184.
+(pdftex.def)             Requested size: 154.80157pt x 55.36685pt.
 
-[3] <./figures/Channel_ENB.pdf, id=28, 438.40889pt x 243.77473pt>
+<./figures/Channel_ENB.pdf, id=19, 438.40889pt x 243.77473pt>
 File: ./figures/Channel_ENB.pdf Graphic file (type pdf)
 
 <use ./figures/Channel_ENB.pdf>
-Package pdftex.def Info: ./figures/Channel_ENB.pdf used on input line 172.
-(pdftex.def)             Requested size: 206.39685pt x 114.76384pt.
+Package pdftex.def Info: ./figures/Channel_ENB.pdf used on input line 223.
+(pdftex.def)             Requested size: 154.80157pt x 86.0738pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 186--188
-$[]\OMS/cmsy/m/n/10 n\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x; \OT1/cmr/m/n/10 )$ \
-OT1/ptm/m/n/10 is an in-de-pen-dently marked PPP and
- []
-
-
-Overfull \hbox (6.97636pt too wide) in paragraph at lines 195--195
-[] 
- []
-
-
-Overfull \hbox (16.2065pt too wide) detected at line 217
-[] []
- []
-
-<./figures/Channel_NLOS.pdf, id=29, 386.37749pt x 191.26155pt>
+<./figures/Channel_NLOS.pdf, id=20, 386.37749pt x 191.26155pt>
 File: ./figures/Channel_NLOS.pdf Graphic file (type pdf)
 
 <use ./figures/Channel_NLOS.pdf>
-Package pdftex.def Info: ./figures/Channel_NLOS.pdf used on input line 229.
+Package pdftex.def Info: ./figures/Channel_NLOS.pdf used on input line 224.
 (pdftex.def)             Requested size: 206.39685pt x 102.16777pt.
- [4 <./figures/Channel_ENB.pdf>]
-Underfull \hbox (badness 1448) in paragraph at lines 308--309
+
+Overfull \hbox (4.09712pt too wide) detected at line 252
+ []$[]  \OT1/cmr/m/n/10 E[\OML/cmm/m/it/10 N[]\OT1/cmr/m/n/10 ] = P[] [] [][](\
+OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 x\OMS/cmsy/m/n/10 j 2 \OT1/cmr/m/n/10 [\OML/c
+mm/m/it/10 r[]; r[]\OT1/cmr/m/n/10 ]) \OMS/cmsy/m/n/10  \OML/cmm/m/it/10 e[]$ 
+
+ []
+
+[3 <./figures/Channel_selfblockage.pdf> <./figures/Channel_ENB.pdf> <./figures/
+Channel_NLOS.pdf>]
+<./figures/Channel_en_si.pdf, id=45, 341.275pt x 255.95625pt>
+File: ./figures/Channel_en_si.pdf Graphic file (type pdf)
+
+<use ./figures/Channel_en_si.pdf>
+Package pdftex.def Info: ./figures/Channel_en_si.pdf used on input line 266.
+(pdftex.def)             Requested size: 154.80157pt x 116.10095pt.
+
+<./figures/Channel_si_pdf.pdf, id=46, 341.275pt x 255.95625pt>
+File: ./figures/Channel_si_pdf.pdf Graphic file (type pdf)
+
+<use ./figures/Channel_si_pdf.pdf>
+Package pdftex.def Info: ./figures/Channel_si_pdf.pdf used on input line 276.
+(pdftex.def)             Requested size: 154.80157pt x 116.10095pt.
+
+<./figures/Channel_jamming_01.pdf, id=47, 255.95625pt x 255.95625pt>
+File: ./figures/Channel_jamming_01.pdf Graphic file (type pdf)
+
+<use ./figures/Channel_jamming_01.pdf>
+Package pdftex.def Info: ./figures/Channel_jamming_01.pdf used on input line 28
+3.
+(pdftex.def)             Requested size: 77.39685pt x 77.39673pt.
+
+<./figures/Channel_jamming_05.pdf, id=48, 255.95625pt x 255.95625pt>
+File: ./figures/Channel_jamming_05.pdf Graphic file (type pdf)
+
+<use ./figures/Channel_jamming_05.pdf>
+Package pdftex.def Info: ./figures/Channel_jamming_05.pdf used on input line 28
+4.
+(pdftex.def)             Requested size: 77.39685pt x 77.39673pt.
+
+<./figures/Channel_jamming_15.pdf, id=49, 255.95625pt x 255.95625pt>
+File: ./figures/Channel_jamming_15.pdf Graphic file (type pdf)
+
+<use ./figures/Channel_jamming_15.pdf>
+Package pdftex.def Info: ./figures/Channel_jamming_15.pdf used on input line 28
+5.
+(pdftex.def)             Requested size: 77.39685pt x 77.39673pt.
+ [4 <./figures/Channel_en_si.pdf> <./figures/Channel_si_pdf.pdf> <./figures/Cha
+nnel_jamming_01.pdf> <./figures/Channel_jamming_05.pdf> <./figures/Channel_jamm
+ing_15.pdf>]
+Underfull \hbox (badness 1448) in paragraph at lines 338--339
 []\OT1/ptm/m/n/10 Denote $\OML/cmm/m/it/10 f[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10
  x[]; m[]; []\OMS/cmsy/m/n/10 n\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]; m[]\OT1/c
 mr/m/n/10 )\OML/cmm/m/it/10 ; m[]\OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 be the in-d
 i-ca-tor
  []
 
-[5 <./figures/Channel_NLOS.pdf>]
-<./figures/Channel_trace.pdf, id=55, 444.66125pt x 184.69pt>
-File: ./figures/Channel_trace.pdf Graphic file (type pdf)
-
-<use ./figures/Channel_trace.pdf>
-Package pdftex.def Info: ./figures/Channel_trace.pdf used on input line 349.
-(pdftex.def)             Requested size: 154.80157pt x 64.29582pt.
-
-<./figures/Channel_boolean.pdf, id=56, 289.54272pt x 137.30397pt>
-File: ./figures/Channel_boolean.pdf Graphic file (type pdf)
-
-<use ./figures/Channel_boolean.pdf>
-Package pdftex.def Info: ./figures/Channel_boolean.pdf used on input line 350.
-(pdftex.def)             Requested size: 154.80157pt x 73.40974pt.
-
-
-Package amsmath Warning: Foreign command \atopwithdelims;
-(amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 383.
-
-[6 <./figures/Channel_trace.pdf> <./figures/Channel_boolean.pdf>] [7]
-<./figures/Channel_en_si.pdf, id=73, 341.275pt x 255.95625pt>
-File: ./figures/Channel_en_si.pdf Graphic file (type pdf)
-
-<use ./figures/Channel_en_si.pdf>
-Package pdftex.def Info: ./figures/Channel_en_si.pdf used on input line 496.
-(pdftex.def)             Requested size: 206.39685pt x 154.80127pt.
-
-<./figures/Channel_si_pdf.pdf, id=74, 341.275pt x 255.95625pt>
-File: ./figures/Channel_si_pdf.pdf Graphic file (type pdf)
-
-<use ./figures/Channel_si_pdf.pdf>
-Package pdftex.def Info: ./figures/Channel_si_pdf.pdf used on input line 504.
-(pdftex.def)             Requested size: 206.39685pt x 154.80127pt.
-
-<./figures/Channel_translation_range.pdf, id=75, 227.85126pt x 170.6375pt>
-File: ./figures/Channel_translation_range.pdf Graphic file (type pdf)
-
-<use ./figures/Channel_translation_range.pdf>
-Package pdftex.def Info: ./figures/Channel_translation_range.pdf used on input 
-line 519.
-(pdftex.def)             Requested size: 154.80157pt x 115.93301pt.
-
-<./figures/Channel_sensitivity.pdf, id=76, 341.275pt x 255.95625pt>
+<./figures/Channel_sensitivity.pdf, id=69, 341.275pt x 255.95625pt>
 File: ./figures/Channel_sensitivity.pdf Graphic file (type pdf)
 
 <use ./figures/Channel_sensitivity.pdf>
-Package pdftex.def Info: ./figures/Channel_sensitivity.pdf used on input line 5
-29.
-(pdftex.def)             Requested size: 206.39685pt x 154.80127pt.
- [8 <./figures/Channel_en_si.pdf> <./figures/Channel_si_pdf.pdf> <./figures/Cha
-nnel_translation_range.pdf> <./figures/Channel_sensitivity.pdf>]
-<./figures/Channel_sensitivity_average.pdf, id=102, 284.06125pt x 204.765pt>
+Package pdftex.def Info: ./figures/Channel_sensitivity.pdf used on input line 3
+69.
+(pdftex.def)             Requested size: 154.80157pt x 116.10095pt.
+
+<./figures/Channel_sensitivity_average.pdf, id=70, 284.06125pt x 204.765pt>
 File: ./figures/Channel_sensitivity_average.pdf Graphic file (type pdf)
 
 <use ./figures/Channel_sensitivity_average.pdf>
 Package pdftex.def Info: ./figures/Channel_sensitivity_average.pdf used on inpu
-t line 538.
-(pdftex.def)             Requested size: 154.80157pt x 111.59314pt.
+t line 384.
+(pdftex.def)             Requested size: 129.0pt x 92.99324pt.
 
-<./figures/Channel_constant_velocity_model.pdf, id=103, 341.275pt x 255.95625pt
->
-File: ./figures/Channel_constant_velocity_model.pdf Graphic file (type pdf)
- <use ./figures/Channel_constant_velocity_model.pdf>
-Package pdftex.def Info: ./figures/Channel_constant_velocity_model.pdf used on 
-input line 547.
-(pdftex.def)             Requested size: 206.39685pt x 154.80127pt.
-
-<./figures/Channel_constant_velocity_model_frequency.pdf, id=104, 341.275pt x 2
-55.95625pt>
-File: ./figures/Channel_constant_velocity_model_frequency.pdf Graphic file (typ
-e pdf)
- <use ./figures/Channel_constant_velocity_model_frequency.pdf>
-Package pdftex.def Info: ./figures/Channel_constant_velocity_model_frequency.pd
-f used on input line 549.
-(pdftex.def)             Requested size: 206.39685pt x 154.80127pt.
-
-Underfull \hbox (badness 5050) in paragraph at lines 566--568
-[]\OT1/ptm/m/n/10 In the de-cen-tral-ized clus-ter-ing scheme pro-posed in
- []
-
-<./figures/Clustering_tdma.pdf, id=105, 635.37375pt x 363.3575pt>
-File: ./figures/Clustering_tdma.pdf Graphic file (type pdf)
-
-<use ./figures/Clustering_tdma.pdf>
-Package pdftex.def Info: ./figures/Clustering_tdma.pdf used on input line 571.
-(pdftex.def)             Requested size: 206.39685pt x 118.03433pt.
- [9 <./figures/Channel_sensitivity_average.pdf> <./figures/Channel_constant_vel
-ocity_model.pdf> <./figures/Channel_constant_velocity_model_frequency.pdf> <./f
-igures/Clustering_tdma.pdf>] [10]
-<./figures/Clustering_reuse.pdf, id=130, 637.38126pt x 363.3575pt>
+<./figures/Clustering_reuse.pdf, id=71, 637.38126pt x 363.3575pt>
 File: ./figures/Clustering_reuse.pdf Graphic file (type pdf)
 
 <use ./figures/Clustering_reuse.pdf>
-Package pdftex.def Info: ./figures/Clustering_reuse.pdf used on input line 647.
+Package pdftex.def Info: ./figures/Clustering_reuse.pdf used on input line 425.
 
 (pdftex.def)             Requested size: 206.39685pt x 117.66286pt.
-
-Overfull \hbox (15.67773pt too wide) detected at line 684
-\OML/cmm/m/it/10 PL\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 i; j\OT1/cmr/m/n/10 ) = []
- \OML/cmm/m/it/10 ;
- []
-
-
-Underfull \hbox (badness 3679) in paragraph at lines 684--688
-\OT1/ptm/m/n/10 where $\OML/cmm/m/it/10 d\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 i; j
-\OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 is the 2-D dis-tance be-tween $\OML/cmm/m/it
-/10 i$ \OT1/ptm/m/n/10 and $\OML/cmm/m/it/10 j$\OT1/ptm/m/n/10 ,
- []
-
-[11 <./figures/Clustering_reuse.pdf>]
-<./figures/Clustering_model.pdf, id=137, 578.16pt x 393.47pt>
+ [5 <./figures/Channel_sensitivity.pdf> <./figures/Channel_sensitivity_average.
+pdf>]
+<./figures/Clustering_model.pdf, id=86, 320.85771pt x 232.21254pt>
 File: ./figures/Clustering_model.pdf Graphic file (type pdf)
 
 <use ./figures/Clustering_model.pdf>
-Package pdftex.def Info: ./figures/Clustering_model.pdf used on input line 761.
+Package pdftex.def Info: ./figures/Clustering_model.pdf used on input line 491.
 
-(pdftex.def)             Requested size: 206.39685pt x 140.46031pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 787--789
+(pdftex.def)             Requested size: 180.60315pt x 130.71135pt.
+ [6 <./figures/Clustering_reuse.pdf> <./figures/Clustering_model.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 513--515
 \OT1/ptm/m/n/10 A PBSS will sched-ule pri-mary trans-mis-sions in
  []
 
 
-Underfull \hbox (badness 5050) in paragraph at lines 787--789
-$\OML/cmm/m/it/10 []p[]=K$ \OT1/ptm/m/n/10 slots, and sec-ondary trans-mis-sio
+Underfull \hbox (badness 5119) in paragraph at lines 513--515
+$\OML/cmm/m/it/10 []f[]=K$ \OT1/ptm/m/n/10 slots, and sec-ondary trans-mis-sio
 ns in
  []
 
-[12 <./figures/Clustering_model.pdf>]
-<./figures/Cluster_analysis_basic_stt.pdf, id=144, 455.7025pt x 341.275pt>
+<./figures/Cluster_analysis_basic_stt.pdf, id=99, 455.7025pt x 341.275pt>
 File: ./figures/Cluster_analysis_basic_stt.pdf Graphic file (type pdf)
 
 <use ./figures/Cluster_analysis_basic_stt.pdf>
 Package pdftex.def Info: ./figures/Cluster_analysis_basic_stt.pdf used on input
- line 865.
-(pdftex.def)             Requested size: 206.39685pt x 154.57214pt.
+ line 578.
+(pdftex.def)             Requested size: 154.80157pt x 115.93301pt.
 
-<./figures/Cluster_analysis_basic_psuccess.pdf, id=145, 455.7025pt x 341.275pt>
+<./figures/Cluster_analysis_basic_psuccess.pdf, id=100, 455.7025pt x 341.275pt>
 File: ./figures/Cluster_analysis_basic_psuccess.pdf Graphic file (type pdf)
 <use ./figures/Cluster_analysis_basic_psuccess.pdf>
 Package pdftex.def Info: ./figures/Cluster_analysis_basic_psuccess.pdf used on 
-input line 867.
-(pdftex.def)             Requested size: 206.39685pt x 154.57214pt.
-
-<./figures/Cluster_analysis_directionality.pdf, id=146, 341.275pt x 255.95625pt
->
-File: ./figures/Cluster_analysis_directionality.pdf Graphic file (type pdf)
- <use ./figures/Cluster_analysis_directionality.pdf>
-Package pdftex.def Info: ./figures/Cluster_analysis_directionality.pdf used on 
-input line 878.
-(pdftex.def)             Requested size: 206.39685pt x 154.80127pt.
- [13 <./figures/Cluster_analysis_basic_stt.pdf> <./figures/Cluster_analysis_bas
-ic_psuccess.pdf>]
-<./figures/Cluster_analysis_primary_ratio.pdf, id=197, 341.275pt x 255.95625pt>
+input line 579.
+(pdftex.def)             Requested size: 154.80157pt x 115.93301pt.
+ [7 <./figures/Cluster_analysis_basic_stt.pdf> <./figures/Cluster_analysis_basi
+c_psuccess.pdf>]
+<./figures/Cluster_analysis_primary_ratio.pdf, id=153, 341.275pt x 255.95625pt>
 File: ./figures/Cluster_analysis_primary_ratio.pdf Graphic file (type pdf)
 <use ./figures/Cluster_analysis_primary_ratio.pdf>
 Package pdftex.def Info: ./figures/Cluster_analysis_primary_ratio.pdf used on i
-nput line 889.
-(pdftex.def)             Requested size: 206.39685pt x 154.80127pt.
+nput line 592.
+(pdftex.def)             Requested size: 154.80157pt x 116.10095pt.
 
-<./figures/Cluster_analysis_location.pdf, id=198, 455.7025pt x 341.275pt>
-File: ./figures/Cluster_analysis_location.pdf Graphic file (type pdf)
-
-<use ./figures/Cluster_analysis_location.pdf>
-Package pdftex.def Info: ./figures/Cluster_analysis_location.pdf used on input 
-line 901.
-(pdftex.def)             Requested size: 206.39685pt x 154.57214pt.
-
-<./figures/Cluster_analysis_optimal_cluster_size.pdf, id=199, 341.275pt x 255.9
+<./figures/Cluster_analysis_optimal_cluster_size.pdf, id=154, 341.275pt x 255.9
 5625pt>
 File: ./figures/Cluster_analysis_optimal_cluster_size.pdf Graphic file (type pd
 f)
  <use ./figures/Cluster_analysis_optimal_cluster_size.pdf>
 Package pdftex.def Info: ./figures/Cluster_analysis_optimal_cluster_size.pdf us
-ed on input line 913.
-(pdftex.def)             Requested size: 206.39685pt x 154.80127pt.
+ed on input line 603.
+(pdftex.def)             Requested size: 154.80157pt x 116.10095pt.
 
-<./figures/Cluster_analysis_compare_mac.pdf, id=200, 341.275pt x 255.95625pt>
+<./figures/Cluster_analysis_compare_mac.pdf, id=155, 341.275pt x 255.95625pt>
 File: ./figures/Cluster_analysis_compare_mac.pdf Graphic file (type pdf)
 
 <use ./figures/Cluster_analysis_compare_mac.pdf>
 Package pdftex.def Info: ./figures/Cluster_analysis_compare_mac.pdf used on inp
-ut line 928.
-(pdftex.def)             Requested size: 206.39685pt x 154.80127pt.
- [14 <./figures/Cluster_analysis_directionality.pdf> <./figures/Cluster_analysi
-s_primary_ratio.pdf> <./figures/Cluster_analysis_location.pdf> <./figures/Clust
-er_analysis_optimal_cluster_size.pdf>]
+ut line 619.
+(pdftex.def)             Requested size: 154.80157pt x 116.10095pt.
+
+Underfull \vbox (badness 1320) has occurred while \output is active []
+
 Missing character: There is no â in font ptmri7t!
 Missing character: There is no € in font ptmri7t!
 Missing character: There is no ” in font ptmri7t!
@@ -653,7 +584,8 @@ Missing character: There is no ” in font ptmri7t!
 Missing character: There is no â in font ptmri7t!
 Missing character: There is no € in font ptmri7t!
 Missing character: There is no ” in font ptmri7t!
- [15 <./figures/Cluster_analysis_compare_mac.pdf>]
+ [8 <./figures/Cluster_analysis_primary_ratio.pdf> <./figures/Cluster_analysis_
+optimal_cluster_size.pdf> <./figures/Cluster_analysis_compare_mac.pdf>]
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -665,44 +597,41 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[16] ("Indoor mmWave Wearable Networks Challenges to MAC Design.aux") ) 
+[9
+
+] (WiOpt_v2.aux) ) 
 Here is how much of TeX's memory you used:
- 4197 strings out of 493636
- 67638 string characters out of 3143753
- 132017 words of memory out of 3000000
- 7519 multiletter control sequences out of 15000+200000
- 48906 words of font info for 105 fonts, out of 3000000 for 9000
+ 4119 strings out of 493636
+ 65360 string characters out of 3143753
+ 127603 words of memory out of 3000000
+ 7450 multiletter control sequences out of 15000+200000
+ 45969 words of font info for 97 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 36i,19n,48p,2076b,351s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Prog
-ram Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Program Files/MiKTeX 2.9/fonts/
-type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
-blic/amsfonts/cmextra/cmex8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
-/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfont
-s/cm/cmmi5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi
-6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:
-/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program 
-Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Program Files/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/f
-onts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
-/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
-sfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
-cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb
-><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Prog
-ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/
-type1/public/amsfonts/cm/cmsy9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
-/amsfonts/symbols/msbm7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/
-utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/P
-rogram Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKT
-eX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on "Indoor mmWave Wearable Networks Challenges to MAC Design.pdf
-" (16 pages, 684786 bytes).
+ 36i,16n,47p,543b,328s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Progr
+am Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
+onts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
+mr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><
+C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program
+ Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
+1/public/amsfonts/cm/cmsy5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.
+pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
+<C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files
+/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Program Files/MiKTeX 2.9/font
+s/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times
+/utmri8a.pfb>
+Output written on WiOpt_v2.pdf (9 pages, 531175 bytes).
 PDF statistics:
- 359 PDF objects out of 1000 (max. 8388607)
+ 274 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 106 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 86 words of extra memory for PDF output out of 10000 (max. 10000000)
 
