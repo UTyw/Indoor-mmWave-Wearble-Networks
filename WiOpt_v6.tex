@@ -58,9 +58,9 @@ More importantly, we show that at high densities the per user throughput is roug
 
 \section{Introduction}\label{section:introduction}
 % 1. Motivation
-The market for wearable devices is growing quickly and research on wearable networks is now actively being pursued \cite{wearable}. 
+The market for wearable devices is growing quickly and research on possible types of wearable networks is actively being pursued \cite{wearable}. 
 In the future, users may be equipped with multiple on body interconnected devices, some of which may require high bandwidth, e.g., devices supporting high quality audio/video and delivering augmented reality experiences. 
-To support such high data rates and operate at possibly high user densities, millimeter wave (mmWave) communication on 60GHz band has been proposed and standards developed for short-range wireless personal area network (WPAN) in the mmWave band, e.g., 802.11ad \cite{80211ad}, 802.15.3c \cite{802153c} and ECMA387 \cite{ECMA387}.
+To support such high data rates and operate at possibly high user densities, millimeter wave (mmWave) communication in the 60GHz band has been proposed and standards developed for short-range wireless personal area networks (WPAN), e.g., 802.11ad \cite{80211ad}, 802.15.3c \cite{802153c} and ECMA387 \cite{ECMA387}.
 
 
 % 2. Challenges
@@ -69,26 +69,26 @@ To support such high data rates and operate at possibly high user densities, mil
 
 Signal propagation in the mmWave band is different from bands traditionally used for mobile wireless devices. 
 The free space path loss in the mmWave band is higher, thus the transmission range is short, and mmWave transmissions experience higher loss due to blockage. 
-This makes the transmission depends mostly on the availability of a line-of-sight (LOS) channel or strong reflected non-line-of-sight (NLOS) channel.
+This makes the transmissions depend mostly on the availability of a line-of-sight (LOS) channel or strong reflected non-line-of-sight (NLOS) channel.
 Further, the human body introduces a path loss of over 20dB \cite{humanshadowing} thus movements of a user and its neighbors may greatly change the channels.
-Devices operating on the mmWave band usually use directional transmissions and reception, thus the antenna gain is non-uniform. 
-As a result, the channels in mmWave band are very sensitive to the environment and user motions. 
+Devices operating in the mmWave band usually use directional transmissions and reception, thus the antenna gain is non-uniform. 
+As a result, the channels in the mmWave band are very sensitive to the environment and user motions. 
 These characteristics are not necessarily shortcomings, e.g., short range, directionality and blockage can reduce the interference seen at receivers, naturally simplifying interference management. 
 In this paper we focus on dense indoor environments with possibly very high user densities and dynamics, e.g., a crowded train car.
 Such a setting corresponds to one of the extreme environments where the technology should operate seamlessly. 
-It is an open question how MAC protocol should adapt to work in such environments, e.g., how much overhead is required to coordinate potential interferers and handle user dynamics.
+It is an open question if and how the MAC protocols should adapt to work in such environments.%, e.g., how much overhead is required to coordinate potential interferers and handle user dynamics.
 
 
 Another key characteristic of mmWave wearable networks is the possible heterogeneity of devices. 
 Wearable devices may have different transmission capabilities in terms of beamforming/directionality, computation capacity, transmit power and energy, etc. 
-Moreover, the traffic patterns of users/devices are different, some may leverage highly directional links between smart phones and augmented reality devices while other users may have multiple low-end devices with relatively poor directionality.
+Moreover, the traffic patterns of users/devices may be different, some may leverage highly directional links between smart phones and augmented reality devices while other users may have multiple low-end devices with relatively poor directionality.
 % use different directionality for different environments. 
-Such heterogeneity makes it challenging to optimize MAC protocols to guarantee desired Quality-of-Service (QoS).
+Such heterogeneity makes it challenging to optimize MAC protocols to guarantee Quality-of-Service (QoS) requirements for high-end applications.
 
 
 The above characteristics affect MAC design in different ways. 
 The nature of mmWave propagation makes it possible to achieve higher spatial reuse, but scheduling users is challenging as the signaling can be unreliable and the interference characteristics may change frequently.
-The high density of users and user dynamics in indoor environments suggests that the MAC protocols should coordinate among users using limited signaling to reduce overheads. 
+The high density of users and user dynamics in indoor environments suggest that the MAC protocols should coordinate among users using limited signaling to reduce overheads. 
 Heterogeneity of devices may require transmissions be treated differently and the MAC should adapt to different devices and QoS requirements.
 
 \emph{Contributions.}
@@ -96,41 +96,40 @@ In this paper, we explore the nature of mmWave propagation for dense wearable ne
 
 We first study the characteristics, i.e., number, location and sensitivity to motion, of ``strong interferers'' as seen by a typical receiver in a dense wearable environment. 
 The strong interferers are those that in principle a MAC protocol would aim to address through scheduling. 
-We note that some work has been done on analyzing the signal-to-interference-ratio (SINR) distribution in dense wearable networks but the studies mostly assume there is no scheduling or simple protocols like Aloha \cite{interferencefinitesized}\cite{enclosedmmwave}.
+We note that some work has been done on analyzing the signal-to-interference-ratio (SINR) distribution in dense wearable networks but the studies mostly assume there is no scheduling or consider simple protocols like Aloha \cite{interferencefinitesized}\cite{enclosedmmwave}.
 Our main findings regarding the interference environment include: 
 \begin{itemize}
 	\item The average number of strong interferers seen by a typical receiver does not keep increasing with user density. 
-	In fact it reaches a peak then starts decreasing due to human body blockage. 
-	\item In highly dense environments, most strong interferers are actually nearby as the close neighbors essentially form a ``ring'' round the user blocking more distant interferers. 
+	In fact it reaches a peak then starts decreasing as a result of human body blockage. 
+	\item In highly dense environments, most strong interferers are actually nearby since the close neighbors essentially form a ``ring'' round the user blocking more distant interferers. 
 	\item Strong interferers are most sensitive to users' local motions at intermediate user densities. 
 \end{itemize}
+%These results suggest that in dense wearable networks, the transmissions of nearby neighbors are those that one should coordinate to mitigate interference.  
+%The number of nearby neighbors is limited, thus the coordination overheads can be scalable, i.e., different user densities may require roughly the same amount of signaling overhead. 
+%Furthermore, the ``worst case'', e.g., where users see highest number of interferers and most sensitivity to motion, does not necessarily correspond to scenarios with the highest user density due to blockage.
 
-These results suggest that in dense wearable networks, the transmissions of nearby neighbors are those that one should coordinate to mitigate interference.  
-The number of nearby neighbors is limited, thus the coordination overheads can be scalable, i.e., different user densities may require roughly the same amount of signaling overhead. 
-Furthermore, the ``worst case'', e.g., where users see highest number of interferers and most sensitivity to motion, does not necessarily correspond to scenarios with the highest user density due to blockage.
-
-We then revisit current approaches to MAC design for wearable networks which leverage clustering and hierarchical scheduling and study the performance of MAC in high density scenarios given the particular characteristics of mmWave propagation discussed above. 
+We then revisit current approaches to MAC design for wearable networks which leverage clustering and hierarchical scheduling and study their performance in high density scenarios given the particular characteristics of mmWave propagation discussed above. 
 %Our goal here is to study the relationship between cluster size and network performance in high density scenarios given the particular characteristics of mmWave propagation discussed above. 
 Our main contributions and findings regarding MAC and scheduling with clustering include:
 \begin{itemize}
 	\item We propose a simple model to analyze the performance of clustering and scheduling for dense wearable networks and validate it through simulation.
-	\item The trade-offs associated with cluster size: large clusters reduce inter-cluster interference but require more coordination overheads and result in reduced reuse versus small clusters.
-	\item Heterogeneous device transmission capabilities impact the best cluster size: highly directional transmissions requires smaller cluster sizes while low directional transmissions require larger clusters to mitigate interference. 
+	\item We explore the trade-offs associated with cluster size: large clusters reduce inter-cluster interference but require more coordination overheads and result in reduced reuse versus small clusters.
+	\item We study how the transmission capabilities of devices impact the best cluster size: highly directional transmissions prefer smaller cluster sizes while low directional transmissions prefer larger clusters to mitigate interference. MAC schedulers can and should be optimized depending on device transmission capabilities and QoS requirements. 
 	%\item The best cluster size is fairly insensitive to user density when it is high. 
-	\item At high densities, the optimal cluster size and per user throughput are roughly constant, thus the MAC of wearable networks is scalable with user density. %The resources allocated to each user may not decrease with density, thus the total reuse of the network may scale with user density.
+	\item We show that the \emph{per user throughput} first decreases with user density as expected, but then remains stable and even increases at high densities. The optimal cluster size also remains roughly constant in dense scenarios. Our results suggest that, perhaps surprisingly, the MAC of wearable networks is ``scalable'' to high user densities. %The resources allocated to each user may not decrease with density, thus the total reuse of the network may scale with user density.
 \end{itemize}
 
-Our results suggest that MAC schedulers may be optimized to device transmission capabilities and QoS requirements. 
-More importantly, for high density scenarios, the overheads of MAC and per user throughput may remain the same, thus the MAC can be well scalable.
+%Our results suggest that MAC schedulers may be optimized to device transmission capabilities and QoS requirements. 
+%More importantly, for high density scenarios, the overheads of MAC and per user throughput may remain the same, thus the MAC can be well scalable.
 %These results suggest that the cluster size is not sensitive to user densities, but may need to adapt to changes in device transmission capabilities and traffic patterns. 
 %Further, optimization of clustering might be most challenging in scenarios with intermediate density.
 
 \emph{Related work.}
 % Channel Modeling
-The channel characteristics of interference has been studied in \cite{urbanblockage} for urban cellular network and \cite{interferencefinitesized}\cite{enclosedmmwave} for indoor wearable networks. 
-In these works, the transmissions of users are not coordinated, or with simple protocols like Aloha, and the interference from all users are summed up to analyze the SINR.
-In this paper, instead, we focus on characterizing the set of users the MAC need to coordinate to identify the requirements on MAC.
-\cite{humanactivity}\cite{timevaryingpathshadowing}\cite{blockagein60ghz} study the impact of human mobility on the channel between two fixed points through measurements and simulation, but how the set of interferers is influenced is not studied.
+The channel and interference characteristics in the mmWave band have been studied in \cite{urbanblockage} for urban cellular network and \cite{interferencefinitesized}\cite{enclosedmmwave} for indoor wearable networks. 
+In these works, the transmissions of users are not coordinated, or assume simple protocols like Aloha, and the interference from all users is summed up to analyze the SINR.
+In this paper, instead, we focus on characterizing the set of users the MAC needs to coordinate so as to identify the requirements on the MAC.
+\cite{humanactivity}\cite{timevaryingpathshadowing}\cite{blockagein60ghz} study the impact of human mobility on the channel between two fixed points through measurements and simulation, but do not study how the set of interferers is affected.
 
 
 MAC protocols have been proposed to improve the spatial reuse for mmWave networks \cite{dtdmac}\cite{mdmac}\cite{intersharing}, but the characteristics in dense wearable networks, i.e., the blockage of user body and large density of devices, are not considered.
@@ -154,7 +153,7 @@ We define an interferer as a \emph{strong interferer} if the interference power,
 \begin{equation*}
 P_r = P_t\cdot G_t\cdot G_r\cdot L, 
 \end{equation*}
-$P_t$ is the transmit power, $G_t$ and $G_r$ are the transmit and receive antenna gains, and $L$ is the channel gain.
+$P_t$ is the transmit power, $G_t$ and $G_r$ are the transmit and receive antenna gains, and $L$ is the path loss.
 
 \textbf{User model.} Users are assumed to stand on a 2-D plane. 
 Walls and obstructions other than human bodies are not considered, but we shall assume there is a ceiling at a height $h_{\mathrm{ceiling}}$. 
@@ -169,12 +168,12 @@ We let $\tilde{\phi} = \{(x_i, \theta_i)\}$ denote a realization of $\tilde{\Phi
 We will use the location of user to represent the user, e.g., $x_i$ for user $i$. 
 
 
-\textbf{Channel model.} We use the center of the user to approximate the location of user's PCP.
+\textbf{Channel model.} We use the location of the center of a user to approximate the location of the user's PCP.
 Only two types of channel are considered, the LOS channel and the reflected channel over the ceiling, which we refer to as the NLOS channel.
 The LOS channel follows the free space propagation model while the path loss of the reflected channel is determined by the free space path loss and a ceiling reflection coefficient, $\Gamma$, which depends on incident angel and reflection material \cite{reflection}.
 
 
-\textbf{Blockage model.} We assume that the channel gain of an interference channel is 0 if the channel is blocked by users, including self blockage.
+\textbf{Blockage model.} We assume that the path loss of an interference channel is 0 if the channel is blocked by users, including self blockage.
 For self blockage, we assume user's body would block both the LOS and NLOS channels to/from devices behind the user as shown in Fig.~\ref{fig:channel:self-blockage}. 
 We say that two users are ``facing'' each other if they are in the non self-block regions of each other.
 
@@ -193,7 +192,7 @@ We assume user $x'$ blocks the LOS channel if the following two conditions are m
 \begin{equation*}
 s_x(x')\in [0,|x|]~\textrm{and}~0 \in D_x(x, \theta'),
 \end{equation*}
-where $s_x(x')\in \mathbb{R}$ is the projection of $x'$ on the unit vector from 0 to $x$, $D_x(x', \theta')\subset \mathbb{R}^2$ is the projection of user's cross section on the vector $n_x$, which is the vector perpendicular to the vector from $0$ to $x$. 
+where $s_x(x')\in \mathbb{R}$ is the projection of $x'$ on the unit vector from 0 to $x$, $|x|$ is the distance between user $x$ and the typical user $0$, $D_x(x', \theta')\subset \mathbb{R}^2$ is the projection of user's cross section at height $h_{\mathrm{device}}$ on the vector $n_x$, which is the vector perpendicular to the vector from $0$ to $x$. 
 For blocking of the NLOS channel, we further assume that the cross section of the user body at height higher than the device, $h\geq h_{\mathrm{device}}$, is contained in the cross section at height $h_{\mathrm{device}}$.
 Thus $x'$ blocks the NLOS channel if an additional third condition is satisfied:
 \begin{equation*}
@@ -213,7 +212,7 @@ This additional condition implies that if the LOS channel is not blocked, the NL
 \end{figure}
 
 Given $P_t$, $G_t$ and $G_r$, let $r_{\max}$ be the maximum distance of a strong interferer when the LOS channel is available, and $r_{\max}^{\mathrm{reflection}}$ that when the NLOS channel is not blocked but the LOS channel is blocked, so due to reflection losses and longer path, $r_{\max}^{\mathrm{reflection}}<r_{\max}$.
-Denote by $|x|$ the distance between user $x$ and the typical user $0$. 
+%Denote by $|x|$ the distance between user $x$ and the typical user $0$. 
 For $|x|\in[r_{\min},r_{\max}^{\mathrm{reflection}}]$, user $x$ is a strong interferer if the NLOS channel is not blocked; for $|x|\in(r_{\max}^{\mathrm{reflection}}, r_{\max}]$, user $x$ is a strong interferer if the LOS channel is not blocked.
 Notice that the path loss of the NLOS channel may not be a monotonic decreasing function of $|x|$ due to the sensitivity of the reflection coefficient to incident angel, thus for $|x|<r_{\max}^{\mathrm{reflection}}$, having an unblocked NLOS channel is only a necessary condition for being a strong interferer in some scenarios. 
 The model can be easily extended to account for these effects. 
@@ -241,9 +240,9 @@ In this section we study the interference environment a user would experience in
 We first analyze the number of strong interferers seen by the typical user, $(0, \theta_0)$, $N_{\mathrm{SI}}$. 
 $N_{\mathrm{SI}}$ can be written as follows, 
 \begin{equation}
-N_{\mathrm{SI}} = \sum_{(x_i, \theta_i)\in \tilde{\phi}}f_0(x_i, \theta_i, \tilde{\phi}\backslash\{(x_i,\theta_i)\}, \theta_0)
+N_{\mathrm{SI}} = \sum_{(X_i, \Theta_i)\in \tilde{\Phi}}f(X_i, \Theta_i, \tilde{\Phi}\backslash\{(X_i,\Theta_i)\}, 0, \theta_0),
 \end{equation}
-where $f_{X_0}(X, \Theta, \tilde{\Phi}\backslash\{(X,\Theta)\}, \Theta_0)$ is the indicator function that $(X, \Theta)$ is a strong interferer of user $(X_0,\Theta_0)$ given the blockages from user users, $\tilde{\Phi}\backslash (X,\Theta)$.
+where $f(X, \Theta, \tilde{\Phi}\backslash\{(X,\Theta)\}, X_0, \Theta_0)$ is the indicator function that user $(X, \Theta)$ is a strong interferer of user $(X_0,\Theta_0)$ given the other users, $\tilde{\Phi}\backslash (X,\Theta)$.
 
 $N_{\mathrm{SI}}$ is a function of $\tilde{\Phi}$, and this makes the distribution of $N_{\mathrm{SI}}$ hard to compute. 
 Still the average number of strong interferers is a good metric to capture the MAC coordination requirements/overhead.
@@ -251,7 +250,8 @@ Still the average number of strong interferers is a good metric to capture the M
 
 %\textbf{How to compute \boldmath$\E[N_{\mathrm{SI}}]$.}
 To compute $\E[N_{\mathrm{SI}}]$ we first compute the probability that the channel between $0$ and $x$ is blocked. 
-Denote $N_{\mathrm{B}}^{\LOS}(x)$ as the number of users blocking the LOS channel between $0$ and $x$, $N_{\mathrm{B}}^{\NLOS}(x)$ as the number of blockages blocking the NLOS channel, $N_{\mathrm{B}}^{\NLOS}(x)\leq N_{\mathrm{B}}^{\LOS}(x)$.
+Denote by $N_{\mathrm{B}}^{\LOS}(x)$ a random variable corresponding to the number of users blocking the LOS channel between $0$ and $x$, $N_{\mathrm{B}}^{\NLOS}(x)$ a random variable corresponding to the number of users blocking the NLOS channel. 
+Clearly $N_{\mathrm{B}}^{\NLOS}(x)\leq N_{\mathrm{B}}^{\LOS}(x)$ almost surely according to our model.
 The distribution of $N_\mathrm{B}^{\LOS}(x)$ is given in the following theorem. 
 \begin{theorem}\label{theorem:E_N_B_LOS}
 	If user locations follow HPPP with density $\lambda$, $N_\mathrm{B}^\mathrm{LOS}(x)$ follows a Poisson distribution with mean $\mathrm{E}[N_{\mathrm{B}}^\mathrm{LOS}(x)] \approx \lambda |x| \mathrm{E}[D]$, where $\mathrm{E}[D]$ is the expected width of a user's cross section at $h_{\mathrm{device}}$.
@@ -259,8 +259,8 @@ The distribution of $N_\mathrm{B}^{\LOS}(x)$ is given in the following theorem.
 	The probability that the LOS channel is not blocked is $e^{-\E[N_\mathrm{B}^\mathrm{LOS}(x)]}$.
 \end{theorem}
 
-The proof of Theorem \ref{theorem:E_N_B_LOS} includes proving that $N_B^{\LOS}(x)$ is a thinned Poisson process \cite{poisson} and Campbell's formula \cite{stochasticgeometry}.
-For NLOS channel, $N_{\mathrm{B}}^\mathrm{NLOS}(x)$ also follows Poisson distribution and its mean can be computed similarly as $N_{\mathrm{B}}^\mathrm{LOS}(x)$ .
+The proof of Theorem \ref{theorem:E_N_B_LOS} is based on showing that $N_B^{\LOS}(x)$ is obtained from a thinned Poisson process \cite{poisson} and using Campbell's formula \cite{stochasticgeometry} to get its mean.
+For NLOS channels, $N_{\mathrm{B}}^\mathrm{NLOS}(x)$ also follows Poisson distribution and its mean can be computed similarly.% as $N_{\mathrm{B}}^\mathrm{LOS}(x)$ .
 
 
 %We make an assumption regarding the blockage of LOS and NLOS channel: if the NLOS channel is blocked, then the LOS channel is also blocked. 
@@ -269,18 +269,18 @@ For NLOS channel, $N_{\mathrm{B}}^\mathrm{NLOS}(x)$ also follows Poisson distrib
 
 Based on the above analysis and assumptions, $\E[N_{\mathrm{SI}}]$ can be computed using the Reduced Campbell's formula for i.m.p.p. of Corollary 2.2 in \cite{stochasticgeometry} as follows,
 \begin{multline}\label{eq:E_N_SI}
-\mathrm{E}[N_{\mathrm{SI}}] =  \mathrm{P}_{\text{facing}} \int\limits_{\mathbb{R}^2} 
+\mathrm{E}[N_{\mathrm{SI}}] =  \mathrm{P}_{\text{facing}} \int\limits_{R_0} 
  \big[\text{1}(|x|\in[r_{\min},r_{\text{max}}^{\mathrm{reflection}}])
 \cdot e^{-\mathrm{E}[N_{\mathrm{B}}^\mathrm{NLOS}(x)]} \\
-+ \text{1}(|x|\in[r_{\text{max}}^{\mathrm{reflection}},r_{\text{max}}])
++ \text{1}(|x|\in(r_{\text{max}}^{\mathrm{reflection}},r_{\text{max}}])
 \cdot e^{-\mathrm{E}[N_{\mathrm{B}}^\mathrm{LOS}(x)]} \big]\lambda(\mathrm{d}x),
 \end{multline}
 %where $r_{\min}$ is the minimum distance between users, 
-where $P_{\text{facing}}$ is the probability that user $x$ and user $0$ faces each other.
+where $P_{\text{facing}}$ is the probability that user $x$ and user $0$ faces each other, $R_0 = \mathbb{R}^2\backslash b(0, r_{\min})$.
 
 
 \textbf{Numerical results.}
-In a dense scenario, HPPP model for users locations may not be a good model as users can not overlap with each other so this may affect the accuracy of our result for $\E[N_{\mathrm{SI}}]$.
+In a dense scenario, HPPP model for users locations may not be a good model as users can not overlap with each other and this may affect the accuracy of our result for $\E[N_{\mathrm{SI}}]$.
 In Fig.~\ref{fig:channel:en_si} we compare our analytical results with simulation accounting for user not overlapping.
 Users are modeled as cylinders with a diameter of 0.6m, and we use Mat\'ern \Rom{3} process \cite{matern} to model user locations in a simulation with $r_{\min}=0.6$ m.
 Our analytical results are in line with the simulation, validating the accuracy of the approximation. 
@@ -327,7 +327,7 @@ The sensitivity of strong interferers, i.e., how the set of strong interferers c
 
 %\textbf{Movement model.} 
 Suppose in a time interval $[t, t+ \Delta t]$, users make independent small scale movements, i.e., translation $\Delta X_i$ and rotation $\Delta \Theta_i$. 
-Denote $\tilde{\Phi}^t$ as the network at time $t$. Given $\tilde{\Phi}^t = \tilde{\phi}^t$ and the typical user is $(0, \theta_0)$ at $t$, the changes of the network are summarized as follows:
+Denote by $\tilde{\Phi}^t$ the network at time $t$. Given $\tilde{\Phi}^t = \tilde{\phi}^t$ and the typical user is $(0, \theta_0)$ at $t$, the changes of the network are summarized as follows:
 \begin{equation*}
 \begin{split}
 (0,\theta_0)&\rightarrow(\Delta X_0, \theta_0 + \Delta\Theta_0), \\
@@ -335,16 +335,16 @@ Denote $\tilde{\Phi}^t$ as the network at time $t$. Given $\tilde{\Phi}^t = \til
 \end{split}
 \end{equation*}
 %where $\Delta x$ is the translation and $\Delta \theta$ is the angle of rotation, both 
-Both $\Delta X_i$ and $\Delta\Theta_i$ are identical and independently distributed (i.i.d.), $\Delta X_i$ is uniformly distributed in $b(0,r_{\mathrm{move}})$, $\Delta \Theta_i$ is uniformly distributed in $[-\omega, \omega]$.
+We assume both $\Delta X_i$ and $\Delta\Theta_i$ are identical and independently distributed (i.i.d.), $\Delta X_i$ is uniformly distributed in $b(0,r_{\mathrm{move}})$, $r_{\mathrm{move}}$ is the maximum range of movements, $\Delta \Theta_i$ is uniformly distributed in $[-\omega, \omega]$.
 
 
 %\textbf{Metric for sensitivity.} 
-Denote $Y_x^t=f_0(x, \Theta, \tilde{\Phi}^t\backslash (x, \Theta), \Theta_0)$ as a random variable representing the whether user $x$ is a strong interferer at time $t$, and $Y_x^{t+\Delta t}$ as the state of the same user at $t+\Delta t$, i.e.,
+Denote by $Y_x^t=f(x, \Theta, \tilde{\Phi}^t\backslash (x, \Theta), 0, \Theta_0)$ as a random variable representing whether user $x$ is a strong interferer at time $t$, and $Y_x^{t+\Delta t}$ a random variable representing the state of the same user at $t+\Delta t$, i.e.,
 \begin{multline*}
-Y_{x}^{t+\Delta t} = f_{\Delta X_0}(x+\Delta X, \Theta + \Delta\Theta, \tilde{\Phi}^{t+\Delta t}\backslash (x+\Delta X, \Theta + \Delta\Theta), \\
-\Theta_0 + \Delta\Theta_0),
+Y_{x}^{t+\Delta t} = f(x+\Delta X, \Theta + \Delta\Theta, \tilde{\Phi}^{t+\Delta t}\backslash (x+\Delta X, \Theta + \Delta\Theta), \\
+\Delta X_0, \Theta_0 + \Delta\Theta_0),
 \end{multline*}
-where $\Delta X$, $\Delta \Theta$ are random variables having the same distribution as $\Delta X_i$ and $\Delta_i$ respectively,
+where $\Delta X$, $\Delta \Theta$ are random variables having the same distribution as $\Delta X_i$ and $\Delta\Theta_i$ respectively,
 $Y_x^t \mathrm{~and~} Y_{x}^{t+\Delta t} \in \{0,1\}$.
 We define the \emph{sensitivity} of an interferer originally located at $x$ for an interval of length $\Delta t$, $S(x, \Delta t)$, based on the autocorrelation of the state of the interferer at $t$ and $t+\Delta t$ as follows, 
 \begin{equation}
@@ -352,9 +352,9 @@ S(x, \Delta t)
 =\mathrm{Corr}(Y_x^t, Y_x^{t+\Delta t})
 =\frac{\mathrm{Cov}(Y_x^t, Y_x^{t+\Delta t})}{\sigma_{Y_x^t}\cdot \sigma_{Y_x^{t+\Delta t}}},
 \end{equation}
-where $\mathrm{Cov}(Y_x^t, Y_x^{t+\Delta t}) = \mathrm{E}[Y_x^t Y_x^{t + \Delta t}] - \E[Y_x^t]\E[Y_x^{t+\Delta t}]$, $\sigma_{Y_x^t}$, $\sigma_{Y_x^{t+\Delta t}}$ are the variance of $Y_x^t$, $Y_x^{t+\Delta t}$, $S(x, \Delta t)\in [0,1]$. If $S(x, \Delta t)$ is small, the autocorrelation of the user state is small and the channel sensitive to movements; if $S(x, \Delta t)$ is close to $1$, the autocorrelation is high and the estimation of interferer is reliable. 
- $S$ can be computed using a similar technique we use for $\E[N_{\SI}]$ leveraging our simple mobility model. 
-The details are omitted due to space.
+where $\mathrm{Cov}(Y_x^t, Y_x^{t+\Delta t}) = \mathrm{E}[Y_x^t Y_x^{t + \Delta t}] - \E[Y_x^t]\E[Y_x^{t+\Delta t}]$, $\sigma_{Y_x^t}$ and $\sigma_{Y_x^{t+\Delta t}}$ are the variance of $Y_x^t$ and $Y_x^{t+\Delta t}$, $S(x, \Delta t)\in [0,1]$. If $S(x, \Delta t)$ is small, the autocorrelation of the user state is small and the channel sensitive to movements; if $S(x, \Delta t)$ is close to $1$, the autocorrelation is high and the interferer are stable. 
+$S(x, \Delta t)$ can be computed as used to obtain $\E[N_{\SI}]$ and leveraging the simple mobility model. 
+The details are omitted due to space constraints.
 
 
 %\textbf{How to compute \boldmath$S$.}
@@ -379,9 +379,9 @@ The details are omitted due to space.
 \textbf{Numerical results.}
 We present the numerical results on the sensitivity of LOS strong interferers for $\Delta t= 1$s in Fig.~\ref{fig:channel:sensitivity}. 
 %$\Delta X$ is uniformly distributed in a disc centered at the origin with the radius of $r(\lambda, \Delta t)$, $\Delta X \sim \mathrm{unif}(b(0, r(\lambda, \Delta t)))$. 
-We assume $r_{\mathrm{move}}(\lambda, \Delta t)$ may decrease with user density, i.e., 
+We assume $r_{\mathrm{move}}$ is a function of $\lambda$ and may decrease with user density, i.e., 
 %\begin{equation*}
-$r(\lambda,\Delta t) = \min(0.23, 0.6 \sqrt{1/\lambda\pi}) \mathrm{~m},$
+$r_{\mathrm{move}}(\lambda) = \min(0.23, 0.6 \sqrt{1/\lambda\pi}) \mathrm{~m},$
 %\end{equation*}
 to capture the fact that users' local movements become limited as the distance among users becomes smaller. 
 The range for rotation is $48\degree$, i.e., $\omega = 24\degree$. 
@@ -410,7 +410,7 @@ In highly dense scenarios, strong interferers are closer and the movements becom
 
 
 \section{Performance of Hierarchical Wearable MAC}\label{section:clustering}
-In this section, we discuss the hierarchy of MAC protocols for dense wearable networks and study the performance of MAC.
+In this section, we propose a simple hierarchical MAC protocol for dense wearable networks and study its performance.
 
 
 \subsection{Hierarchical MAC for Wearable Networks}\label{section:clustering:hierarchy}
@@ -420,16 +420,16 @@ When centralized control is absent, hierarchical clustering and scheduling work 
 The hierarchical MAC consists of three parts, clustering, channel selection and scheduling at each PBSS. 
 The cluster head synchronizes PBSSs in the cluster and schedules Beacon Transmission Intervals (BTIs) for each cluster member PBSS. 
 Due to high user density and unstable channels, cluster head may not schedule the data transmissions for cluster members.
-Channel selection is mainly used to mitigate interference, either the cluster head select a channel for all members in the cluster, or a PBSS choose the channel to work on then form clusters on that channel. 
+Channel selection is mainly used to mitigate interference, either the cluster heads select a channel for all members in the cluster, or the PBSSs choose the channel to work on then form clusters on that channel. 
 Clustering and channel selection help coordinate the PBSSs and are usually performed at a slower time scale. 
 In each PBSS, the PCP schedules the data transmissions within the PBSS for each frame while trying to optimize reuse in dense scenarios. 
 
 
 Current standards leave open the question of how to form clusters and select channels according to the scenario. 
-Another major problem is that reuse might be limited, e.g., PBSSs may not use the same slots and work in a time devision multiple access (TDMA) like manner if they can hear other's beacon in 802.11ad.
+Another major problem is that reuse might be limited, e.g., PBSSs may not use the same slots and work in a time devision multiple access (TDMA) like manner if they can hear others' beacons in 802.11ad.
 
 
-For dense wearable networks, the basic principle underlying clustering is that the channel between cluster head and cluster members should be strong and stable. 
+For dense wearable networks, the basic principle underlying clustering is that the channels between cluster head and cluster members should be strong and stable. 
 To better mitigate inter-cluster interference through channel selection, it is also desirable that cluster members share a similar set of strong interferers. 
 Based on our analysis of channels and the above principles, a cluster shall consist of users in close proximity and operate in a channel distinct from that of nearby clusters. 
 %Apart from applying the above basic principles, one must also choose the proper size for clusters. 
@@ -457,14 +457,14 @@ In this section we propose a model to compute the achievable reuse of clustering
 
 Consider the average time that a typical PBSS can perform a successful data transmission, denoted by Successful Transmission Time (STT) as the performance metric of interest.
 A PBSS interferes with another PBSS if the interference power it causes at the receiver is above a threshold $\gamma_{\SI}$.
-We define two users interferes with each other if the interference power at either user exceeds $\gamma_{\SI}$. 
+We say two users interfere with each other if the interference power at either user exceeds $\gamma_{\SI}$. 
 A transmission is successful if the there is no interferer.
 STT is then defined as follows, 
 \begin{equation*}
 STT = f_{\mathrm{data}}\times p_{\mathrm{access}} \times p_{\mathrm{success}},
 \end{equation*}
-where $f_{\mathrm{data}}$ is the fraction of time reserved for data transmission, $p_{\mathrm{access}}$ is the probability that the PBSS may access the channel and does not interfere with other PBSSs within the same cluster,
-and $p_{\mathrm{success}}$ is the probability that the transmission is free from inter-cluster interference.
+where $f_{\mathrm{data}}$ is the fraction of time reserved for data transmission, $p_{\mathrm{access}}$ is the probability that a PBSS may access the channel and does not interfere with other PBSSs within the same cluster,
+and $p_{\mathrm{success}}$ is the probability that a transmission is free from inter-cluster interference.
 
 
 There are two types of transmissions, beacon and data transmissions. 
@@ -487,7 +487,7 @@ R_{\mathrm{cluster}} = \sqrt{\frac{K - 1}{\lambda\pi}+r_{\min}^2}.
 
 %Modify this paragraph\%
 Channel selection is geared at ensuring neighboring clusters operate on different channels and thus effectively form  an inter-cluster interference protection region, see Fig.~\ref{fig:clusteranalysis:model}.
-An idealized protection area is modeled as a disc centered at the cluster head with radius $R_{\mathrm{protect}}$, where there are no inter-cluster interferers.
+An idealized protection area is modeled as a disc centered at the cluster head with a radius $R_{\mathrm{protect}}$, where there are no inter-cluster interferers.
 Assume the fraction of clusters operating on each channel is equal, and the number of users in the protection area of each cluster is the same.
 We further assume the protection areas of clusters on the same channel are non-overlapping, then on average there should be $M\cdot K$ users in the protection area. 
 Suppose these users are uniformly distributed on the protection area with density $\lambda$, then we have under our idealized model, 
@@ -498,7 +498,7 @@ Suppose these users are uniformly distributed on the protection area with densit
 R_{\mathrm{protect}} \approx \sqrt{\frac{M\cdot K - 1}{\lambda \pi} + r_{\min}^2}.
 \end{equation*}
 We shall assume users outside the protection area can be modeled as following a HPPP with density $\lambda$ and operating on a given channel with probability $1/M$.
-All PBSSs outside the protection region works independently.
+All PBSSs outside the protection region work independently.
 %The clusters can be ignored from the point of view of the inter-cluster interference seen by a user. 
 %For users out side the cluster, we assume they are uniformly distributed outside the protection area with density $\lambda$.
 %These users are not synchronized with the typical cluster and work independently.
@@ -516,14 +516,12 @@ All PBSSs outside the protection region works independently.
 \textbf{Modeling scheduling.}
 %Next we introduce a model for scheduling.
 We assume there is at most one transmission in each PBSS in each slot. 
-Let $T_{\mathrm{frame}}$ denote the length of a cluster shared frame and $T_{\mathrm{beacon}}$ the length of one BTI. 
+Let $T_{\mathrm{frame}}$ denote the length of a cluster shared frame and $T_{\mathrm{beacon}}$ denote the length of one BTI. 
 The cluster head reserves exactly $K$ BTIs in $T_{\mathrm{frame}}$ thus the proportion of data reserved for data transmission is given by
 \begin{equation*}
 f_{\mathrm{data}} = \frac{T_{\mathrm{data}}}{T_{\mathrm{frame}}} = \frac{T_{\mathrm{frame}} - K\cdot T_{\mathrm{beacon}}} {T_{\mathrm{frame}}}.
 \end{equation*}
 In each BTI, exactly one PCP will transmit its beacon and the other devices will attempt to receive the beacon using omni-directional receive mode. 
-
-
 The PBSSs are full-buffer and schedule primary transmissions a proportion $\rho_{\mathrm{primary}}\in[0,1]$ of slots for data transmission and schedule secondary transmissions for the remaining $\rho_{\mathrm{secondary}} =1 - \rho_{\mathrm{primary}}$  slots. 
 
 
@@ -534,17 +532,17 @@ p_{\mathrm{access}}^{\mathrm{TDMA}} = f_{\mathrm{data}}/K.
 A PBSS schedules primary transmissions in ${\rho_{\mathrm{primary}}f_{\mathrm{data}}}/{K}$ slots, and secondary transmissions in the rest $(1-\rho_{\mathrm{primary}})f_{\mathrm{data}}/K$ slots. 
 
 In HRR, each PBSS is allocated $1/K$ of the slots where it is priority PBSS, i.e., having higher priority in scheduling. 
-A typical PBSS first schedules primary transmissions in the reserved slots and schedules other transmissions by reusing slots allocated to other PBSSs. 
+A PBSS first schedules primary transmissions in the reserved slots and schedules other transmissions by reusing slots allocated to other PBSSs. 
 If $\rho_{\mathrm{primary}}\leq 1/K$, the PBSS also schedules secondary transmissions in the allocated slots. 
 Other PBSSs will try to reuse the slots if they do not interfere with the priority PBSS owning the slot.
 The probability that a PBSS can reuse a given slot is approximated by
 \begin{equation*}
-p_{\mathrm{access}}^{\mathrm{HRR}}=(1-p_{\mathrm{SI}}^{\mathrm{priority}})\cdot \frac{1}{1+\E[N_{\mathrm{intra-cluster}}^{\mathrm{reuse}}]},
+p_{\mathrm{access}}^{\mathrm{reuse}}=(1-p_{\mathrm{SI}}^{\mathrm{priority}})\cdot \frac{1}{1+\E[N_{\mathrm{intra-cluster}}^{\mathrm{reuse}}]},
 \end{equation*}
 %Discuss how $P_{clear}$ is computed\%
 where $p_{\mathrm{SI}}^{\mathrm{priority}}$ is the probability that the typical PBSS interferes with the priority PBSS considering the channel path loss and antenna gain,  
 %$N_{\mathrm{intra-cluster}}$ is the number of intra-cluster interferers, i.e., PBSSs within the same cluster whose transmissions interferes with the transmission of the typical PBSS.  
-$N_{\mathrm{intra-cluster}}^{\mathrm{reuse}}$ is number of non-priority PBSSs in the cluster, which do not interfere with the priority PBSS and contend with the typical PBSS to reuse the slot.
+$N_{\mathrm{intra-cluster}}^{\mathrm{reuse}}$ is number of non-priority PBSSs in the cluster, which do not interfere with the priority PBSS and contend with the PBSS to reuse the slot.
 
 
 %A PBSS's transmission is successful if the transmission is not interfered by transmissions outside the cluster. 
@@ -558,25 +556,14 @@ We use the transmission pattern of a user $\frac{\sqrt{2}}{2}R_{\mathrm{cluster}
 
 %Validation of mathematical model\%
 
+
+
+
 \subsection{Numerical Results and Discussion}
 %Is the typical user at cluster center good enough?\%
-In this section, we present the achievable STT of a representative user which is located between the center and the edge of the cluster with a distance $\frac{\sqrt{2}}{2}R_{\mathrm{cluster}}$ to the center.
+In this section, we present the achievable STT of a representative user which is located between the center and the edge of the cluster at a distance $\frac{\sqrt{2}}{2}R_{\mathrm{cluster}}$ to the center.
 We assume the secondary transmissions use omni-directional antenna and low transmit power while primary transmissions use directional antenna with $\beta=60\degree$, $\rho_{primary} = 0.5$.
 The parameters used are listed in Table \ref{tab:clusteranalysis:parameter}.
-
-We begin by comparing our analytical model with simulation in Fig.~\ref{fig:cluster:validation}. 
-In our simulations, the locations of users follow a Mat\'ern \Rom{3} process \cite{matern}, i.e., users can not overlap each other.
-The blockage from other users follows the probabilistic model based on distance while self-blockage and antenna gain are calculated based on user locations and orientations and antenna directions.
-Users are first clustered using Affinity Propagation (AP) \cite{apcluster} based on a similarity metric between two users $i$ and $j$, which is simply defined as the inverse squared distance, i.e., $d_{ij}^{-2}$, where $d_{ij}$ is the distance between user $i$ and $j$.
-After clustering, the cluster head hops among channels for a certain number of slots, attempting to  minimize the sum similarity to inter-cluster PBSSs that are on the same channel.
-Channel selection is performed for a fixed number of rounds at which point cluster heads stop selecting channels.
-After clustering and channel selection, each cluster schedules users either using TDMA or HRR. 
-In HRR, each non-priority PBSS is assigned with a random reuse-priority, and a non-priority PBSS user can reuse the channel if it does not interfere with the prioirty PBSS, nor other non-priority PBSSs which have higher reuse priority and do not interfere with the priority PBSS. 
-%The STT is the average over different users. 
-%In HRR, in each slot, non-priority users are given a random priority index and users contend for the access to channel based on their priority index. 
-%Simulation is performed over different network topologies.
-As we will see, the simulation results for this more realistic network model, e.g., with real clusters, channel selection and scheduling, are in accordance with our simplified analytical model.
-
 
 \begin{table}
 	\centering
@@ -587,8 +574,8 @@ As we will see, the simulation results for this more realistic network model, e.
 		\hline
 		Frequency & 60 GHz \\
 		M & 4 \\
-	%	$h_{\mathrm{ceiling}}$ & 2.8 m \\
-	%	$|\Gamma_{\mathrm{ceiling}}|^2$ & 0.2166 \\
+		%	$h_{\mathrm{ceiling}}$ & 2.8 m \\
+		%	$|\Gamma_{\mathrm{ceiling}}|^2$ & 0.2166 \\
 		$\lambda$ & 1 $\mathrm{user/m^2}$ \\
 		$P_t$ (primary) & 10 dBm \\
 		$P_t$ (secondary) & 4 dBm \\
@@ -604,6 +591,23 @@ As we will see, the simulation results for this more realistic network model, e.
 	\end{tabular}
 	\label{tab:clusteranalysis:parameter}	
 \end{table}
+
+
+We begin by comparing our analytical model with simulation in Fig.~\ref{fig:cluster:validation}. 
+In our simulations, the locations of users follow a Mat\'ern \Rom{3} process \cite{matern}, i.e., users can not overlap each other.
+The blockage from other users follows the probabilistic model based on distance while self-blockage and antenna gain are calculated based on user locations and orientations and antenna directions.
+Users are first clustered using Affinity Propagation (AP) \cite{apcluster} based on a similarity metric between two users $i$ and $j$, which is simply defined as the inverse squared distance, i.e., $d_{ij}^{-2}$, where $d_{ij}$ is the distance between user $i$ and $j$.
+After clustering, the cluster heads hop among channels for a certain number of slots, attempting to  minimize the sum similarity to inter-cluster PBSSs that are on the same channel.
+Channel selection is performed for a fixed number of rounds at which point cluster heads stop selecting channels.
+After clustering and channel selection, each cluster schedules users either using TDMA or HRR. 
+In HRR, each non-priority PBSS is assigned a random reuse-priority, and a non-priority PBSS user can reuse the channel if it does not interfere with the prioirty PBSS, nor other non-priority PBSSs which have higher reuse priority and do not interfere with the priority PBSS. 
+%The STT is the average over different users. 
+%In HRR, in each slot, non-priority users are given a random priority index and users contend for the access to channel based on their priority index. 
+%Simulation is performed over different network topologies.
+As we will see, the simulation results for this more realistic network model, e.g., with real clusters, channel selection and scheduling, are in accordance with our simplified analytical model.
+
+
+
 % SINR not considered thus don't need noise figure ? 
 
 
@@ -612,6 +616,7 @@ As we will see, the simulation results for this more realistic network model, e.
 Fig.~\ref{fig:cluster:validation} exhibits how the STT of user changes with cluster size.
 STT first increases with cluster size, then saturates and decreases, indicating that while large clusters may provide good inter-cluster interference mitigation, they increase the contention between users within cluster as well as signaling overheads thus may reduce the spatial reuse.
 %The STT of primary transmissions is maximized when cluster size is small while the STT of secondary transmissions is maximized for larger $K$, showing that secondary transmissions benefit more from interference mitigation of larger clusters.
+
 
 \begin{figure}[htp]
 	\centering
@@ -634,15 +639,15 @@ STT first increases with cluster size, then saturates and decreases, indicating 
 %	\label{fig:clusteranalysis:basic}
 %\end{figure}
 
-\textbf{Impact of heterogeneity of devices.} Fig.~\ref{fig:cluster:directionality} exhibits the STT when users have different beam width $\beta$ for primary transmissions.
-As might be expected, the optimal cluster size maximizing STT is smaller when transmissions are more directional. 
+\textbf{Impact of transmission capability of devices.} Fig.~\ref{fig:cluster:directionality} compare the STT when users have different beamwidths $\beta$ for primary transmissions.
+As might be expected, the optimal cluster size maximizing STT is smaller when the transmissions are more directional. 
 Results suggest that highly directional devices are less dependent on clustering to mitigate interference, thus users with highly directional devices may favor small clusters or be better off not joining clusters at all. 
 
 
 \begin{figure}
 	\centering
 	\includegraphics[width = 0.3\textwidth]{Cluster_analysis_directionality_wiopt.pdf}
-	\caption{Comparison of STT when users in the network have different beamwidth $\beta$ for primary transmissions.}
+	\caption{Comparison of STT for networks with different beamwidths $\beta$ for primary transmissions.}
 	\label{fig:cluster:directionality}
 \end{figure}
 
@@ -661,10 +666,10 @@ However, as we have discussed, the transmission capabilities of users influence 
 At each user density, the cluster size is chosen as the one that maximizes the STT. %for the hierarchical MAC with clustering. 
 For Aloha, we assume users select channels randomly and the access probability is optimized to maximize the total STT. 
 We observe that clustering and reuse provide moderate gains in STT, partly due to beacon overheads. %but can substantially improve the probability of successful transmission. 
-The STT of users remains constant with user densities, indicating that the per user throughput scales with user density. 
+The STT of users remains constant with user densities, indicating that the per user throughput scales with user density at high densities.
 Combined with observation that optimal cluster size is robust, we can see that MAC is scalable in dense wearable networks.
 %We also note that the total STT first decreases with user density then starts to increase with density.
-Our result here is different from the existing scaling results on ad hoc networks in that the transmit power or the signal strength does not change with density.
+Our result here is different from the existing scaling results on ad hoc networks in that the transmit power and the signal strength do not change with density.
 %Such results indicate that the MAC for dense wearable network scales with user density, and the design of MAC should focus more on intermediate dense environments. 
 %Such a result is in line with our analysis of the interference environment that in very dense networks, close by neighbors block the interference from distant interferers thus the interference in dense environments may not be the worst case. 
  
@@ -680,11 +685,12 @@ Our result here is different from the existing scaling results on ad hoc network
 
 
 \section{Conclusion}\label{section:conclusion}	
-Our analysis of character of interference strong interferers in dense mmWave wearable networks suggests such networks might be quite viable. 
+Our analysis of character of interference and MAC performance in dense mmWave wearable networks suggests such networks might be quite viable. 
 Blockage and directionality help limit the number of strong interferers to a few that are close by and stable.
 For a relative stationary network, clustering with resource reuse is a viable solution to coordinating PBSS transmissions. 
-An ideal cluster protocol should be able to adapt to user transmission capabilities and QoS requirements. 
-More importantly, the overhead and performance of MAC is scalable with user densities in dense wearable networks, and the design of MAC may focus on the most challenging scenario, the intermediate dense scenario.
+An ideal cluster protocol should be able to adapt to user transmission capabilities and QoS requirements. %  but choice of optimal cluster size may be robust to user density.
+More importantly, the overhead and performance of MAC scale well at high densities. 
+In fact when designing and evaluating a MAC, one may want to focus on the most challenging scenario at which one has a moderate density of users.
 %Finding the optimal cluster size requires optimizing a trade-off between interference mitigation and resource reuse within clusters thus an ideal cluster protocol should adapt to different environment. 
 %Our model provide a simple way to explore such trade-offs.
 

@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.7.10)  12 JAN 2016 17:17
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.7.10)  12 JAN 2016 22:45
 entering extended mode
-**WiOpt_v4.tex
-("F:\Dropbox\Research\15 Fall\Indoor mmWave Wearble Networks\WiOpt_v4.tex"
+**WiOpt_v5.tex
+("F:\Dropbox\Research\15 Fall\Indoor mmWave Wearble Networks\WiOpt_v5.tex"
 LaTeX2e <2014/05/01>
 Babel <3.9k> and hyphenation patterns for 68 languages loaded.
 ("F:\Dropbox\Research\15 Fall\Indoor mmWave Wearble Networks\IEEEtran.cls"
@@ -336,7 +336,7 @@ Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 340.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\was\gensymb.sty"
 Package: gensymb 2003/07/02 v1.0 (WaS)
 )
-("F:\Dropbox\Research\15 Fall\Indoor mmWave Wearble Networks\WiOpt_v4.aux")
+("F:\Dropbox\Research\15 Fall\Indoor mmWave Wearble Networks\WiOpt_v5.aux")
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
 LaTeX Font Info:    ... okay on input line 37.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
@@ -403,21 +403,21 @@ File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 ) [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 
-] [2]
-<./figures/Channel_selfblockage.pdf, id=19, 640.3925pt x 239.89626pt>
+]
+<./figures/Channel_selfblockage.pdf, id=10, 640.3925pt x 239.89626pt>
 File: ./figures/Channel_selfblockage.pdf Graphic file (type pdf)
 
 <use ./figures/Channel_selfblockage.pdf>
 Package pdftex.def Info: ./figures/Channel_selfblockage.pdf used on input line 
-184.
+183.
 (pdftex.def)             Requested size: 129.0pt x 48.32248pt.
-
+ [2]
 <./figures/Channel_ENB_wiopt16.pdf, id=20, 786.94pt x 364.36125pt>
 File: ./figures/Channel_ENB_wiopt16.pdf Graphic file (type pdf)
 
 <use ./figures/Channel_ENB_wiopt16.pdf>
 Package pdftex.def Info: ./figures/Channel_ENB_wiopt16.pdf used on input line 2
-09.
+08.
 (pdftex.def)             Requested size: 154.80157pt x 71.67006pt.
 
 <./figures/Channel_NLOS_wiopt16.pdf, id=21, 733.74126pt x 363.3575pt>
@@ -425,18 +425,18 @@ File: ./figures/Channel_NLOS_wiopt16.pdf Graphic file (type pdf)
 
 <use ./figures/Channel_NLOS_wiopt16.pdf>
 Package pdftex.def Info: ./figures/Channel_NLOS_wiopt16.pdf used on input line 
-210.
+209.
 (pdftex.def)             Requested size: 206.39685pt x 102.21066pt.
- [3 <F:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures/Channel
-_selfblockage.pdf> <F:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/
-figures/Channel_ENB_wiopt16.pdf> <F:/Dropbox/Research/15 Fall/Indoor mmWave Wea
-rble Networks/figures/Channel_NLOS_wiopt16.pdf>]
+
 Underfull \hbox (badness 1742) in paragraph at lines 257--258
 \OT1/ptm/b/n/10 Theorem 1. \OT1/ptm/m/it/10 If user lo-ca-tions fol-low HPPP wi
 th den-
  []
 
-
+[3 <F:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures/Channel_
+selfblockage.pdf> <F:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/f
+igures/Channel_ENB_wiopt16.pdf> <F:/Dropbox/Research/15 Fall/Indoor mmWave Wear
+ble Networks/figures/Channel_NLOS_wiopt16.pdf>]
 Overfull \hbox (4.09712pt too wide) detected at line 277
  []$[]  \OT1/cmr/m/n/10 E[\OML/cmm/m/it/10 N[]\OT1/cmr/m/n/10 ] = P[] [] [][](\
 OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 x\OMS/cmsy/m/n/10 j 2 \OT1/cmr/m/n/10 [\OML/c
@@ -444,7 +444,7 @@ mm/m/it/10 r[]; r[]\OT1/cmr/m/n/10 ]) \OMS/cmsy/m/n/10  \OML/cmm/m/it/10 e[]$
 
  []
 
-<./figures/Channel_en_si_wiopt.pdf, id=41, 341.275pt x 255.95625pt>
+<./figures/Channel_en_si_wiopt.pdf, id=40, 341.275pt x 255.95625pt>
 File: ./figures/Channel_en_si_wiopt.pdf Graphic file (type pdf)
 
 <use ./figures/Channel_en_si_wiopt.pdf>
@@ -452,14 +452,14 @@ Package pdftex.def Info: ./figures/Channel_en_si_wiopt.pdf used on input line 2
 93.
 (pdftex.def)             Requested size: 154.80157pt x 116.10095pt.
 
-<./figures/Channel_si_pdf.pdf, id=42, 341.275pt x 255.95625pt>
+<./figures/Channel_si_pdf.pdf, id=41, 341.275pt x 255.95625pt>
 File: ./figures/Channel_si_pdf.pdf Graphic file (type pdf)
 
 <use ./figures/Channel_si_pdf.pdf>
 Package pdftex.def Info: ./figures/Channel_si_pdf.pdf used on input line 303.
 (pdftex.def)             Requested size: 154.80157pt x 116.10095pt.
 
-<./figures/Channel_jamming_01.pdf, id=43, 255.95625pt x 255.95625pt>
+<./figures/Channel_jamming_01.pdf, id=42, 255.95625pt x 255.95625pt>
 File: ./figures/Channel_jamming_01.pdf Graphic file (type pdf)
 
 <use ./figures/Channel_jamming_01.pdf>
@@ -467,7 +467,7 @@ Package pdftex.def Info: ./figures/Channel_jamming_01.pdf used on input line 31
 0.
 (pdftex.def)             Requested size: 77.39685pt x 77.39673pt.
 
-<./figures/Channel_jamming_05.pdf, id=44, 255.95625pt x 255.95625pt>
+<./figures/Channel_jamming_05.pdf, id=43, 255.95625pt x 255.95625pt>
 File: ./figures/Channel_jamming_05.pdf Graphic file (type pdf)
 
 <use ./figures/Channel_jamming_05.pdf>
@@ -475,29 +475,20 @@ Package pdftex.def Info: ./figures/Channel_jamming_05.pdf used on input line 31
 1.
 (pdftex.def)             Requested size: 77.39685pt x 77.39673pt.
 
-<./figures/Channel_jamming_15.pdf, id=45, 255.95625pt x 255.95625pt>
+<./figures/Channel_jamming_15.pdf, id=44, 255.95625pt x 255.95625pt>
 File: ./figures/Channel_jamming_15.pdf Graphic file (type pdf)
 
 <use ./figures/Channel_jamming_15.pdf>
 Package pdftex.def Info: ./figures/Channel_jamming_15.pdf used on input line 31
 2.
 (pdftex.def)             Requested size: 77.39685pt x 77.39673pt.
-
-Overfull \hbox (4.30144pt too wide) detected at line 346
- []$[]  \OML/cmm/m/it/10 Y[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 f[]\OT1/cmr/m/n
-/10 (\OML/cmm/m/it/10 x \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 X; \OT1/cmr/m/n/10 
- + \OML/cmm/m/it/10 ; []\OMS/cmsy/m/n/10 n\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 
-x \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 X; \OT1/cmr/m/n/10  + )\OML/cmm/m/it/1
-0 ;$ 
- []
-
-[4 <F:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures/Channel_
-en_si_wiopt.pdf> <F:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/fi
-gures/Channel_si_pdf.pdf> <F:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Ne
-tworks/figures/Channel_jamming_01.pdf> <F:/Dropbox/Research/15 Fall/Indoor mmWa
-ve Wearble Networks/figures/Channel_jamming_05.pdf> <F:/Dropbox/Research/15 Fal
-l/Indoor mmWave Wearble Networks/figures/Channel_jamming_15.pdf>]
-<./figures/Channel_sensitivity_wiopt16.pdf, id=100, 255.95625pt x 204.765pt>
+ [4 <F:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures/Channel
+_en_si_wiopt.pdf> <F:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/f
+igures/Channel_si_pdf.pdf> <F:/Dropbox/Research/15 Fall/Indoor mmWave Wearble N
+etworks/figures/Channel_jamming_01.pdf> <F:/Dropbox/Research/15 Fall/Indoor mmW
+ave Wearble Networks/figures/Channel_jamming_05.pdf> <F:/Dropbox/Research/15 Fa
+ll/Indoor mmWave Wearble Networks/figures/Channel_jamming_15.pdf>]
+<./figures/Channel_sensitivity_wiopt16.pdf, id=99, 255.95625pt x 204.765pt>
 File: ./figures/Channel_sensitivity_wiopt16.pdf Graphic file (type pdf)
 
 <use ./figures/Channel_sensitivity_wiopt16.pdf>
@@ -505,7 +496,7 @@ Package pdftex.def Info: ./figures/Channel_sensitivity_wiopt16.pdf used on inpu
 t line 402.
 (pdftex.def)             Requested size: 118.6778pt x 94.9429pt.
 
-<./figures/Channel_sensitivity_average_wiopt16.pdf, id=101, 255.95625pt x 204.7
+<./figures/Channel_sensitivity_average_wiopt16.pdf, id=100, 255.95625pt x 204.7
 65pt>
 File: ./figures/Channel_sensitivity_average_wiopt16.pdf Graphic file (type pdf)
 
@@ -514,7 +505,7 @@ Package pdftex.def Info: ./figures/Channel_sensitivity_average_wiopt16.pdf used
  on input line 403.
 (pdftex.def)             Requested size: 118.6778pt x 94.9429pt.
 
-<./figures/Clustering_reuse_wiopt.pdf, id=102, 5460.4pt x 3126.68124pt>
+<./figures/Clustering_reuse_wiopt.pdf, id=101, 5460.4pt x 3126.68124pt>
 File: ./figures/Clustering_reuse_wiopt.pdf Graphic file (type pdf)
 
 <use ./figures/Clustering_reuse_wiopt.pdf>
@@ -533,7 +524,7 @@ Package pdftex.def Info: ./figures/Clustering_model.pdf used on input line 510.
 
 (pdftex.def)             Requested size: 154.80157pt x 105.08997pt.
 
-Underfull \hbox (badness 5403) in paragraph at lines 533--535
+Underfull \hbox (badness 5403) in paragraph at lines 531--533
 \OT1/ptm/m/n/10 slots, and sec-ondary trans-mis-sions in the rest $\OT1/cmr/m/n
 /10 (1 \OMS/cmsy/m/n/10  $
  []
@@ -545,7 +536,7 @@ ng_model.pdf>]
 File: ./figures/Cluster_analysis_validation_tdma.pdf Graphic file (type pdf)
  <use ./figures/Cluster_analysis_validation_tdma.pdf>
 Package pdftex.def Info: ./figures/Cluster_analysis_validation_tdma.pdf used on
- input line 618.
+ input line 623.
 (pdftex.def)             Requested size: 118.6778pt x 105.64726pt.
 
 <./figures/Cluster_analysis_validation_hrr.pdf, id=166, 255.95625pt x 227.85126
@@ -553,7 +544,7 @@ pt>
 File: ./figures/Cluster_analysis_validation_hrr.pdf Graphic file (type pdf)
  <use ./figures/Cluster_analysis_validation_hrr.pdf>
 Package pdftex.def Info: ./figures/Cluster_analysis_validation_hrr.pdf used on 
-input line 619.
+input line 624.
 (pdftex.def)             Requested size: 118.6778pt x 105.64726pt.
 
 <./figures/Cluster_analysis_directionality_wiopt.pdf, id=167, 341.275pt x 284.0
@@ -562,27 +553,28 @@ File: ./figures/Cluster_analysis_directionality_wiopt.pdf Graphic file (type pd
 f)
  <use ./figures/Cluster_analysis_directionality_wiopt.pdf>
 Package pdftex.def Info: ./figures/Cluster_analysis_directionality_wiopt.pdf us
-ed on input line 644.
+ed on input line 649.
 (pdftex.def)             Requested size: 154.80157pt x 128.84929pt.
-
-<./figures/Cluster_analysis_optimal_cluster_size_wiopt.pdf, id=168, 341.275pt x
+ [7 <F:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures/Cluster
+_analysis_validation_tdma.pdf> <F:/Dropbox/Research/15 Fall/Indoor mmWave Wearb
+le Networks/figures/Cluster_analysis_validation_hrr.pdf> <F:/Dropbox/Research/1
+5 Fall/Indoor mmWave Wearble Networks/figures/Cluster_analysis_directionality_w
+iopt.pdf>]
+<./figures/Cluster_analysis_optimal_cluster_size_wiopt.pdf, id=227, 341.275pt x
  255.95625pt>
 File: ./figures/Cluster_analysis_optimal_cluster_size_wiopt.pdf Graphic file (t
 ype pdf)
  <use ./figures/Cluster_analysis_optimal_cluster_size_wiopt.pdf>
 Package pdftex.def Info: ./figures/Cluster_analysis_optimal_cluster_size_wiopt.
-pdf used on input line 655.
+pdf used on input line 660.
 (pdftex.def)             Requested size: 154.80157pt x 116.10095pt.
 
-[7 <F:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures/Cluster_
-analysis_validation_tdma.pdf> <F:/Dropbox/Research/15 Fall/Indoor mmWave Wearbl
-e Networks/figures/Cluster_analysis_validation_hrr.pdf>]
-<./figures/Cluster_analysis_compare_mac_wiopt.pdf, id=200, 341.275pt x 255.9562
+<./figures/Cluster_analysis_compare_mac_wiopt.pdf, id=228, 341.275pt x 255.9562
 5pt>
 File: ./figures/Cluster_analysis_compare_mac_wiopt.pdf Graphic file (type pdf)
  <use ./figures/Cluster_analysis_compare_mac_wiopt.pdf>
 Package pdftex.def Info: ./figures/Cluster_analysis_compare_mac_wiopt.pdf used 
-on input line 674.
+on input line 679.
 (pdftex.def)             Requested size: 154.80157pt x 116.10095pt.
 Missing character: There is no â in font ptmri7t!
 Missing character: There is no € in font ptmri7t!
@@ -615,11 +607,9 @@ Before submitting the final camera ready copy, remember to:
  process uses the appropriate paper size.
 
 [8 <F:/Dropbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures/Cluster_
-analysis_directionality_wiopt.pdf> <F:/Dropbox/Research/15 Fall/Indoor mmWave W
-earble Networks/figures/Cluster_analysis_optimal_cluster_size_wiopt.pdf> <F:/Dr
-opbox/Research/15 Fall/Indoor mmWave Wearble Networks/figures/Cluster_analysis_
-compare_mac_wiopt.pdf>]
-("F:\Dropbox\Research\15 Fall\Indoor mmWave Wearble Networks\WiOpt_v4.aux") ) 
+analysis_optimal_cluster_size_wiopt.pdf> <F:/Dropbox/Research/15 Fall/Indoor mm
+Wave Wearble Networks/figures/Cluster_analysis_compare_mac_wiopt.pdf>]
+("F:\Dropbox\Research\15 Fall\Indoor mmWave Wearble Networks\WiOpt_v5.aux") ) 
 Here is how much of TeX's memory you used:
  4104 strings out of 493706
  66079 string characters out of 3144580
@@ -627,7 +617,7 @@ Here is how much of TeX's memory you used:
  7375 multiletter control sequences out of 15000+200000
  44421 words of font info for 92 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 36i,16n,47p,513b,330s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,16n,47p,516b,330s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C
 :/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files/Mi
 KTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9
@@ -649,7 +639,7 @@ m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm7.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fo
 nts/type1/urw/times/utmbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/ti
 mes/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on WiOpt_v4.pdf (8 pages, 971113 bytes).
+Output written on WiOpt_v5.pdf (8 pages, 970882 bytes).
 PDF statistics:
  332 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
